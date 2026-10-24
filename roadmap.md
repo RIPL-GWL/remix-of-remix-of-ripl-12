@@ -29,8 +29,8 @@
 - [x] Verify remixed database and import available missing records: 615 store-network districts and 6 employee master records restored; public list verified at 477 districts / 37,932 stores. Old login accounts and CRM records still require a source export (see existing records task).
 
 ## 2026-10-24 new tasks
-- [ ] Recheck optimized repo backup for every image; restore any missing copies.
-- [ ] Admin password creation: owner must enter private password through the account signup screen; never save it in the repo.
+- [x] Recheck optimized repo backup: all 152 images present, valid, max 1920px; 13.4 MiB total, no missing copies.
+- [ ] Admin password: existing owner account confirmed and secure reset request accepted; owner must open email link and enter a private password. Delivery and completion unverified.
 - [x] Admin verification audit log: record changes and public attempts with time, result and related record; insert/update/delete and public attempts verified. Admin screen check awaits a signed-up admin account (see below).
 - [x] Separate public verification page linked from Our Family; team directory and profiles require sign-in; employee, mentor and document results browser-verified.
 - [x] Mobile footer: Startups 3 columns, Global Markets 4 columns below, then Contact; 393px browser check without overflow.
@@ -40,5 +40,5 @@
 - [x] Funding Programme: new Zoho form embedded with auto-resize (formperma 1SNzTjiKwSF14T0BCEyJLvZCZDDowZl3NYWbAjpy1KE)
 - [x] Site-wide grammar check: 12 fixes applied
 
-- [ ] harsh@rishishwarindustry.in must sign up again at /auth (remix wiped auth users); signup trigger restored so it auto-approves + grants Super Admin
+- [x] Owner account now exists; no repeat signup needed (confirmed 2026-10-24).
 - [ ] Admin verification page browser test pending (needs the account above)
