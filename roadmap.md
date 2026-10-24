@@ -30,7 +30,8 @@
 
 ## 2026-10-24 new tasks
 - [x] Recheck optimized repo backup: all 152 images present, valid, max 1920px; 13.4 MiB total, no missing copies.
-- [ ] Admin password: existing owner account confirmed and secure reset request accepted; owner must open email link and enter a private password. Delivery and completion unverified.
+- [ ] Admin password: authenticated password update rejected with internal auth error through both direct Auth API and app client; requested password not set. Prior reset request accepted; owner completion unverified.
+- [x] Our Family button renamed Verify; Verify and Login both 76×26px, mobile browser verified.
 - [x] Admin verification audit log: record changes and public attempts with time, result and related record; insert/update/delete and public attempts verified. Admin screen check awaits a signed-up admin account (see below).
 - [x] Separate public verification page linked from Our Family; team directory and profiles require sign-in; employee, mentor and document results browser-verified.
 - [x] Mobile footer: Startups 3 columns, Global Markets 4 columns below, then Contact; 393px browser check without overflow.
