@@ -29,6 +29,8 @@
 - [x] Verify remixed database and import available missing records: 615 store-network districts and 6 employee master records restored; public list verified at 477 districts / 37,932 stores. Old login accounts and CRM records still require a source export (see existing records task).
 
 ## 2026-10-24 new tasks
+- [ ] Recheck optimized repo backup for every image; restore any missing copies.
+- [ ] Admin password creation: owner must enter private password through the account signup screen; never save it in the repo.
 - [x] Admin verification audit log: record changes and public attempts with time, result and related record; insert/update/delete and public attempts verified. Admin screen check awaits a signed-up admin account (see below).
 - [x] Separate public verification page linked from Our Family; team directory and profiles require sign-in; employee, mentor and document results browser-verified.
 - [x] Mobile footer: Startups 3 columns, Global Markets 4 columns below, then Contact; 393px browser check without overflow.
