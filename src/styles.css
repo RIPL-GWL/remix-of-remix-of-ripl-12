@@ -1312,6 +1312,8 @@ html.dark .investor-page { --investor-paper: oklch(0.17 0.006 55); --investor-so
 .people-page .people-verify-form svg,.people-page .people-search svg{width:18px;height:18px;color:var(--investor-muted)}
 .people-page .people-verify-form input,.people-page .people-search input{flex:1;background:transparent;outline:none;min-width:0}
 .people-page .people-verify-fail{display:flex;gap:8px;align-items:center;margin-top:16px;color:var(--destructive);font-weight:600}
+.people-page .people-verify-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.people-page .people-verify-hint{margin-top:10px;font-size:12px;color:var(--investor-muted)}
 .people-page .people-verified{margin-top:20px;border:1px solid var(--investor-line);border-radius:6px;padding:20px}
 .people-page .people-badge{display:inline-flex;gap:6px;align-items:center;padding:6px 12px;border-radius:6px;background:var(--investor-green-soft);color:var(--investor-green);font-weight:600;font-size:14px}
 .people-page .people-verified h3{margin-block:12px}
