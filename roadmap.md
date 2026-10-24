@@ -29,6 +29,7 @@
 - [x] Verify remixed database and import available missing records: 615 store-network districts and 6 employee master records restored; public list verified at 477 districts / 37,932 stores. Old login accounts and CRM records still require a source export (see existing records task).
 
 ## 2026-10-24 new tasks
+- [ ] Admin verification audit log: record changes and public attempts with time, result and related record; test.
 - [ ] Separate public verification page linked from Our Family; restore sign-in requirement for team directory and profiles; verify result views.
 - [ ] Mobile footer: Startups 3 columns, Global Markets 4 columns below, then Contact; browser check.
 - [x] Mobile footer: Startups & Investments 2 columns; Login button into Our Family section (browser-verified)
