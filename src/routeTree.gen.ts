@@ -61,6 +61,7 @@ import { Route as AuthenticatedAdminStoreNetworkRouteImport } from './routes/_au
 import { Route as AuthenticatedAdminStoresRouteImport } from './routes/_authenticated/admin.stores'
 import { Route as AuthenticatedAdminTargetsRouteImport } from './routes/_authenticated/admin.targets'
 import { Route as AuthenticatedAdminUsersRouteImport } from './routes/_authenticated/admin.users'
+import { Route as AuthenticatedAdminVerificationRouteImport } from './routes/_authenticated/admin.verification'
 import { Route as AuthenticatedOurInvestorsIndexRouteImport } from './routes/_authenticated/our-investors.index'
 import { Route as AuthenticatedOurInvestorsSlugRouteImport } from './routes/_authenticated/our-investors.$slug'
 import { Route as AuthenticatedOurMentorsIndexRouteImport } from './routes/_authenticated/our-mentors.index'
@@ -344,6 +345,12 @@ const AuthenticatedAdminUsersRoute = AuthenticatedAdminUsersRouteImport.update({
   path: '/users',
   getParentRoute: () => AuthenticatedAdminRoute,
 } as any)
+const AuthenticatedAdminVerificationRoute =
+  AuthenticatedAdminVerificationRouteImport.update({
+    id: '/verification',
+    path: '/verification',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const AuthenticatedOurInvestorsIndexRoute =
   AuthenticatedOurInvestorsIndexRouteImport.update({
     id: '/',
@@ -450,6 +457,7 @@ export interface FileRoutesByFullPath {
   '/admin/stores': typeof AuthenticatedAdminStoresRoute
   '/admin/targets': typeof AuthenticatedAdminTargetsRoute
   '/admin/users': typeof AuthenticatedAdminUsersRoute
+  '/admin/verification': typeof AuthenticatedAdminVerificationRoute
   '/our-investors/$slug': typeof AuthenticatedOurInvestorsSlugRoute
   '/our-mentors/$slug': typeof AuthenticatedOurMentorsSlugRoute
   '/our-team/$slug': typeof AuthenticatedOurTeamSlugRoute
@@ -508,6 +516,7 @@ export interface FileRoutesByTo {
   '/admin/stores': typeof AuthenticatedAdminStoresRoute
   '/admin/targets': typeof AuthenticatedAdminTargetsRoute
   '/admin/users': typeof AuthenticatedAdminUsersRoute
+  '/admin/verification': typeof AuthenticatedAdminVerificationRoute
   '/our-investors/$slug': typeof AuthenticatedOurInvestorsSlugRoute
   '/our-mentors/$slug': typeof AuthenticatedOurMentorsSlugRoute
   '/our-team/$slug': typeof AuthenticatedOurTeamSlugRoute
@@ -572,6 +581,7 @@ export interface FileRoutesById {
   '/_authenticated/admin/stores': typeof AuthenticatedAdminStoresRoute
   '/_authenticated/admin/targets': typeof AuthenticatedAdminTargetsRoute
   '/_authenticated/admin/users': typeof AuthenticatedAdminUsersRoute
+  '/_authenticated/admin/verification': typeof AuthenticatedAdminVerificationRoute
   '/_authenticated/our-investors/$slug': typeof AuthenticatedOurInvestorsSlugRoute
   '/_authenticated/our-mentors/$slug': typeof AuthenticatedOurMentorsSlugRoute
   '/_authenticated/our-team/$slug': typeof AuthenticatedOurTeamSlugRoute
@@ -636,6 +646,7 @@ export interface FileRouteTypes {
     | '/admin/stores'
     | '/admin/targets'
     | '/admin/users'
+    | '/admin/verification'
     | '/our-investors/$slug'
     | '/our-mentors/$slug'
     | '/our-team/$slug'
@@ -694,6 +705,7 @@ export interface FileRouteTypes {
     | '/admin/stores'
     | '/admin/targets'
     | '/admin/users'
+    | '/admin/verification'
     | '/our-investors/$slug'
     | '/our-mentors/$slug'
     | '/our-team/$slug'
@@ -757,6 +769,7 @@ export interface FileRouteTypes {
     | '/_authenticated/admin/stores'
     | '/_authenticated/admin/targets'
     | '/_authenticated/admin/users'
+    | '/_authenticated/admin/verification'
     | '/_authenticated/our-investors/$slug'
     | '/_authenticated/our-mentors/$slug'
     | '/_authenticated/our-team/$slug'
@@ -1168,6 +1181,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminUsersRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
+    '/_authenticated/admin/verification': {
+      id: '/_authenticated/admin/verification'
+      path: '/verification'
+      fullPath: '/admin/verification'
+      preLoaderRoute: typeof AuthenticatedAdminVerificationRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/our-investors/': {
       id: '/_authenticated/our-investors/'
       path: '/'
@@ -1249,6 +1269,7 @@ interface AuthenticatedAdminRouteChildren {
   AuthenticatedAdminStoresRoute: typeof AuthenticatedAdminStoresRoute
   AuthenticatedAdminTargetsRoute: typeof AuthenticatedAdminTargetsRoute
   AuthenticatedAdminUsersRoute: typeof AuthenticatedAdminUsersRoute
+  AuthenticatedAdminVerificationRoute: typeof AuthenticatedAdminVerificationRoute
   AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
   AuthenticatedAdminDealsIdRoute: typeof AuthenticatedAdminDealsIdRoute
   AuthenticatedAdminLeadsIdRoute: typeof AuthenticatedAdminLeadsIdRoute
@@ -1270,6 +1291,7 @@ const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
   AuthenticatedAdminStoresRoute: AuthenticatedAdminStoresRoute,
   AuthenticatedAdminTargetsRoute: AuthenticatedAdminTargetsRoute,
   AuthenticatedAdminUsersRoute: AuthenticatedAdminUsersRoute,
+  AuthenticatedAdminVerificationRoute: AuthenticatedAdminVerificationRoute,
   AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
   AuthenticatedAdminDealsIdRoute: AuthenticatedAdminDealsIdRoute,
   AuthenticatedAdminLeadsIdRoute: AuthenticatedAdminLeadsIdRoute,
