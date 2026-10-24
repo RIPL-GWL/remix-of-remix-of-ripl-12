@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "56fdc20b-aaa3-426c-b38a-ccbd74cbf9b8",
-  "project_id": "969fed95-ba60-4c29-9182-993fa92f8a71",
-  "url": "/__l5e/assets-v1/56fdc20b-aaa3-426c-b38a-ccbd74cbf9b8/oral-care.webp",
-  "r2_key": "a/v1/969fed95-ba60-4c29-9182-993fa92f8a71/56fdc20b-aaa3-426c-b38a-ccbd74cbf9b8/oral-care.webp",
-  "original_filename": "oral-care.webp",
-  "size": 37974,
   "content_type": "image/webp",
-  "created_at": "2026-10-21T15:32:11Z"
+  "created_at": "2026-10-21T15:32:11Z",
+  "original_filename": "oral-care.webp",
+  "project_id": "a0194dbe-d76c-4177-8a7c-40bf20a585e0",
+  "r2_key": "a/v1/a0194dbe-d76c-4177-8a7c-40bf20a585e0/56fdc20b-aaa3-426c-b38a-ccbd74cbf9b8/oral-care.webp",
+  "size": 37974,
+  "url": "/__l5e/assets-v1/56fdc20b-aaa3-426c-b38a-ccbd74cbf9b8/oral-care.webp",
+  "version": 1
 }
