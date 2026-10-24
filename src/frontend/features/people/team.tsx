@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useMutation } from "@tanstack/react-query";
-import { ArrowLeft, ArrowRight, BadgeCheck, Building2, CalendarDays, ClipboardList, Globe, GraduationCap, IdCard, KeyRound, Mail, MapPin, Search, ShieldCheck, ShieldX, UserRound, Users, BarChart3 } from "lucide-react";
+import { ArrowLeft, ArrowRight, BadgeCheck, Building2, CalendarDays, ClipboardList, FileCheck2, Globe, GraduationCap, IdCard, KeyRound, Mail, MapPin, Phone, Search, ShieldCheck, ShieldX, UserRound, Users, BarChart3 } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/frontend/components/site-chrome";
 import { Button } from "@/frontend/components/ui/button";
 import { Portrait, SectionHeading } from "@/frontend/features/investors/shared";
-import { verifyEmployee, type VerifiedEmployee } from "@/lib/employee-verify.functions";
+import { verifyEmployeeFlexible, verifyDocument, verifyMentor, type VerifiedDocument, type VerifiedEmployeeFlex, type VerifiedMentor } from "@/lib/verification.functions";
 import { DEPARTMENTS, filterTeam, team, type TeamMember } from "./data";
 
 export function TeamPage({ members = team }: { members?: TeamMember[] }) {
