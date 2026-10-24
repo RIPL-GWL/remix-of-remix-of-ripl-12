@@ -1639,7 +1639,4 @@ html .site-footer { --primary: var(--site-primary); }
   .footer-brand .footer-reach { margin-top: 6px; }
 }
 
-.programme-registration-frame { display: block; width: 100%; height: 1100px; border: 1px solid var(--border); background: var(--background); margin-top: 24px; }
-@media (max-width: 767px) {
-  .programme-registration-frame { height: 1250px; }
-}
+.programme-registration-frame { display: block; width: 100%; min-height: 600px; border: none; background: transparent; margin-top: 24px; transition: height 0.5s ease; }
