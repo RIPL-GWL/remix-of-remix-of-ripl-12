@@ -778,6 +778,45 @@ export type Database = {
         }
         Relationships: []
       }
+      verification_audit_log: {
+        Row: {
+          action: string
+          actor_id: string | null
+          event_type: string
+          fields: string[]
+          id: string
+          occurred_at: string
+          record_id: string | null
+          record_label: string | null
+          record_type: string
+          result: string
+        }
+        Insert: {
+          action: string
+          actor_id?: string | null
+          event_type: string
+          fields?: string[]
+          id?: string
+          occurred_at?: string
+          record_id?: string | null
+          record_label?: string | null
+          record_type: string
+          result: string
+        }
+        Update: {
+          action?: string
+          actor_id?: string | null
+          event_type?: string
+          fields?: string[]
+          id?: string
+          occurred_at?: string
+          record_id?: string | null
+          record_label?: string | null
+          record_type?: string
+          result?: string
+        }
+        Relationships: []
+      }
       verification_documents: {
         Row: {
           category: string
