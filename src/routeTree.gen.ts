@@ -38,6 +38,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StartupWithRiplRouteImport } from './routes/startup-with-ripl'
 import { Route as StoreListRouteImport } from './routes/store-list'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as VerificationRouteImport } from './routes/verification'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedOurInvestorsRouteImport } from './routes/_authenticated/our-investors'
 import { Route as AuthenticatedOurTeamRouteImport } from './routes/_authenticated/our-team'
@@ -215,6 +216,11 @@ const StoreListRoute = StoreListRouteImport.update({
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerificationRoute = VerificationRouteImport.update({
+  id: '/verification',
+  path: '/verification',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
@@ -433,6 +439,7 @@ export interface FileRoutesByFullPath {
   '/startup-with-ripl': typeof StartupWithRiplRoute
   '/store-list': typeof StoreListRoute
   '/terms': typeof TermsRoute
+  '/verification': typeof VerificationRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/our-investors': typeof AuthenticatedOurInvestorsRouteWithChildren
   '/our-team': typeof AuthenticatedOurTeamRouteWithChildren
@@ -495,6 +502,7 @@ export interface FileRoutesByTo {
   '/startup-with-ripl': typeof StartupWithRiplRoute
   '/store-list': typeof StoreListRoute
   '/terms': typeof TermsRoute
+  '/verification': typeof VerificationRoute
   '/partner': typeof AuthenticatedPartnerRoute
   '/portal': typeof AuthenticatedPortalRoute
   '/api/chat': typeof ApiChatRoute
@@ -557,6 +565,7 @@ export interface FileRoutesById {
   '/startup-with-ripl': typeof StartupWithRiplRoute
   '/store-list': typeof StoreListRoute
   '/terms': typeof TermsRoute
+  '/verification': typeof VerificationRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
   '/_authenticated/our-investors': typeof AuthenticatedOurInvestorsRouteWithChildren
   '/_authenticated/our-team': typeof AuthenticatedOurTeamRouteWithChildren
@@ -622,6 +631,7 @@ export interface FileRouteTypes {
     | '/startup-with-ripl'
     | '/store-list'
     | '/terms'
+    | '/verification'
     | '/admin'
     | '/our-investors'
     | '/our-team'
@@ -684,6 +694,7 @@ export interface FileRouteTypes {
     | '/startup-with-ripl'
     | '/store-list'
     | '/terms'
+    | '/verification'
     | '/partner'
     | '/portal'
     | '/api/chat'
@@ -745,6 +756,7 @@ export interface FileRouteTypes {
     | '/startup-with-ripl'
     | '/store-list'
     | '/terms'
+    | '/verification'
     | '/_authenticated/admin'
     | '/_authenticated/our-investors'
     | '/_authenticated/our-team'
@@ -810,6 +822,7 @@ export interface RootRouteChildren {
   StartupWithRiplRoute: typeof StartupWithRiplRoute
   StoreListRoute: typeof StoreListRoute
   TermsRoute: typeof TermsRoute
+  VerificationRoute: typeof VerificationRoute
   ApiChatRoute: typeof ApiChatRoute
   OurServicesServiceIdRoute: typeof OurServicesServiceIdRoute
 }
@@ -1017,6 +1030,13 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verification': {
+      id: '/verification'
+      path: '/verification'
+      fullPath: '/verification'
+      preLoaderRoute: typeof VerificationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin': {
@@ -1404,6 +1424,7 @@ const rootRouteChildren: RootRouteChildren = {
   StartupWithRiplRoute: StartupWithRiplRoute,
   StoreListRoute: StoreListRoute,
   TermsRoute: TermsRoute,
+  VerificationRoute: VerificationRoute,
   ApiChatRoute: ApiChatRoute,
   OurServicesServiceIdRoute: OurServicesServiceIdRoute,
 }

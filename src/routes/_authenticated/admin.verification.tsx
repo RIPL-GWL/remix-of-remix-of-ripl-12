@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/_authenticated/admin/verification")({
-  head: () => ({ meta: [{ title: "Verification Records — RIPL Admin" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ meta: [{ title: "Verification Records & Audit — RIPL Admin" }, { name: "description", content: "Manage verification records and review record changes and public verification attempts." }, { property: "og:title", content: "Verification Records & Audit — RIPL Admin" }, { property: "og:description", content: "Manage verification records and review the verification audit log." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }, { name: "robots", content: "noindex" }] }),
   component: VerificationPage,
 });
 
@@ -49,7 +49,7 @@ const MENTOR_FIELDS: { key: keyof MentorRow; label: string; list?: boolean; long
 const cls = "mt-1 w-full rounded-md border bg-background px-3 py-2 text-sm text-foreground";
 
 function VerificationPage() {
-  const [tab, setTab] = useState<"documents" | "mentors">("documents");
+  const [tab, setTab] = useState<"documents" | "mentors" | "audit">("documents");
   return (
     <div className="space-y-4">
       <div>
@@ -62,10 +62,41 @@ function VerificationPage() {
       <div className="flex flex-wrap gap-2">
         <Button size="sm" variant={tab === "documents" ? "default" : "outline"} onClick={() => setTab("documents")}>Letters & Documents</Button>
         <Button size="sm" variant={tab === "mentors" ? "default" : "outline"} onClick={() => setTab("mentors")}>Verified Mentors</Button>
+        <Button size="sm" variant={tab === "audit" ? "default" : "outline"} onClick={() => setTab("audit")}>Audit Log</Button>
       </div>
-      {tab === "documents" ? <DocumentsAdmin /> : <MentorsAdmin />}
+      {tab === "documents" ? <DocumentsAdmin /> : tab === "mentors" ? <MentorsAdmin /> : <AuditLog />}
     </div>
   );
+}
+
+function AuditLog() {
+  const [page, setPage] = useState(0);
+  const [kind, setKind] = useState("");
+  const { data: rows = [], isPending, error, refetch } = useQuery({
+    queryKey: ["verification-audit", page, kind],
+    queryFn: async () => {
+      let query = supabase.from("verification_audit_log").select("*").order("occurred_at", { ascending: false }).range(page * 50, page * 50 + 49);
+      if (kind) query = query.eq("event_type", kind);
+      const { data, error } = await query;
+      if (error) throw error;
+      return data;
+    },
+  });
+  return <section className="space-y-3">
+    <div className="flex flex-wrap items-center gap-2">
+      <select aria-label="Audit event type" className={cls} value={kind} onChange={(e) => { setKind(e.target.value); setPage(0); }}>
+        <option value="">All events</option><option value="record_change">Record changes</option><option value="public_attempt">Public attempts</option>
+      </select>
+      <Button variant="outline" size="sm" onClick={() => refetch()}>Refresh</Button>
+    </div>
+    {error && <p role="alert">Unable to load audit events.</p>}
+    {isPending ? <p>Loading audit events…</p> : <div className="overflow-x-auto rounded-lg border">
+      <table className="w-full text-left text-sm"><thead className="bg-muted"><tr>{["Time", "Event", "Record", "Result", "Actor", "Fields"].map((label) => <th key={label} className="p-3">{label}</th>)}</tr></thead>
+        <tbody>{rows.map((r) => <tr key={r.id} className="border-t"><td className="whitespace-nowrap p-3">{new Date(r.occurred_at).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} IST</td><td className="p-3">{r.event_type === "public_attempt" ? "Public verification" : r.action}</td><td className="p-3"><p>{r.record_type}: {r.record_label || "No matching record"}</p>{r.record_id && <small className="text-muted-foreground">{r.record_id}</small>}</td><td className="p-3">{r.result.replaceAll("_", " ")}</td><td className="p-3">{r.actor_id || (r.event_type === "public_attempt" ? "Public visitor" : "System")}</td><td className="p-3">{r.fields.join(", ")}</td></tr>)}</tbody>
+      </table>{!rows.length && <p className="p-4">No audit events yet.</p>}
+    </div>}
+    <div className="flex items-center gap-3"><Button variant="outline" size="sm" disabled={page === 0} onClick={() => setPage(page - 1)}>Previous</Button><span>Page {page + 1}</span><Button variant="outline" size="sm" disabled={rows.length < 50} onClick={() => setPage(page + 1)}>Next</Button></div>
+  </section>;
 }
 
 function DocumentsAdmin() {
