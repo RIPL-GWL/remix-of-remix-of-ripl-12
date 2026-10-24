@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { createClient } from "@supabase/supabase-js";
+import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { investors as staticInvestors, type Investor } from "@/frontend/features/investors/data";
 import { mentors as staticMentors, team as staticTeam, type Mentor, type TeamMember } from "@/frontend/features/people/data";
 
@@ -49,8 +50,15 @@ const kindSchema = z.object({ kind: z.enum(["investor", "mentor", "team"]) });
 
 export const listDirectory = createServerFn({ method: "GET" })
   .inputValidator((i: unknown) => kindSchema.parse(i))
-  .handler(async ({ data }) => ((await load(data.kind).catch(() => null)) ?? fallback[data.kind]) as Array<Investor | Mentor | TeamMember>);
+  .handler(async ({ data }) => {
+    if (data.kind === "team") throw new Error("Sign in to view the team directory.");
+    return ((await load(data.kind).catch(() => null)) ?? fallback[data.kind]) as Array<Investor | Mentor | TeamMember>;
+  });
 
 export const getInvestors = async () => (await listDirectory({ data: { kind: "investor" } })) as Investor[];
 export const getMentors = async () => (await listDirectory({ data: { kind: "mentor" } })) as Mentor[];
-export const getTeam = async () => (await listDirectory({ data: { kind: "team" } })) as TeamMember[];
+export const getTeam = createServerFn({ method: "GET" }).middleware([requireSupabaseAuth]).handler(async ({ context }) => {
+  const { data, error } = await context.supabase.from("directory_profiles").select("slug, data").eq("kind", "team").eq("is_published", true).order("sort_order").order("created_at");
+  if (error) throw new Error("Unable to load the team directory.");
+  return data?.length ? data.map((r) => complete("team", r as Row)) as TeamMember[] : staticTeam;
+});
