@@ -20,7 +20,7 @@ export function ZohoRegistrationForm() {
       if (parts.length !== 2 && parts.length !== 3) return;
       const [perma, height] = parts;
       const frame = frameRef.current;
-      if (!frame || !frame.src.includes("formperma") || !frame.src.includes(perma)) return;
+      if (!perma || !height || !frame || !frame.src.includes("formperma") || !frame.src.includes(perma)) return;
       const nextHeight = `${parseInt(height, 10) + 15}px`;
       if (parts.length === 3) frame.scrollIntoView();
       if (frame.style.height !== nextHeight) frame.style.height = nextHeight;
