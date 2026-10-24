@@ -211,8 +211,8 @@ export function WhatWeDo() {
         <span className="text-primary">FMCG Manufacturers</span>
       </h2>
       <p className="mx-auto mt-3 max-w-xl text-center text-sm leading-relaxed text-muted-foreground">
-        Our focus is simple — to help good products reach more people, more
-        markets and create bigger opportunities.
+        Our focus is simple — to help good products reach more people and more
+        markets, and to create bigger opportunities.
       </p>
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {services.map((s) => (

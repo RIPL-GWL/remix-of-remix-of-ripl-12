@@ -41,7 +41,7 @@ export function FundingPopup() {
       <DialogOverlay className="funding-popup-overlay" />
       <DialogPrimitive.Content className="funding-popup" onCloseAutoFocus={(event) => event.preventDefault()}>
         <DialogTitle className="sr-only">RIPL Startup Funding Programme — Registrations Open</DialogTitle>
-        <DialogDescription className="sr-only">29–31 December 2026, Gwalior. Top two startups can receive grants up to ₹10 lakhs and ₹5 lakhs, subject to evaluation, eligibility and terms.</DialogDescription>
+        <DialogDescription className="sr-only">29–31 December 2026, Gwalior. The top two startups can receive grants of up to ₹10 lakhs and ₹5 lakhs, subject to evaluation, eligibility and terms.</DialogDescription>
         <div className="funding-popup-poster">
           <img src={poster.url} alt="RIPL Startup Funding Programme: Pitch. Connect. Raise. Grow. Gwalior summit, 29–31 December 2026. Grants for the top two startups, subject to selection and terms." width={789} height={680} />
           <Button variant="ghost" className="funding-popup-registration" onClick={register} aria-label="Register Your Startup Now"><span className="sr-only">Register Your Startup Now</span></Button>

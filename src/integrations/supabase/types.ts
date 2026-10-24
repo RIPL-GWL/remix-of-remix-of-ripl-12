@@ -401,6 +401,7 @@ export type Database = {
           id: string
           is_active: boolean
           official_email: string | null
+          phone: string | null
           user_id: string | null
           work_location: string
         }
@@ -415,6 +416,7 @@ export type Database = {
           id?: string
           is_active?: boolean
           official_email?: string | null
+          phone?: string | null
           user_id?: string | null
           work_location: string
         }
@@ -429,6 +431,7 @@ export type Database = {
           id?: string
           is_active?: boolean
           official_email?: string | null
+          phone?: string | null
           user_id?: string | null
           work_location?: string
         }
@@ -772,6 +775,102 @@ export type Database = {
           id?: string
           role?: Database["public"]["Enums"]["app_role"]
           user_id?: string
+        }
+        Relationships: []
+      }
+      verification_documents: {
+        Row: {
+          category: string
+          created_at: string
+          department: string
+          description: string | null
+          dispatch_date: string | null
+          dispatch_mode: string
+          doc_type: string
+          id: string
+          is_active: boolean
+          issued_by: string
+          issued_date: string
+          issued_to: string
+          letter_number: string
+          reference_number: string
+          subject: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          department: string
+          description?: string | null
+          dispatch_date?: string | null
+          dispatch_mode: string
+          doc_type: string
+          id?: string
+          is_active?: boolean
+          issued_by: string
+          issued_date: string
+          issued_to: string
+          letter_number: string
+          reference_number: string
+          subject: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          department?: string
+          description?: string | null
+          dispatch_date?: string | null
+          dispatch_mode?: string
+          doc_type?: string
+          id?: string
+          is_active?: boolean
+          issued_by?: string
+          issued_date?: string
+          issued_to?: string
+          letter_number?: string
+          reference_number?: string
+          subject?: string
+        }
+        Relationships: []
+      }
+      verified_mentors: {
+        Row: {
+          bio: string | null
+          created_at: string
+          email: string | null
+          focus: string[]
+          full_name: string
+          id: string
+          is_active: boolean
+          mentor_code: string
+          phone: string | null
+          regions: string[]
+          title: string
+        }
+        Insert: {
+          bio?: string | null
+          created_at?: string
+          email?: string | null
+          focus?: string[]
+          full_name: string
+          id?: string
+          is_active?: boolean
+          mentor_code: string
+          phone?: string | null
+          regions?: string[]
+          title: string
+        }
+        Update: {
+          bio?: string | null
+          created_at?: string
+          email?: string | null
+          focus?: string[]
+          full_name?: string
+          id?: string
+          is_active?: boolean
+          mentor_code?: string
+          phone?: string | null
+          regions?: string[]
+          title?: string
         }
         Relationships: []
       }

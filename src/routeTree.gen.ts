@@ -24,7 +24,9 @@ import { Route as FundYourStartupRouteImport } from './routes/fund-your-startup'
 import { Route as FundingProgrammeRouteImport } from './routes/funding-programme'
 import { Route as GlobalPresenceRouteImport } from './routes/global-presence'
 import { Route as ManufacturersRouteImport } from './routes/manufacturers'
+import { Route as OurMentorsRouteImport } from './routes/our-mentors'
 import { Route as OurServicesRouteImport } from './routes/our-services'
+import { Route as OurTeamRouteImport } from './routes/our-team'
 import { Route as PartnerWithUsRouteImport } from './routes/partner-with-us'
 import { Route as PaymentRouteImport } from './routes/payment'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
@@ -39,13 +41,15 @@ import { Route as StoreListRouteImport } from './routes/store-list'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedOurInvestorsRouteImport } from './routes/_authenticated/our-investors'
-import { Route as AuthenticatedOurMentorsRouteImport } from './routes/_authenticated/our-mentors'
-import { Route as AuthenticatedOurTeamRouteImport } from './routes/_authenticated/our-team'
 import { Route as AuthenticatedPartnerRouteImport } from './routes/_authenticated/partner'
 import { Route as AuthenticatedPortalRouteImport } from './routes/_authenticated/portal'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as GlobalPresenceMarketRouteImport } from './routes/global-presence.$market'
+import { Route as OurMentorsIndexRouteImport } from './routes/our-mentors.index'
+import { Route as OurMentorsSlugRouteImport } from './routes/our-mentors.$slug'
 import { Route as OurServicesServiceIdRouteImport } from './routes/our-services_.$serviceId'
+import { Route as OurTeamIndexRouteImport } from './routes/our-team.index'
+import { Route as OurTeamSlugRouteImport } from './routes/our-team.$slug'
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
 import { Route as AuthenticatedAdminContactsRouteImport } from './routes/_authenticated/admin.contacts'
 import { Route as AuthenticatedAdminContentRouteImport } from './routes/_authenticated/admin.content'
@@ -61,12 +65,9 @@ import { Route as AuthenticatedAdminStoreNetworkRouteImport } from './routes/_au
 import { Route as AuthenticatedAdminStoresRouteImport } from './routes/_authenticated/admin.stores'
 import { Route as AuthenticatedAdminTargetsRouteImport } from './routes/_authenticated/admin.targets'
 import { Route as AuthenticatedAdminUsersRouteImport } from './routes/_authenticated/admin.users'
+import { Route as AuthenticatedAdminVerificationRouteImport } from './routes/_authenticated/admin.verification'
 import { Route as AuthenticatedOurInvestorsIndexRouteImport } from './routes/_authenticated/our-investors.index'
 import { Route as AuthenticatedOurInvestorsSlugRouteImport } from './routes/_authenticated/our-investors.$slug'
-import { Route as AuthenticatedOurMentorsIndexRouteImport } from './routes/_authenticated/our-mentors.index'
-import { Route as AuthenticatedOurMentorsSlugRouteImport } from './routes/_authenticated/our-mentors.$slug'
-import { Route as AuthenticatedOurTeamIndexRouteImport } from './routes/_authenticated/our-team.index'
-import { Route as AuthenticatedOurTeamSlugRouteImport } from './routes/_authenticated/our-team.$slug'
 import { Route as AuthenticatedAdminDealsIdRouteImport } from './routes/_authenticated/admin.deals.$id'
 import { Route as AuthenticatedAdminLeadsIdRouteImport } from './routes/_authenticated/admin.leads.$id'
 import { Route as AuthenticatedAdminQuotesIdRouteImport } from './routes/_authenticated/admin.quotes.$id'
@@ -146,9 +147,19 @@ const ManufacturersRoute = ManufacturersRouteImport.update({
   path: '/manufacturers',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OurMentorsRoute = OurMentorsRouteImport.update({
+  id: '/our-mentors',
+  path: '/our-mentors',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OurServicesRoute = OurServicesRouteImport.update({
   id: '/our-services',
   path: '/our-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurTeamRoute = OurTeamRouteImport.update({
+  id: '/our-team',
+  path: '/our-team',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PartnerWithUsRoute = PartnerWithUsRouteImport.update({
@@ -222,16 +233,6 @@ const AuthenticatedOurInvestorsRoute =
     path: '/our-investors',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const AuthenticatedOurMentorsRoute = AuthenticatedOurMentorsRouteImport.update({
-  id: '/our-mentors',
-  path: '/our-mentors',
-  getParentRoute: () => AuthenticatedRouteRoute,
-} as any)
-const AuthenticatedOurTeamRoute = AuthenticatedOurTeamRouteImport.update({
-  id: '/our-team',
-  path: '/our-team',
-  getParentRoute: () => AuthenticatedRouteRoute,
-} as any)
 const AuthenticatedPartnerRoute = AuthenticatedPartnerRouteImport.update({
   id: '/partner',
   path: '/partner',
@@ -252,10 +253,30 @@ const GlobalPresenceMarketRoute = GlobalPresenceMarketRouteImport.update({
   path: '/$market',
   getParentRoute: () => GlobalPresenceRoute,
 } as any)
+const OurMentorsIndexRoute = OurMentorsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => OurMentorsRoute,
+} as any)
+const OurMentorsSlugRoute = OurMentorsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => OurMentorsRoute,
+} as any)
 const OurServicesServiceIdRoute = OurServicesServiceIdRouteImport.update({
   id: '/our-services_/$serviceId',
   path: '/our-services/$serviceId',
   getParentRoute: () => rootRouteImport,
+} as any)
+const OurTeamIndexRoute = OurTeamIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => OurTeamRoute,
+} as any)
+const OurTeamSlugRoute = OurTeamSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => OurTeamRoute,
 } as any)
 const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
   id: '/',
@@ -344,6 +365,12 @@ const AuthenticatedAdminUsersRoute = AuthenticatedAdminUsersRouteImport.update({
   path: '/users',
   getParentRoute: () => AuthenticatedAdminRoute,
 } as any)
+const AuthenticatedAdminVerificationRoute =
+  AuthenticatedAdminVerificationRouteImport.update({
+    id: '/verification',
+    path: '/verification',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const AuthenticatedOurInvestorsIndexRoute =
   AuthenticatedOurInvestorsIndexRouteImport.update({
     id: '/',
@@ -355,30 +382,6 @@ const AuthenticatedOurInvestorsSlugRoute =
     id: '/$slug',
     path: '/$slug',
     getParentRoute: () => AuthenticatedOurInvestorsRoute,
-  } as any)
-const AuthenticatedOurMentorsIndexRoute =
-  AuthenticatedOurMentorsIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => AuthenticatedOurMentorsRoute,
-  } as any)
-const AuthenticatedOurMentorsSlugRoute =
-  AuthenticatedOurMentorsSlugRouteImport.update({
-    id: '/$slug',
-    path: '/$slug',
-    getParentRoute: () => AuthenticatedOurMentorsRoute,
-  } as any)
-const AuthenticatedOurTeamIndexRoute =
-  AuthenticatedOurTeamIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => AuthenticatedOurTeamRoute,
-  } as any)
-const AuthenticatedOurTeamSlugRoute =
-  AuthenticatedOurTeamSlugRouteImport.update({
-    id: '/$slug',
-    path: '/$slug',
-    getParentRoute: () => AuthenticatedOurTeamRoute,
   } as any)
 const AuthenticatedAdminDealsIdRoute =
   AuthenticatedAdminDealsIdRouteImport.update({
@@ -414,7 +417,9 @@ export interface FileRoutesByFullPath {
   '/funding-programme': typeof FundingProgrammeRoute
   '/global-presence': typeof GlobalPresenceRouteWithChildren
   '/manufacturers': typeof ManufacturersRoute
+  '/our-mentors': typeof OurMentorsRouteWithChildren
   '/our-services': typeof OurServicesRoute
+  '/our-team': typeof OurTeamRouteWithChildren
   '/partner-with-us': typeof PartnerWithUsRoute
   '/payment': typeof PaymentRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -429,13 +434,15 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/our-investors': typeof AuthenticatedOurInvestorsRouteWithChildren
-  '/our-mentors': typeof AuthenticatedOurMentorsRouteWithChildren
-  '/our-team': typeof AuthenticatedOurTeamRouteWithChildren
   '/partner': typeof AuthenticatedPartnerRoute
   '/portal': typeof AuthenticatedPortalRoute
   '/api/chat': typeof ApiChatRoute
   '/global-presence/$market': typeof GlobalPresenceMarketRoute
+  '/our-mentors/$slug': typeof OurMentorsSlugRoute
   '/our-services/$serviceId': typeof OurServicesServiceIdRoute
+  '/our-team/$slug': typeof OurTeamSlugRoute
+  '/our-mentors/': typeof OurMentorsIndexRoute
+  '/our-team/': typeof OurTeamIndexRoute
   '/admin/contacts': typeof AuthenticatedAdminContactsRoute
   '/admin/content': typeof AuthenticatedAdminContentRoute
   '/admin/crm': typeof AuthenticatedAdminCrmRoute
@@ -450,13 +457,10 @@ export interface FileRoutesByFullPath {
   '/admin/stores': typeof AuthenticatedAdminStoresRoute
   '/admin/targets': typeof AuthenticatedAdminTargetsRoute
   '/admin/users': typeof AuthenticatedAdminUsersRoute
+  '/admin/verification': typeof AuthenticatedAdminVerificationRoute
   '/our-investors/$slug': typeof AuthenticatedOurInvestorsSlugRoute
-  '/our-mentors/$slug': typeof AuthenticatedOurMentorsSlugRoute
-  '/our-team/$slug': typeof AuthenticatedOurTeamSlugRoute
   '/admin/': typeof AuthenticatedAdminIndexRoute
   '/our-investors/': typeof AuthenticatedOurInvestorsIndexRoute
-  '/our-mentors/': typeof AuthenticatedOurMentorsIndexRoute
-  '/our-team/': typeof AuthenticatedOurTeamIndexRoute
   '/admin/deals/$id': typeof AuthenticatedAdminDealsIdRoute
   '/admin/leads/$id': typeof AuthenticatedAdminLeadsIdRoute
   '/admin/quotes/$id': typeof AuthenticatedAdminQuotesIdRoute
@@ -493,7 +497,11 @@ export interface FileRoutesByTo {
   '/portal': typeof AuthenticatedPortalRoute
   '/api/chat': typeof ApiChatRoute
   '/global-presence/$market': typeof GlobalPresenceMarketRoute
+  '/our-mentors/$slug': typeof OurMentorsSlugRoute
   '/our-services/$serviceId': typeof OurServicesServiceIdRoute
+  '/our-team/$slug': typeof OurTeamSlugRoute
+  '/our-mentors': typeof OurMentorsIndexRoute
+  '/our-team': typeof OurTeamIndexRoute
   '/admin/contacts': typeof AuthenticatedAdminContactsRoute
   '/admin/content': typeof AuthenticatedAdminContentRoute
   '/admin/crm': typeof AuthenticatedAdminCrmRoute
@@ -508,13 +516,10 @@ export interface FileRoutesByTo {
   '/admin/stores': typeof AuthenticatedAdminStoresRoute
   '/admin/targets': typeof AuthenticatedAdminTargetsRoute
   '/admin/users': typeof AuthenticatedAdminUsersRoute
+  '/admin/verification': typeof AuthenticatedAdminVerificationRoute
   '/our-investors/$slug': typeof AuthenticatedOurInvestorsSlugRoute
-  '/our-mentors/$slug': typeof AuthenticatedOurMentorsSlugRoute
-  '/our-team/$slug': typeof AuthenticatedOurTeamSlugRoute
   '/admin': typeof AuthenticatedAdminIndexRoute
   '/our-investors': typeof AuthenticatedOurInvestorsIndexRoute
-  '/our-mentors': typeof AuthenticatedOurMentorsIndexRoute
-  '/our-team': typeof AuthenticatedOurTeamIndexRoute
   '/admin/deals/$id': typeof AuthenticatedAdminDealsIdRoute
   '/admin/leads/$id': typeof AuthenticatedAdminLeadsIdRoute
   '/admin/quotes/$id': typeof AuthenticatedAdminQuotesIdRoute
@@ -536,7 +541,9 @@ export interface FileRoutesById {
   '/funding-programme': typeof FundingProgrammeRoute
   '/global-presence': typeof GlobalPresenceRouteWithChildren
   '/manufacturers': typeof ManufacturersRoute
+  '/our-mentors': typeof OurMentorsRouteWithChildren
   '/our-services': typeof OurServicesRoute
+  '/our-team': typeof OurTeamRouteWithChildren
   '/partner-with-us': typeof PartnerWithUsRoute
   '/payment': typeof PaymentRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -551,13 +558,15 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
   '/_authenticated/our-investors': typeof AuthenticatedOurInvestorsRouteWithChildren
-  '/_authenticated/our-mentors': typeof AuthenticatedOurMentorsRouteWithChildren
-  '/_authenticated/our-team': typeof AuthenticatedOurTeamRouteWithChildren
   '/_authenticated/partner': typeof AuthenticatedPartnerRoute
   '/_authenticated/portal': typeof AuthenticatedPortalRoute
   '/api/chat': typeof ApiChatRoute
   '/global-presence/$market': typeof GlobalPresenceMarketRoute
+  '/our-mentors/$slug': typeof OurMentorsSlugRoute
   '/our-services_/$serviceId': typeof OurServicesServiceIdRoute
+  '/our-team/$slug': typeof OurTeamSlugRoute
+  '/our-mentors/': typeof OurMentorsIndexRoute
+  '/our-team/': typeof OurTeamIndexRoute
   '/_authenticated/admin/contacts': typeof AuthenticatedAdminContactsRoute
   '/_authenticated/admin/content': typeof AuthenticatedAdminContentRoute
   '/_authenticated/admin/crm': typeof AuthenticatedAdminCrmRoute
@@ -572,13 +581,10 @@ export interface FileRoutesById {
   '/_authenticated/admin/stores': typeof AuthenticatedAdminStoresRoute
   '/_authenticated/admin/targets': typeof AuthenticatedAdminTargetsRoute
   '/_authenticated/admin/users': typeof AuthenticatedAdminUsersRoute
+  '/_authenticated/admin/verification': typeof AuthenticatedAdminVerificationRoute
   '/_authenticated/our-investors/$slug': typeof AuthenticatedOurInvestorsSlugRoute
-  '/_authenticated/our-mentors/$slug': typeof AuthenticatedOurMentorsSlugRoute
-  '/_authenticated/our-team/$slug': typeof AuthenticatedOurTeamSlugRoute
   '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
   '/_authenticated/our-investors/': typeof AuthenticatedOurInvestorsIndexRoute
-  '/_authenticated/our-mentors/': typeof AuthenticatedOurMentorsIndexRoute
-  '/_authenticated/our-team/': typeof AuthenticatedOurTeamIndexRoute
   '/_authenticated/admin/deals/$id': typeof AuthenticatedAdminDealsIdRoute
   '/_authenticated/admin/leads/$id': typeof AuthenticatedAdminLeadsIdRoute
   '/_authenticated/admin/quotes/$id': typeof AuthenticatedAdminQuotesIdRoute
@@ -600,7 +606,9 @@ export interface FileRouteTypes {
     | '/funding-programme'
     | '/global-presence'
     | '/manufacturers'
+    | '/our-mentors'
     | '/our-services'
+    | '/our-team'
     | '/partner-with-us'
     | '/payment'
     | '/privacy-policy'
@@ -615,13 +623,15 @@ export interface FileRouteTypes {
     | '/terms'
     | '/admin'
     | '/our-investors'
-    | '/our-mentors'
-    | '/our-team'
     | '/partner'
     | '/portal'
     | '/api/chat'
     | '/global-presence/$market'
+    | '/our-mentors/$slug'
     | '/our-services/$serviceId'
+    | '/our-team/$slug'
+    | '/our-mentors/'
+    | '/our-team/'
     | '/admin/contacts'
     | '/admin/content'
     | '/admin/crm'
@@ -636,13 +646,10 @@ export interface FileRouteTypes {
     | '/admin/stores'
     | '/admin/targets'
     | '/admin/users'
+    | '/admin/verification'
     | '/our-investors/$slug'
-    | '/our-mentors/$slug'
-    | '/our-team/$slug'
     | '/admin/'
     | '/our-investors/'
-    | '/our-mentors/'
-    | '/our-team/'
     | '/admin/deals/$id'
     | '/admin/leads/$id'
     | '/admin/quotes/$id'
@@ -679,7 +686,11 @@ export interface FileRouteTypes {
     | '/portal'
     | '/api/chat'
     | '/global-presence/$market'
+    | '/our-mentors/$slug'
     | '/our-services/$serviceId'
+    | '/our-team/$slug'
+    | '/our-mentors'
+    | '/our-team'
     | '/admin/contacts'
     | '/admin/content'
     | '/admin/crm'
@@ -694,13 +705,10 @@ export interface FileRouteTypes {
     | '/admin/stores'
     | '/admin/targets'
     | '/admin/users'
+    | '/admin/verification'
     | '/our-investors/$slug'
-    | '/our-mentors/$slug'
-    | '/our-team/$slug'
     | '/admin'
     | '/our-investors'
-    | '/our-mentors'
-    | '/our-team'
     | '/admin/deals/$id'
     | '/admin/leads/$id'
     | '/admin/quotes/$id'
@@ -721,7 +729,9 @@ export interface FileRouteTypes {
     | '/funding-programme'
     | '/global-presence'
     | '/manufacturers'
+    | '/our-mentors'
     | '/our-services'
+    | '/our-team'
     | '/partner-with-us'
     | '/payment'
     | '/privacy-policy'
@@ -736,13 +746,15 @@ export interface FileRouteTypes {
     | '/terms'
     | '/_authenticated/admin'
     | '/_authenticated/our-investors'
-    | '/_authenticated/our-mentors'
-    | '/_authenticated/our-team'
     | '/_authenticated/partner'
     | '/_authenticated/portal'
     | '/api/chat'
     | '/global-presence/$market'
+    | '/our-mentors/$slug'
     | '/our-services_/$serviceId'
+    | '/our-team/$slug'
+    | '/our-mentors/'
+    | '/our-team/'
     | '/_authenticated/admin/contacts'
     | '/_authenticated/admin/content'
     | '/_authenticated/admin/crm'
@@ -757,13 +769,10 @@ export interface FileRouteTypes {
     | '/_authenticated/admin/stores'
     | '/_authenticated/admin/targets'
     | '/_authenticated/admin/users'
+    | '/_authenticated/admin/verification'
     | '/_authenticated/our-investors/$slug'
-    | '/_authenticated/our-mentors/$slug'
-    | '/_authenticated/our-team/$slug'
     | '/_authenticated/admin/'
     | '/_authenticated/our-investors/'
-    | '/_authenticated/our-mentors/'
-    | '/_authenticated/our-team/'
     | '/_authenticated/admin/deals/$id'
     | '/_authenticated/admin/leads/$id'
     | '/_authenticated/admin/quotes/$id'
@@ -785,7 +794,9 @@ export interface RootRouteChildren {
   FundingProgrammeRoute: typeof FundingProgrammeRoute
   GlobalPresenceRoute: typeof GlobalPresenceRouteWithChildren
   ManufacturersRoute: typeof ManufacturersRoute
+  OurMentorsRoute: typeof OurMentorsRouteWithChildren
   OurServicesRoute: typeof OurServicesRoute
+  OurTeamRoute: typeof OurTeamRouteWithChildren
   PartnerWithUsRoute: typeof PartnerWithUsRoute
   PaymentRoute: typeof PaymentRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
@@ -909,11 +920,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManufacturersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/our-mentors': {
+      id: '/our-mentors'
+      path: '/our-mentors'
+      fullPath: '/our-mentors'
+      preLoaderRoute: typeof OurMentorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/our-services': {
       id: '/our-services'
       path: '/our-services'
       fullPath: '/our-services'
       preLoaderRoute: typeof OurServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-team': {
+      id: '/our-team'
+      path: '/our-team'
+      fullPath: '/our-team'
+      preLoaderRoute: typeof OurTeamRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/partner-with-us': {
@@ -1014,20 +1039,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedOurInvestorsRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/our-mentors': {
-      id: '/_authenticated/our-mentors'
-      path: '/our-mentors'
-      fullPath: '/our-mentors'
-      preLoaderRoute: typeof AuthenticatedOurMentorsRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/our-team': {
-      id: '/_authenticated/our-team'
-      path: '/our-team'
-      fullPath: '/our-team'
-      preLoaderRoute: typeof AuthenticatedOurTeamRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
     '/_authenticated/partner': {
       id: '/_authenticated/partner'
       path: '/partner'
@@ -1056,12 +1067,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GlobalPresenceMarketRouteImport
       parentRoute: typeof GlobalPresenceRoute
     }
+    '/our-mentors/': {
+      id: '/our-mentors/'
+      path: '/'
+      fullPath: '/our-mentors/'
+      preLoaderRoute: typeof OurMentorsIndexRouteImport
+      parentRoute: typeof OurMentorsRoute
+    }
+    '/our-mentors/$slug': {
+      id: '/our-mentors/$slug'
+      path: '/$slug'
+      fullPath: '/our-mentors/$slug'
+      preLoaderRoute: typeof OurMentorsSlugRouteImport
+      parentRoute: typeof OurMentorsRoute
+    }
     '/our-services_/$serviceId': {
       id: '/our-services_/$serviceId'
       path: '/our-services/$serviceId'
       fullPath: '/our-services/$serviceId'
       preLoaderRoute: typeof OurServicesServiceIdRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/our-team/': {
+      id: '/our-team/'
+      path: '/'
+      fullPath: '/our-team/'
+      preLoaderRoute: typeof OurTeamIndexRouteImport
+      parentRoute: typeof OurTeamRoute
+    }
+    '/our-team/$slug': {
+      id: '/our-team/$slug'
+      path: '/$slug'
+      fullPath: '/our-team/$slug'
+      preLoaderRoute: typeof OurTeamSlugRouteImport
+      parentRoute: typeof OurTeamRoute
     }
     '/_authenticated/admin/': {
       id: '/_authenticated/admin/'
@@ -1168,6 +1207,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminUsersRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
+    '/_authenticated/admin/verification': {
+      id: '/_authenticated/admin/verification'
+      path: '/verification'
+      fullPath: '/admin/verification'
+      preLoaderRoute: typeof AuthenticatedAdminVerificationRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/our-investors/': {
       id: '/_authenticated/our-investors/'
       path: '/'
@@ -1181,34 +1227,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/our-investors/$slug'
       preLoaderRoute: typeof AuthenticatedOurInvestorsSlugRouteImport
       parentRoute: typeof AuthenticatedOurInvestorsRoute
-    }
-    '/_authenticated/our-mentors/': {
-      id: '/_authenticated/our-mentors/'
-      path: '/'
-      fullPath: '/our-mentors/'
-      preLoaderRoute: typeof AuthenticatedOurMentorsIndexRouteImport
-      parentRoute: typeof AuthenticatedOurMentorsRoute
-    }
-    '/_authenticated/our-mentors/$slug': {
-      id: '/_authenticated/our-mentors/$slug'
-      path: '/$slug'
-      fullPath: '/our-mentors/$slug'
-      preLoaderRoute: typeof AuthenticatedOurMentorsSlugRouteImport
-      parentRoute: typeof AuthenticatedOurMentorsRoute
-    }
-    '/_authenticated/our-team/': {
-      id: '/_authenticated/our-team/'
-      path: '/'
-      fullPath: '/our-team/'
-      preLoaderRoute: typeof AuthenticatedOurTeamIndexRouteImport
-      parentRoute: typeof AuthenticatedOurTeamRoute
-    }
-    '/_authenticated/our-team/$slug': {
-      id: '/_authenticated/our-team/$slug'
-      path: '/$slug'
-      fullPath: '/our-team/$slug'
-      preLoaderRoute: typeof AuthenticatedOurTeamSlugRouteImport
-      parentRoute: typeof AuthenticatedOurTeamRoute
     }
     '/_authenticated/admin/deals/$id': {
       id: '/_authenticated/admin/deals/$id'
@@ -1249,6 +1267,7 @@ interface AuthenticatedAdminRouteChildren {
   AuthenticatedAdminStoresRoute: typeof AuthenticatedAdminStoresRoute
   AuthenticatedAdminTargetsRoute: typeof AuthenticatedAdminTargetsRoute
   AuthenticatedAdminUsersRoute: typeof AuthenticatedAdminUsersRoute
+  AuthenticatedAdminVerificationRoute: typeof AuthenticatedAdminVerificationRoute
   AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
   AuthenticatedAdminDealsIdRoute: typeof AuthenticatedAdminDealsIdRoute
   AuthenticatedAdminLeadsIdRoute: typeof AuthenticatedAdminLeadsIdRoute
@@ -1270,6 +1289,7 @@ const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
   AuthenticatedAdminStoresRoute: AuthenticatedAdminStoresRoute,
   AuthenticatedAdminTargetsRoute: AuthenticatedAdminTargetsRoute,
   AuthenticatedAdminUsersRoute: AuthenticatedAdminUsersRoute,
+  AuthenticatedAdminVerificationRoute: AuthenticatedAdminVerificationRoute,
   AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
   AuthenticatedAdminDealsIdRoute: AuthenticatedAdminDealsIdRoute,
   AuthenticatedAdminLeadsIdRoute: AuthenticatedAdminLeadsIdRoute,
@@ -1295,40 +1315,9 @@ const AuthenticatedOurInvestorsRouteWithChildren =
     AuthenticatedOurInvestorsRouteChildren,
   )
 
-interface AuthenticatedOurMentorsRouteChildren {
-  AuthenticatedOurMentorsSlugRoute: typeof AuthenticatedOurMentorsSlugRoute
-  AuthenticatedOurMentorsIndexRoute: typeof AuthenticatedOurMentorsIndexRoute
-}
-
-const AuthenticatedOurMentorsRouteChildren: AuthenticatedOurMentorsRouteChildren =
-  {
-    AuthenticatedOurMentorsSlugRoute: AuthenticatedOurMentorsSlugRoute,
-    AuthenticatedOurMentorsIndexRoute: AuthenticatedOurMentorsIndexRoute,
-  }
-
-const AuthenticatedOurMentorsRouteWithChildren =
-  AuthenticatedOurMentorsRoute._addFileChildren(
-    AuthenticatedOurMentorsRouteChildren,
-  )
-
-interface AuthenticatedOurTeamRouteChildren {
-  AuthenticatedOurTeamSlugRoute: typeof AuthenticatedOurTeamSlugRoute
-  AuthenticatedOurTeamIndexRoute: typeof AuthenticatedOurTeamIndexRoute
-}
-
-const AuthenticatedOurTeamRouteChildren: AuthenticatedOurTeamRouteChildren = {
-  AuthenticatedOurTeamSlugRoute: AuthenticatedOurTeamSlugRoute,
-  AuthenticatedOurTeamIndexRoute: AuthenticatedOurTeamIndexRoute,
-}
-
-const AuthenticatedOurTeamRouteWithChildren =
-  AuthenticatedOurTeamRoute._addFileChildren(AuthenticatedOurTeamRouteChildren)
-
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedAdminRoute: typeof AuthenticatedAdminRouteWithChildren
   AuthenticatedOurInvestorsRoute: typeof AuthenticatedOurInvestorsRouteWithChildren
-  AuthenticatedOurMentorsRoute: typeof AuthenticatedOurMentorsRouteWithChildren
-  AuthenticatedOurTeamRoute: typeof AuthenticatedOurTeamRouteWithChildren
   AuthenticatedPartnerRoute: typeof AuthenticatedPartnerRoute
   AuthenticatedPortalRoute: typeof AuthenticatedPortalRoute
 }
@@ -1336,8 +1325,6 @@ interface AuthenticatedRouteRouteChildren {
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedAdminRoute: AuthenticatedAdminRouteWithChildren,
   AuthenticatedOurInvestorsRoute: AuthenticatedOurInvestorsRouteWithChildren,
-  AuthenticatedOurMentorsRoute: AuthenticatedOurMentorsRouteWithChildren,
-  AuthenticatedOurTeamRoute: AuthenticatedOurTeamRouteWithChildren,
   AuthenticatedPartnerRoute: AuthenticatedPartnerRoute,
   AuthenticatedPortalRoute: AuthenticatedPortalRoute,
 }
@@ -1357,6 +1344,33 @@ const GlobalPresenceRouteWithChildren = GlobalPresenceRoute._addFileChildren(
   GlobalPresenceRouteChildren,
 )
 
+interface OurMentorsRouteChildren {
+  OurMentorsSlugRoute: typeof OurMentorsSlugRoute
+  OurMentorsIndexRoute: typeof OurMentorsIndexRoute
+}
+
+const OurMentorsRouteChildren: OurMentorsRouteChildren = {
+  OurMentorsSlugRoute: OurMentorsSlugRoute,
+  OurMentorsIndexRoute: OurMentorsIndexRoute,
+}
+
+const OurMentorsRouteWithChildren = OurMentorsRoute._addFileChildren(
+  OurMentorsRouteChildren,
+)
+
+interface OurTeamRouteChildren {
+  OurTeamSlugRoute: typeof OurTeamSlugRoute
+  OurTeamIndexRoute: typeof OurTeamIndexRoute
+}
+
+const OurTeamRouteChildren: OurTeamRouteChildren = {
+  OurTeamSlugRoute: OurTeamSlugRoute,
+  OurTeamIndexRoute: OurTeamIndexRoute,
+}
+
+const OurTeamRouteWithChildren =
+  OurTeamRoute._addFileChildren(OurTeamRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
@@ -1373,7 +1387,9 @@ const rootRouteChildren: RootRouteChildren = {
   FundingProgrammeRoute: FundingProgrammeRoute,
   GlobalPresenceRoute: GlobalPresenceRouteWithChildren,
   ManufacturersRoute: ManufacturersRoute,
+  OurMentorsRoute: OurMentorsRouteWithChildren,
   OurServicesRoute: OurServicesRoute,
+  OurTeamRoute: OurTeamRouteWithChildren,
   PartnerWithUsRoute: PartnerWithUsRoute,
   PaymentRoute: PaymentRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
