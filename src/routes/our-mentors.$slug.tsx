@@ -1,7 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { getMentors } from "@/lib/directory.functions";
 import { MentorProfile } from "@/frontend/features/people/mentors";
-export const Route = createFileRoute("/_authenticated/our-mentors/$slug")({
+export const Route = createFileRoute("/our-mentors/$slug")({
   loader: async ({ params }) => { const m = (await getMentors()).find((x) => x.slug === params.slug); if (!m) throw notFound(); return m; },
   head: ({ loaderData }) => {
     const title = loaderData ? `${loaderData.name} — ${loaderData.title} | Rishishwar Industry` : "Mentor Not Found — Rishishwar Industry";
