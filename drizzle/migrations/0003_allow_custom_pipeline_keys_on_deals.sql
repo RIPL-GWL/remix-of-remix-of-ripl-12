@@ -1,1 +1,0 @@
-ALTER TABLE public.crm_deals DROP CONSTRAINT IF EXISTS crm_deals_pipeline_check;
