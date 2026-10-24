@@ -29,8 +29,11 @@
 - [x] Verify remixed database and import available missing records: 615 store-network districts and 6 employee master records restored; public list verified at 477 districts / 37,932 stores. Old login accounts and CRM records still require a source export (see existing records task).
 
 ## 2026-10-24 new tasks
-- [ ] Mobile footer: Startups & Investments 2 columns; Login button into Our Family section
-- [ ] Verify retail store numbers identical across all themes (DB-driven, no per-theme records)
-- [ ] Verification system on Our Team: employee (any 2 of ID/code/email/phone), document (letter no + ref no + date), mentor (shows mentor profile)
-- [ ] Funding Programme: replace registration form with new Zoho form (formperma 1SNzTjiKwSF14T0BCEyJLvZCZDDowZl3NYWbAjpy1KE)
-- [ ] Site-wide grammar check and fixes
+- [x] Mobile footer: Startups & Investments 2 columns; Login button into Our Family section (browser-verified)
+- [x] Retail store numbers DB-driven via store_network, identical across all themes — no per-theme records exist
+- [x] Verification system on Our Team (employee any-2, document all-3, mentor any-2) + admin.verification page; /our-team & /our-mentors made public; browser-verified
+- [x] Funding Programme: new Zoho form embedded with auto-resize (formperma 1SNzTjiKwSF14T0BCEyJLvZCZDDowZl3NYWbAjpy1KE)
+- [x] Site-wide grammar check: 12 fixes applied
+
+- [ ] harsh@rishishwarindustry.in must sign up again at /auth (remix wiped auth users); signup trigger restored so it auto-approves + grants Super Admin
+- [ ] Admin verification page browser test pending (needs the account above)
