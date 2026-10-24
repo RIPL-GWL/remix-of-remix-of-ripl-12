@@ -15,6 +15,13 @@
       "when": 1792819225601,
       "tag": "0001_verification_system",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792819584175,
+      "tag": "0002_restore_signup_trigger",
+      "breakpoints": true
     }
   ]
 }
