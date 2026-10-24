@@ -10,6 +10,8 @@
 <!-- LOVABLE:END -->
 
 - Preserve the target TanStack runtime configuration when importing source; source pages live in routes and reusable presentation in frontend.
+- Keep public verification presentation separate from the authenticated team directory; verification results must not require directory access.
+- Record verification changes with database triggers and public attempts server-side in an append-only admin-readable audit table; never store submitted codes, email addresses or phone numbers in audit events.
 - Keep imported media as Lovable Assets pointers and generated media as bundled ES imports, so media remains available independently of the source project.
 - Scope Funding Programme design tokens and controls to its page to preserve other imported page designs.
 - Preserve original IDs when importing future user records; verified identity mapping must control access, never client-submitted roles.
