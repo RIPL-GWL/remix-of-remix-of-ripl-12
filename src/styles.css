@@ -1634,7 +1634,7 @@ html .site-footer { --primary: var(--site-primary); }
   .site-footer li { margin: 0 !important; }
   .site-footer a { min-height: 22px; }
   .footer-markets ul { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
-  .footer-startups ul { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)) !important; column-gap: 6px !important; }
+  .footer-startups ul { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)) !important; column-gap: 6px !important; }
   .footer-startups a, .footer-markets a { overflow-wrap: anywhere; max-width: 100%; }
   .footer-brand .footer-reach { margin-top: 6px; }
 }

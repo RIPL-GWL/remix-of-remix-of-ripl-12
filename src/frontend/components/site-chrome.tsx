@@ -82,7 +82,6 @@ export function SiteFooter() {
               {navLinks.filter((link) => link.to !== "/business-valuation-calculator").map((link) => <li key={link.to}><Link to={link.to} className="transition-colors hover:text-primary">{link.label}</Link></li>)}
               <li><Link to="/faq" className="transition-colors hover:text-primary">FAQ</Link></li>
               <li><Link to="/payment" className="transition-colors hover:text-primary">Payment Details</Link></li>
-              <li><Link to="/auth" className="inline-flex items-center rounded-md border border-primary px-3 py-1 font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">Login</Link></li>
             </ul>
           </nav>
         </div>
@@ -105,6 +104,7 @@ export function SiteFooter() {
             <li><Link to="/our-investors" className="hover:text-primary">Our Investors</Link></li>
             <li><Link to="/our-mentors" className="hover:text-primary">Our Mentors</Link></li>
             <li><Link to="/our-team" className="hover:text-primary">Our Team</Link></li>
+            <li><Link to="/auth" className="inline-flex items-center rounded-md border border-primary px-3 py-1 font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">Login</Link></li>
           </ul>
         </nav>
         <nav aria-label="Startups and Investments links" className="footer-startups col-span-1">
