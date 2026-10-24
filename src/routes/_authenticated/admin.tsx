@@ -1,5 +1,5 @@
 import { createFileRoute, Link, Outlet, useNavigate, useRouterState } from "@tanstack/react-router";
-import { BarChart3, CalendarClock, Contact, ExternalLink, FileText, Gauge, Inbox, KanbanSquare, LogOut, MapPin, Rocket, Route as Route_, ShieldCheck, Store, Target, Users, Workflow, type LucideIcon } from "lucide-react";
+import { BadgeCheck, BarChart3, CalendarClock, Contact, ExternalLink, FileText, Gauge, Inbox, KanbanSquare, LogOut, MapPin, Rocket, Route as Route_, ShieldCheck, Store, Target, Users, Workflow, type LucideIcon } from "lucide-react";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
@@ -48,6 +48,7 @@ function AdminLayout() {
     { label: "Programme & Content", items: [
       { to: "/admin/programme", label: "Funding Programme", icon: Rocket, show: has(["super_admin", "admin", "programme_manager"]) },
       { to: "/admin/people", label: "Investors, Mentors & Team", icon: Users, show: has(["super_admin", "admin", "content_editor", "hr_manager"]) },
+      { to: "/admin/verification", label: "Verification Records", icon: BadgeCheck, show: has(["super_admin", "admin", "hr_manager"]) },
       { to: "/admin/content", label: "Website Content", icon: FileText, show: has(["super_admin", "admin", "content_editor"]) },
     ] },
     { label: "Administration", items: [
