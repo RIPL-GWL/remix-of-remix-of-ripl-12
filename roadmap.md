@@ -29,6 +29,7 @@
 - [x] Verify remixed database and import available missing records: 615 store-network districts and 6 employee master records restored; public list verified at 477 districts / 37,932 stores. Old login accounts and CRM records still require a source export (see existing records task).
 
 ## 2026-10-24 new tasks
+- [ ] Add one-line space between Verify and Login; optimize remaining website image assets and synchronize repo backups.
 - [x] Recheck optimized repo backup: all 152 images present, valid, max 1920px; 13.4 MiB total, no missing copies.
 - [ ] Admin password: authenticated password update rejected with internal auth error through both direct Auth API and app client; requested password not set. Prior reset request accepted; owner completion unverified.
 - [x] Our Family button renamed Verify; Verify and Login both 76×26px, mobile browser verified.
