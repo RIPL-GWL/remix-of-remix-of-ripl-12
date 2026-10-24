@@ -67,7 +67,7 @@ export const advertisingFields: FormField[] = [
   { k: "phone", l: "Mobile Number", t: "tel" },
   { k: "email", l: "Business Email", t: "email" },
   { k: "product", l: "Product Category", t: "text" },
-  { k: "format", l: "Preferred Format", t: "select", opts: ["Silent 10–20 second video", "Static illuminated sign board", "Both formats"] },
+  { k: "format", l: "Preferred Format", t: "select", opts: ["Silent 10–20-second video", "Static illuminated sign board", "Both formats"] },
   { k: "markets", l: "Preferred States / Areas", t: "text", optional: true, wide: true },
   { k: "message", l: "Campaign Requirement", t: "textarea", rows: 4, wide: true },
 ];

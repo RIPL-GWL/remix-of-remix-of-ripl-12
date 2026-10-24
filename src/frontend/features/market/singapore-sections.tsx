@@ -46,11 +46,11 @@ const categories = [
   { title: "Engineering Goods", note: "Machinery, Auto Components, Industrial Products", alt: "Precision gears, bearings and auto components" },
 ];
 const strengths: Point[] = [
-  { icon: Cog, title: "High Quality Indian Products", note: "Trusted and reliable manufacturing standards" },
+  { icon: Cog, title: "High-Quality Indian Products", note: "Trusted and reliable manufacturing standards" },
   { icon: Layers, title: "Wide Product Portfolio", note: "FMCG to industrial goods and more" },
   { icon: Truck, title: "Strong Supply Chain", note: "Timely and efficient deliveries" },
   { icon: Handshake, title: "Customized Solutions", note: "Tailored to market requirements" },
-  { icon: TrendingUp, title: "Long Term Partnerships", note: "Mutual growth and success" },
+  { icon: TrendingUp, title: "Long-Term Partnerships", note: "Mutual growth and success" },
 ];
 
 function MarketFlag({ singapore = false }: { singapore?: boolean }) {

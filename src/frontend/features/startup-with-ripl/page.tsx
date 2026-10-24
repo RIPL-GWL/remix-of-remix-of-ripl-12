@@ -23,7 +23,7 @@ const stats = [
   { icon: UserRoundCheck, value: "20+", label: "Industry", detail: "Mentors" },
 ];
 const pathways = [
-  { icon: Coins, title: "Funding Pathways", text: "Connect with investors, venture funds and strategic partners for early and growth stage funding.", to: "/fund-your-startup" },
+  { icon: Coins, title: "Funding Pathways", text: "Connect with investors, venture funds and strategic partners for early-stage and growth-stage funding.", to: "/fund-your-startup" },
   { icon: TrendingUp, title: "Growth Strategy", text: "Business research, market analysis and go-to-market strategy to accelerate your growth.", to: "/scale-your-startup" },
   { icon: Network, title: "Sales & Market Access", text: "Leverage our pan-India retail, distributor and institutional network to scale faster.", to: "/our-services" },
   { icon: Users, title: "Mentorship", text: "Learn from industry experts, successful entrepreneurs and domain specialists.", to: "/our-mentors" },

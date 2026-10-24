@@ -46,7 +46,7 @@ const auToIndia = [
   { icon: Stethoscope, t: "Healthcare & Medical Devices" },
 ];
 const strengths = [
-  { icon: ShieldCheck, t: "High Quality Indian Products", s: "Trusted & Certified Supply" },
+  { icon: ShieldCheck, t: "High-Quality Indian Products", s: "Trusted & Certified Supply" },
   { icon: TrendingUp, t: "Growing Demand in Australia", s: "Expanding Market Opportunities" },
   { icon: Truck, t: "Reliable Supply Chain", s: "On-Time & Efficient Delivery" },
   { icon: Leaf, t: "Sustainable Business Growth", s: "Long-Term Partnerships" },

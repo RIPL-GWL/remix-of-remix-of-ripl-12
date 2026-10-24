@@ -47,7 +47,7 @@ export function MentorProfile({ mentor: m }: { mentor: Mentor }) {
       <section className="people-split"><SectionHeading eyebrow="Areas of Expertise">Expertise That Creates <em>Real Impact</em></SectionHeading>
         <div className="people-tiles">{m.expertise.map((e, n) => { const I = icons[n % 4] ?? Target; return <article key={e.title}><span><I /></span><h3>{e.title}</h3><p>{e.text}</p></article>; })}</div></section>
       <section className="people-split"><SectionHeading eyebrow="Experience & Impact">A Track Record of Building <em>Successful Businesses</em></SectionHeading>
-        <dl className="people-stats">{[[GraduationCap, m.years, "Years Experience"], [Users, m.guided, "Businesses Guided"], [ChartNoAxesCombined, m.investments, "Investments Supported"], [Globe, m.countries, "Countries Worked In"]].map(([I, v, l]) => { const Icon = I as typeof Users; return <div key={String(l)}><Icon /><dt>{String(v)}</dt><dd>{String(l)}</dd></div>; })}</dl></section>
+        <dl className="people-stats">{[[GraduationCap, m.years, "Years of Experience"], [Users, m.guided, "Businesses Guided"], [ChartNoAxesCombined, m.investments, "Investments Supported"], [Globe, m.countries, "Countries Worked In"]].map(([I, v, l]) => { const Icon = I as typeof Users; return <div key={String(l)}><Icon /><dt>{String(v)}</dt><dd>{String(l)}</dd></div>; })}</dl></section>
       <section className="people-split"><SectionHeading eyebrow="Journey">From Experience to <em>Lasting Impact</em></SectionHeading>
         <ol className="people-timeline">{m.journey.map((j) => <li key={j.year}><b>{j.year}</b><p>{j.text}</p></li>)}</ol></section>
       <blockquote className="people-quote"><Quote /><p>“{m.quote}”</p><footer>— {m.name}</footer></blockquote>
