@@ -1,7 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { getTeam } from "@/lib/directory.functions";
 import { TeamProfile } from "@/frontend/features/people/team";
-export const Route = createFileRoute("/our-team/$slug")({
+export const Route = createFileRoute("/_authenticated/our-team/$slug")({
   loader: async ({ params }) => { const p = (await getTeam()).find((x) => x.slug === params.slug); if (!p) throw notFound(); return p; },
   head: ({ loaderData }) => {
     const title = loaderData ? `${loaderData.name} — ${loaderData.designation} | Rishishwar Industry` : "Team Member Not Found — Rishishwar Industry";
