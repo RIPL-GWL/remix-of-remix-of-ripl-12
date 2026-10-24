@@ -27,3 +27,10 @@
 - [x] Re-test drag-and-drop on the Pipeline page in the browser (New → Qualified works, persisted; test deal deleted after).
 - [x] Refresh media-library backup: optimized WebP copies of every current site image (152 files, 13.4 MB, none corrupt).
 - [x] Verify remixed database and import available missing records: 615 store-network districts and 6 employee master records restored; public list verified at 477 districts / 37,932 stores. Old login accounts and CRM records still require a source export (see existing records task).
+
+## 2026-10-24 new tasks
+- [ ] Mobile footer: Startups & Investments 2 columns; Login button into Our Family section
+- [ ] Verify retail store numbers identical across all themes (DB-driven, no per-theme records)
+- [ ] Verification system on Our Team: employee (any 2 of ID/code/email/phone), document (letter no + ref no + date), mentor (shows mentor profile)
+- [ ] Funding Programme: replace registration form with new Zoho form (formperma 1SNzTjiKwSF14T0BCEyJLvZCZDDowZl3NYWbAjpy1KE)
+- [ ] Site-wide grammar check and fixes
