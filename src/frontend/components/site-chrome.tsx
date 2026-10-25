@@ -44,7 +44,7 @@ export function SiteHeader() {
         </nav>
         <div className="flex shrink-0 items-center gap-2">
           <ThemeCycle />
-          <Button asChild size="sm" className="px-2 text-[9px] sm:px-3 sm:text-xs"><Link to="/funding-programme" onClick={() => setOpen(false)}>Funding Programme</Link></Button>
+          <Button asChild size="sm" className="px-2 text-[9px] sm:px-3 sm:text-xs"><Link to="/summit-2026" onClick={() => setOpen(false)}>Startup Summit 2026</Link></Button>
           <Button asChild size="sm" variant="outline" className="hidden lg:inline-flex"><Link to="/partner-with-us">Partner With Us</Link></Button>
           <Button variant="outline" size="icon" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((value) => !value)} className="border-ink-foreground/25 text-ink-foreground 2xl:hidden">
             {open ? <X /> : <Menu />}
