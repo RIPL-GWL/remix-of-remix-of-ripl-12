@@ -105,7 +105,7 @@ export function SiteFooter() {
             <li><Link to="/our-mentors" className="hover:text-primary">Our Mentors</Link></li>
             <li><Link to="/our-team" className="hover:text-primary">Our Team</Link></li>
             <li><Button asChild size="sm" variant="outline" className="h-auto w-[76px] border-primary px-3 py-1 text-inherit font-semibold text-primary hover:bg-primary hover:text-primary-foreground"><Link to="/verification">Verify</Link></Button></li>
-            <li><Button asChild size="sm" variant="outline" className="h-auto w-[76px] border-primary px-3 py-1 text-inherit font-semibold text-primary hover:bg-primary hover:text-primary-foreground"><Link to="/auth">Login</Link></Button></li>
+            <li className="footer-login"><Button asChild size="sm" variant="outline" className="h-auto w-[76px] border-primary px-3 py-1 text-inherit font-semibold text-primary hover:bg-primary hover:text-primary-foreground"><Link to="/auth">Login</Link></Button></li>
           </ul>
         </nav>
         <nav aria-label="Startups and Investments links" className="footer-startups col-span-1">
