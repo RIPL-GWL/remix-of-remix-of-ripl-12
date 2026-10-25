@@ -117,5 +117,6 @@
 @media (width < 48rem) {
   .summit-duo { grid-template-columns: 1fr; }
   .summit-checks { grid-template-columns: 1fr; }
+  .summit-amount strong { font-size: 26px; white-space: nowrap; }
   .summit-coin { width: 170px; } .summit-coin strong { font-size: 34px; }
 }
