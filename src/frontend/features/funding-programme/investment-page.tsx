@@ -180,6 +180,7 @@ export function InvestmentProgramPage() {
               <div className="invest-glass"><small>Up to</small><strong>{grant}</strong><span>Non-Refundable Grant Opportunities</span></div>
             </div>
             <div className="invest-actions"><Cta label="Apply Now" /><Cta label="Submit Your Idea" variant="ghost" /></div>
+            <p className="invest-summit-link"><MapPin aria-hidden="true" /> Startup Summit 2026 in Gwalior — <Link to="/summit-2026">view summit details</Link></p>
             <p className="invest-positioning">“We don't just fund startups — we help them build, validate, pitch, raise and scale.”</p>
           </div>
         </div>

@@ -54,3 +54,5 @@
 - [x] Remix: removed copied database setup history, created empty baseline; restored 615 store districts (477 visible / 37,932 stores) and 6 team records.
 - [x] Restore original Funding Programme design (Gwalior theme, fee, journey, support) with all new funding/investment content merged; dates still hidden.
 - [x] Move premium redesign to its own page (Investment Program, footer link) using the original fonts (Inter body, Montserrat headings).
+- [x] Funding Programme (permanent) uses the premium design; dedicated Gwalior-themed Startup Summit 2026 page added with footer link and cross-links (desktop + phone checked).
+- [ ] Summit 2026 dates: still hidden per brief — awaiting owner decision to show them.

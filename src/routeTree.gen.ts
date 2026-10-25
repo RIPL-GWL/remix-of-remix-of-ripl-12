@@ -35,9 +35,9 @@ import { Route as RetailerPartnerRouteImport } from './routes/retailer-partner'
 import { Route as ScaleYourStartupRouteImport } from './routes/scale-your-startup'
 import { Route as SitemapRouteImport } from './routes/sitemap'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as StartupInvestmentProgramRouteImport } from './routes/startup-investment-program'
 import { Route as StartupWithRiplRouteImport } from './routes/startup-with-ripl'
 import { Route as StoreListRouteImport } from './routes/store-list'
+import { Route as Summit2026RouteImport } from './routes/summit-2026'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as VerificationRouteImport } from './routes/verification'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
@@ -204,12 +204,6 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StartupInvestmentProgramRoute =
-  StartupInvestmentProgramRouteImport.update({
-    id: '/startup-investment-program',
-    path: '/startup-investment-program',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const StartupWithRiplRoute = StartupWithRiplRouteImport.update({
   id: '/startup-with-ripl',
   path: '/startup-with-ripl',
@@ -218,6 +212,11 @@ const StartupWithRiplRoute = StartupWithRiplRouteImport.update({
 const StoreListRoute = StoreListRouteImport.update({
   id: '/store-list',
   path: '/store-list',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Summit2026Route = Summit2026RouteImport.update({
+  id: '/summit-2026',
+  path: '/summit-2026',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -443,9 +442,9 @@ export interface FileRoutesByFullPath {
   '/scale-your-startup': typeof ScaleYourStartupRoute
   '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/startup-investment-program': typeof StartupInvestmentProgramRoute
   '/startup-with-ripl': typeof StartupWithRiplRoute
   '/store-list': typeof StoreListRoute
+  '/summit-2026': typeof Summit2026Route
   '/terms': typeof TermsRoute
   '/verification': typeof VerificationRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
@@ -507,9 +506,9 @@ export interface FileRoutesByTo {
   '/scale-your-startup': typeof ScaleYourStartupRoute
   '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/startup-investment-program': typeof StartupInvestmentProgramRoute
   '/startup-with-ripl': typeof StartupWithRiplRoute
   '/store-list': typeof StoreListRoute
+  '/summit-2026': typeof Summit2026Route
   '/terms': typeof TermsRoute
   '/verification': typeof VerificationRoute
   '/partner': typeof AuthenticatedPartnerRoute
@@ -571,9 +570,9 @@ export interface FileRoutesById {
   '/scale-your-startup': typeof ScaleYourStartupRoute
   '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/startup-investment-program': typeof StartupInvestmentProgramRoute
   '/startup-with-ripl': typeof StartupWithRiplRoute
   '/store-list': typeof StoreListRoute
+  '/summit-2026': typeof Summit2026Route
   '/terms': typeof TermsRoute
   '/verification': typeof VerificationRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
@@ -638,9 +637,9 @@ export interface FileRouteTypes {
     | '/scale-your-startup'
     | '/sitemap'
     | '/sitemap.xml'
-    | '/startup-investment-program'
     | '/startup-with-ripl'
     | '/store-list'
+    | '/summit-2026'
     | '/terms'
     | '/verification'
     | '/admin'
@@ -702,9 +701,9 @@ export interface FileRouteTypes {
     | '/scale-your-startup'
     | '/sitemap'
     | '/sitemap.xml'
-    | '/startup-investment-program'
     | '/startup-with-ripl'
     | '/store-list'
+    | '/summit-2026'
     | '/terms'
     | '/verification'
     | '/partner'
@@ -765,9 +764,9 @@ export interface FileRouteTypes {
     | '/scale-your-startup'
     | '/sitemap'
     | '/sitemap.xml'
-    | '/startup-investment-program'
     | '/startup-with-ripl'
     | '/store-list'
+    | '/summit-2026'
     | '/terms'
     | '/verification'
     | '/_authenticated/admin'
@@ -832,9 +831,9 @@ export interface RootRouteChildren {
   ScaleYourStartupRoute: typeof ScaleYourStartupRoute
   SitemapRoute: typeof SitemapRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  StartupInvestmentProgramRoute: typeof StartupInvestmentProgramRoute
   StartupWithRiplRoute: typeof StartupWithRiplRoute
   StoreListRoute: typeof StoreListRoute
+  Summit2026Route: typeof Summit2026Route
   TermsRoute: typeof TermsRoute
   VerificationRoute: typeof VerificationRoute
   ApiChatRoute: typeof ApiChatRoute
@@ -1025,13 +1024,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/startup-investment-program': {
-      id: '/startup-investment-program'
-      path: '/startup-investment-program'
-      fullPath: '/startup-investment-program'
-      preLoaderRoute: typeof StartupInvestmentProgramRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/startup-with-ripl': {
       id: '/startup-with-ripl'
       path: '/startup-with-ripl'
@@ -1044,6 +1036,13 @@ declare module '@tanstack/react-router' {
       path: '/store-list'
       fullPath: '/store-list'
       preLoaderRoute: typeof StoreListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/summit-2026': {
+      id: '/summit-2026'
+      path: '/summit-2026'
+      fullPath: '/summit-2026'
+      preLoaderRoute: typeof Summit2026RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -1442,9 +1441,9 @@ const rootRouteChildren: RootRouteChildren = {
   ScaleYourStartupRoute: ScaleYourStartupRoute,
   SitemapRoute: SitemapRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  StartupInvestmentProgramRoute: StartupInvestmentProgramRoute,
   StartupWithRiplRoute: StartupWithRiplRoute,
   StoreListRoute: StoreListRoute,
+  Summit2026Route: Summit2026Route,
   TermsRoute: TermsRoute,
   VerificationRoute: VerificationRoute,
   ApiChatRoute: ApiChatRoute,

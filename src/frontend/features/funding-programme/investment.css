@@ -284,3 +284,6 @@
 @media (prefers-reduced-motion: reduce) {
   .invest-page *, .invest-page *::before, .invest-page *::after { transition: none !important; }
 }
+.invest-summit-link { display: flex; align-items: center; gap: 8px; margin-top: 18px; font-size: 14px; color: var(--inv-on-dark-muted); }
+.invest-summit-link svg { width: 16px; height: 16px; color: var(--inv-gold); flex-shrink: 0; }
+.invest-summit-link a { color: var(--inv-gold); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
