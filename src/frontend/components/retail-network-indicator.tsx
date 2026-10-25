@@ -31,7 +31,7 @@ export function RetailNetworkIndicator({ selection, onChange, count }: {
 
   return (
     <section className="retail-network-indicator border-b border-border bg-background py-5 lg:py-3" aria-labelledby="network-title">
-      <div className="page-shell lg:grid lg:grid-cols-[230px_minmax(0,1fr)] lg:items-center lg:gap-6">
+      <div className="page-shell lg:grid lg:grid-cols-[max-content_minmax(0,1fr)] lg:items-center lg:gap-8">
         <div className="mb-4 flex min-w-0 items-center gap-2 lg:mb-0">
           <MapPin className="size-5 shrink-0 text-primary" aria-hidden="true" />
           <h2 id="network-title" className="min-w-0 whitespace-nowrap text-sm leading-snug sm:text-lg">Check Our Retail Store Network</h2>
