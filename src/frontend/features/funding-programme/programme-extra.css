@@ -83,3 +83,5 @@
   .programme-hero-actions { display: grid; grid-template-columns: 1fr; }
 }
 .programme-inline-link { color: var(--primary); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.programme-closing-date { display: flex; align-items: center; gap: 8px; margin: 10px 0 0; font-weight: 700; color: var(--programme-gold); }
+.programme-closing-date svg { width: 18px; height: 18px; }

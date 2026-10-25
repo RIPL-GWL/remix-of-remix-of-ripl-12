@@ -34,7 +34,7 @@ export function FundingPopup() {
 
   async function register() {
     setOpen(false);
-    await navigate({ to: "/funding-programme", hash: "register" });
+    await navigate({ to: "/summit-2026", hash: "register" });
     window.requestAnimationFrame(() => {
       document.getElementById("register")?.scrollIntoView({
         behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
@@ -49,11 +49,11 @@ export function FundingPopup() {
       <DialogPrimitive.Content className="funding-popup" onCloseAutoFocus={(event) => event.preventDefault()}>
         <img src={heroPhoto} alt="" width={1920} height={1024} className="funding-popup-photo" />
         <div className="funding-popup-body">
-          <p className="funding-popup-eyebrow">Startup Funding &amp; Investment Program</p>
+          <p className="funding-popup-eyebrow">RIPL Startup Summit 2026 · 29–31 December · Gwalior</p>
           <DialogTitle className="funding-popup-title">Turn Your Idea Into a <em>Fundable</em> Business</DialogTitle>
-          <DialogDescription className="funding-popup-text">Grants, prototype support, mentorship, investor pitching, technology and legal support — applications are open.</DialogDescription>
+          <DialogDescription className="funding-popup-text">Three days of jury and investor pitches, grants, prototype support and mentorship in Gwalior — registrations are open.</DialogDescription>
           <dl className="funding-popup-facts">{highlights.map(([value, label]) => <div key={label}><dt>{value}</dt><dd>{label}</dd></div>)}</dl>
-          <Button className="funding-popup-register" onClick={register}>Apply Now <ArrowRight /></Button>
+          <Button className="funding-popup-register" onClick={register}>Register for Summit 2026 <ArrowRight /></Button>
           <p className="funding-popup-terms">Subject to eligibility, evaluation, selection, investor interest and Terms &amp; Conditions. Funding is not guaranteed.</p>
         </div>
         <DialogClose asChild><Button variant="ghost" size="icon" className="funding-popup-close" aria-label="Close funding popup"><X /></Button></DialogClose>

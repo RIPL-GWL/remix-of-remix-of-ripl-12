@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Award, BadgeIndianRupee, BriefcaseBusiness, Building2, CalendarCheck, Car, ChartNoAxesCombined, ClipboardCheck, Code2, Compass, Cpu, FileCheck2, FilePenLine, FileSignature, FlaskConical, Gavel, Gem, Globe2, GraduationCap, Handshake, Headphones, Hotel, Landmark, Layers, Lightbulb, MapPin, Mic, Network, PenTool, Plane, Presentation, Rocket, Scale, ScanSearch, Server, ShieldCheck, Sparkles, Star, Target, TrendingUp, Trophy, UserRoundCheck, Users, Utensils, Wrench, type LucideIcon } from "lucide-react";
+import { ArrowRight, Award, CalendarDays, BadgeIndianRupee, BriefcaseBusiness, Building2, CalendarCheck, Car, ChartNoAxesCombined, ClipboardCheck, Code2, Compass, Cpu, FileCheck2, FilePenLine, FileSignature, FlaskConical, Gavel, Gem, Globe2, GraduationCap, Handshake, Headphones, Hotel, Landmark, Layers, Lightbulb, MapPin, Mic, Network, PenTool, Plane, Presentation, Rocket, Scale, ScanSearch, Server, ShieldCheck, Sparkles, Star, Target, TrendingUp, Trophy, UserRoundCheck, Users, Utensils, Wrench, type LucideIcon } from "lucide-react";
 import { Button } from "@/frontend/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/frontend/components/ui/accordion";
 import heroPhoto from "@/assets/funding-gwalior-hero.webp.asset.json";
@@ -8,7 +8,6 @@ import logo from "@/assets/header-wordmark-dark.webp.asset.json";
 import technologyPhoto from "@/assets/investment-program-technology.webp";
 import legalPhoto from "@/assets/investment-program-legal.webp";
 import { formatRupeeWords, grantPool, opportunityRules as rules, programmeRules, registrationTotal, rewardPool } from "./rules";
-import { CalendarDays } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/frontend/components/site-chrome";
 import { SUMMIT_REGISTRATION_URL, ZohoRegistrationForm } from "./zoho-form";
 import benefit0Asset from "@/assets/funding-programme-benefit-0.webp.asset.json";
