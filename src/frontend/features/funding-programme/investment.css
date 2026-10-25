@@ -21,7 +21,6 @@
   --inv-gold-grad: linear-gradient(135deg, color-mix(in oklch, var(--inv-gold) 70%, white), var(--inv-gold) 55%, color-mix(in oklch, var(--inv-gold) 80%, black));
   --inv-crimson-grad: linear-gradient(140deg, color-mix(in oklch, var(--inv-band) 40%, var(--ink)), color-mix(in oklch, var(--inv-band) 62%, var(--ink)) 55%, color-mix(in oklch, var(--inv-band) 30%, var(--ink)));
   --inv-dark-grad: radial-gradient(120% 90% at 85% 0%, color-mix(in oklch, var(--inv-band) 35%, transparent), transparent 60%), linear-gradient(180deg, color-mix(in oklch, var(--ink) 92%, var(--inv-band)), var(--ink));
-  --primary: var(--inv-crimson);
   --ring: var(--inv-gold);
   background: var(--inv-page);
   color: var(--inv-ink);
