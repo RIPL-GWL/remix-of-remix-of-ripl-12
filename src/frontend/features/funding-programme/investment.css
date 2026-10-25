@@ -23,6 +23,7 @@
   background: var(--inv-white);
   color: var(--inv-ink);
   overflow-x: clip;
+  font-family: "Inter", sans-serif;
 }
 .invest-page :is(h1, h2, h3) { font-family: "Montserrat", sans-serif; letter-spacing: -0.01em; }
 .invest-page h2 { font-size: clamp(30px, 4.2vw, 50px); font-weight: 800; line-height: 1.06; text-wrap: balance; overflow-wrap: anywhere; }
@@ -70,11 +71,11 @@
 .invest-hero-highlights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 30px; max-width: 620px; }
 .invest-glass { display: grid; gap: 2px; padding: 18px 20px; border-radius: 18px; background: var(--inv-glass); border: 1px solid var(--inv-glass-line); backdrop-filter: blur(14px); }
 .invest-glass small { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--inv-on-dark-muted); }
-.invest-glass strong { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(34px, 4vw, 48px); font-weight: 600; line-height: 1; color: var(--inv-white); }
+.invest-glass strong { font-family: "Montserrat", sans-serif; font-size: clamp(34px, 4vw, 48px); font-weight: 600; line-height: 1; color: var(--inv-white); }
 .invest-glass span { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
 .invest-glass-gold { border-color: oklch(0.8 0.12 82 / 0.6); background: linear-gradient(140deg, oklch(0.8 0.12 82 / 0.22), oklch(0.8 0.12 82 / 0.05)); }
 .invest-glass-gold strong { background: var(--inv-gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.invest-positioning { margin-top: 26px; font-family: "Cormorant Garamond", Georgia, serif; font-size: 21px; font-style: italic; color: var(--inv-gold); max-width: 560px; }
+.invest-positioning { margin-top: 26px; font-family: "Montserrat", sans-serif; font-size: 21px; font-style: italic; color: var(--inv-gold); max-width: 560px; }
 .invest-trust { position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 0; padding: 16px 12px; background: oklch(0.1 0.008 30 / 0.7); border-top: 1px solid var(--inv-glass-line); backdrop-filter: blur(10px); }
 .invest-trust li { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding-inline: 18px; color: var(--inv-white); }
 .invest-trust li + li { border-left: 1px solid oklch(0.8 0.12 82 / 0.6); }
@@ -84,7 +85,7 @@
 .invest-stats dl { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .invest-stats dl > div { padding: 28px 12px; text-align: center; border-right: 1px solid var(--inv-line); }
 .invest-stats dl > div:last-child { border-right: 0; }
-.invest-stats dt { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(32px, 4vw, 46px); font-weight: 600; color: var(--inv-crimson); line-height: 1; font-variant-numeric: tabular-nums; }
+.invest-stats dt { font-family: "Montserrat", sans-serif; font-size: clamp(32px, 4vw, 46px); font-weight: 600; color: var(--inv-crimson); line-height: 1; font-variant-numeric: tabular-nums; }
 .invest-stats dd { margin-top: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--inv-muted); }
 
 /* Flow chips */
@@ -115,7 +116,7 @@
 .invest-mentor ul { display: grid; gap: 8px; margin-top: 14px; }
 .invest-mentor li { font-size: 14px; color: var(--inv-muted); padding-left: 16px; position: relative; }
 .invest-mentor li::before { content: ""; position: absolute; left: 0; top: 7px; width: 6px; height: 6px; border-radius: 50%; background: var(--inv-gold-deep); }
-.invest-step-no { position: absolute; top: 18px; right: 20px; font-family: "Cormorant Garamond", Georgia, serif; font-size: 30px; font-weight: 600; color: var(--inv-line); }
+.invest-step-no { position: absolute; top: 18px; right: 20px; font-family: "Montserrat", sans-serif; font-size: 30px; font-weight: 600; color: var(--inv-line); }
 
 /* Grant ranks */
 .invest-grant { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; }
@@ -126,10 +127,10 @@
 .invest-rank-place svg { width: 18px; height: 18px; }
 .invest-rank-bar { height: 12px; border-radius: 999px; background: oklch(0.99 0 0 / 0.1); overflow: hidden; }
 .invest-rank-bar span { display: block; height: 100%; width: var(--rank-fill); border-radius: inherit; background: var(--inv-gold-grad); transition: width 1.2s cubic-bezier(.2,.7,.2,1); }
-.invest-rank strong { font-family: "Cormorant Garamond", Georgia, serif; font-size: 28px; font-weight: 600; text-align: right; }
+.invest-rank strong { font-family: "Montserrat", sans-serif; font-size: 28px; font-weight: 600; text-align: right; }
 .invest-rank-total { display: flex; justify-content: space-between; align-items: baseline; margin-top: 10px; padding-top: 18px; border-top: 1px dashed oklch(0.8 0.12 82 / 0.5); }
 .invest-rank-total span { font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
-.invest-rank-total strong { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(44px, 5vw, 64px); font-weight: 600; line-height: 1; background: var(--inv-gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.invest-rank-total strong { font-family: "Montserrat", sans-serif; font-size: clamp(44px, 5vw, 64px); font-weight: 600; line-height: 1; background: var(--inv-gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .invest-animate .invest-ranks:not(.is-visible) .invest-rank-bar span { width: 0; }
 
 /* Prototype + reward */
@@ -138,7 +139,7 @@
 .invest-feature h2 { font-size: clamp(28px, 3.4vw, 42px); }
 .invest-amount { display: grid; gap: 2px; margin-top: 24px; padding: 20px 22px; border-radius: 18px; background: var(--inv-soft); border-left: 4px solid var(--inv-crimson); }
 .invest-amount small { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--inv-crimson); }
-.invest-amount strong { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(32px, 4vw, 46px); font-weight: 600; line-height: 1.05; color: var(--inv-ink); }
+.invest-amount strong { font-family: "Montserrat", sans-serif; font-size: clamp(32px, 4vw, 46px); font-weight: 600; line-height: 1.05; color: var(--inv-ink); }
 .invest-amount span { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--inv-muted); }
 .invest-amount-inline { margin-top: 0; max-width: 420px; }
 .invest-sub { margin-top: 22px; font-weight: 700; }
@@ -149,13 +150,13 @@
 .invest-reward .invest-eyebrow { color: var(--inv-gold); }
 .invest-reward-coin { display: grid; justify-items: center; gap: 4px; margin: 28px auto; width: 210px; aspect-ratio: 1; border-radius: 50%; place-content: center; background: radial-gradient(circle at 30% 25%, oklch(0.92 0.09 90), oklch(0.74 0.13 75) 55%, oklch(0.55 0.11 60)); color: var(--inv-black); box-shadow: 0 0 0 10px oklch(0.8 0.12 82 / 0.15), 0 24px 60px -20px oklch(0.75 0.13 78 / 0.8); }
 .invest-reward-coin svg { width: 30px; height: 30px; }
-.invest-reward-coin strong { font-family: "Cormorant Garamond", Georgia, serif; font-size: 44px; font-weight: 700; line-height: 1; }
+.invest-reward-coin strong { font-family: "Montserrat", sans-serif; font-size: 44px; font-weight: 700; line-height: 1; }
 .invest-reward-coin span { font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
 .invest-reward-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .invest-reward-facts div { padding: 14px; border-radius: 14px; background: var(--inv-glass); border: 1px solid var(--inv-glass-line); }
 .invest-reward-facts dt { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--inv-on-dark-muted); }
 .invest-reward-facts dd { margin-top: 4px; font-size: 18px; font-weight: 800; color: var(--inv-gold); }
-.invest-reward blockquote { margin-top: auto; padding-top: 24px; font-family: "Cormorant Garamond", Georgia, serif; font-size: 22px; font-style: italic; color: var(--inv-white); }
+.invest-reward blockquote { margin-top: auto; padding-top: 24px; font-family: "Montserrat", sans-serif; font-size: 22px; font-style: italic; color: var(--inv-white); }
 
 /* Split layouts */
 .invest-split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
@@ -164,7 +165,7 @@
 .invest-ladder { display: grid; gap: 4px; }
 .invest-ladder li { display: grid; grid-template-columns: 56px 1fr; align-items: center; gap: 4px 16px; padding: 16px 22px; border-radius: 16px; background: var(--inv-glass); border: 1px solid var(--inv-glass-line); }
 .invest-ladder li:last-child { background: linear-gradient(140deg, oklch(0.8 0.12 82 / 0.28), oklch(0.8 0.12 82 / 0.08)); border-color: oklch(0.8 0.12 82 / 0.6); }
-.invest-ladder span { font-family: "Cormorant Garamond", Georgia, serif; font-size: 30px; font-weight: 600; color: var(--inv-gold); }
+.invest-ladder span { font-family: "Montserrat", sans-serif; font-size: 30px; font-weight: 600; color: var(--inv-gold); }
 .invest-ladder b { font-size: 17px; letter-spacing: 0.02em; }
 .invest-ladder svg { grid-column: 1 / -1; justify-self: center; width: 18px; height: 18px; color: var(--inv-gold); margin-bottom: -14px; position: relative; top: 8px; }
 .invest-photo { border-radius: 26px; overflow: hidden; box-shadow: var(--inv-shadow); aspect-ratio: 4 / 3; }
@@ -173,7 +174,7 @@
 .invest-audience { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .invest-audience li { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-radius: 14px; background: var(--inv-soft); font-weight: 700; font-size: 15px; }
 .invest-audience svg { width: 22px; height: 22px; color: var(--inv-crimson); flex-shrink: 0; }
-.invest-tagline { font-family: "Cormorant Garamond", Georgia, serif; font-size: 26px; font-style: italic; font-weight: 600; color: var(--inv-crimson); }
+.invest-tagline { font-family: "Montserrat", sans-serif; font-size: 26px; font-style: italic; font-weight: 600; color: var(--inv-crimson); }
 .invest-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 20px; }
 .invest-tiles li { display: flex; align-items: center; gap: 12px; padding: 16px; border-radius: 14px; background: var(--inv-white); border: 1px solid var(--inv-line); font-weight: 700; font-size: 15px; box-shadow: 0 8px 20px -16px oklch(0.2 0.05 20 / 0.5); }
 .invest-tiles svg { width: 22px; height: 22px; color: var(--inv-crimson); flex-shrink: 0; }
@@ -186,7 +187,7 @@
 .invest-ecosystem { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 0; position: relative; }
 .invest-ecosystem::before { content: ""; position: absolute; left: 5%; right: 5%; top: 28px; height: 2px; background: linear-gradient(90deg, var(--inv-crimson), var(--inv-gold)); }
 .invest-ecosystem li { position: relative; display: grid; justify-items: center; gap: 12px; text-align: center; padding-inline: 4px; }
-.invest-ecosystem span { display: flex; width: 56px; height: 56px; align-items: center; justify-content: center; border-radius: 50%; background: var(--inv-white); border: 2px solid var(--inv-crimson); font-family: "Cormorant Garamond", Georgia, serif; font-size: 24px; font-weight: 700; color: var(--inv-crimson); }
+.invest-ecosystem span { display: flex; width: 56px; height: 56px; align-items: center; justify-content: center; border-radius: 50%; background: var(--inv-white); border: 2px solid var(--inv-crimson); font-family: "Montserrat", sans-serif; font-size: 24px; font-weight: 700; color: var(--inv-crimson); }
 .invest-ecosystem li:last-child span { background: var(--inv-gold-grad); border-color: transparent; color: var(--inv-black); }
 .invest-ecosystem b { font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
 

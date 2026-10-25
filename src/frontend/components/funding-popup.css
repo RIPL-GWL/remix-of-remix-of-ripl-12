@@ -23,7 +23,7 @@
 .funding-popup .funding-popup-text { margin-top: 12px; font-size: 14px; line-height: 1.55; color: var(--popup-muted); }
 .funding-popup-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
 .funding-popup-facts div { padding: 12px 14px; border-radius: 14px; background: var(--popup-glass); border: 1px solid var(--popup-line); backdrop-filter: blur(10px); }
-.funding-popup-facts dt { font-family: "Cormorant Garamond", Georgia, serif; font-size: 26px; font-weight: 600; line-height: 1.05; color: var(--popup-gold); }
+.funding-popup-facts dt { font-family: "Montserrat", sans-serif; font-size: 26px; font-weight: 600; line-height: 1.05; color: var(--popup-gold); }
 .funding-popup-facts dd { margin-top: 2px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--popup-ink); }
 .funding-popup .funding-popup-register { width: 100%; height: 50px; margin-top: 20px; border-radius: 999px; background: var(--popup-gold-grad); color: oklch(0.13 0.008 30); font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.1em; }
 .funding-popup .funding-popup-register:hover { background: var(--popup-gold-grad); color: oklch(0.13 0.008 30); transform: translateY(-1px); }
