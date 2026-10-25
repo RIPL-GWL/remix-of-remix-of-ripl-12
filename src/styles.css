@@ -1649,5 +1649,4 @@ html .site-footer { --primary: var(--site-primary); }
 
 /* Smooth feel: gentle transitions on interactive elements and images */
 a, button, [role="button"], .card, img { transition-property: color, background-color, border-color, box-shadow, opacity, transform; transition-duration: .25s; transition-timing-function: cubic-bezier(.22,.61,.36,1); }
-img { content-visibility: auto; }
 html { -webkit-tap-highlight-color: transparent; }
