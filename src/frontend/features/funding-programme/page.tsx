@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   ArrowRight, Award, BadgeIndianRupee, BriefcaseBusiness, Building2, ChartNoAxesCombined, ChevronDown, Code2, Compass,
   Cpu, FileCheck2, FileSignature, FlaskConical, Gavel, Gem, Globe2, GraduationCap, Handshake, Headphones, Hotel, Landmark, Layers,
-  Lightbulb, Mail, MapPin, Mic, Network, PenTool, Plane, Presentation, Rocket, Scale, Server,
+  Lightbulb, Mail, MapPin, Megaphone, Mic, Network, PenTool, Plane, Presentation, Rocket, Scale, ScanSearch, Server,
   ShieldCheck, Sparkles, Target, TrendingUp, Trophy, UserRoundCheck, Users, Wrench, type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/frontend/components/ui/button";
@@ -134,7 +134,7 @@ function Counter({ value, prefix = "", suffix = "", decimals = 0 }: { value: num
     if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
     let frame = 0;
     const observer = new IntersectionObserver(([entry]) => {
-      if (!entry?.isIntersecting) return;
+      if (!entry.isIntersecting) return;
       observer.disconnect();
       const start = performance.now();
       const tick = (now: number) => {
