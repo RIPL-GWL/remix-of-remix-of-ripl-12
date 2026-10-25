@@ -63,3 +63,6 @@
 - [ ] Summit 2026 page: less text, more premium look (trim copy, keep dates/grants/fee/form).
 - [x] Remix: cleared copied migrations, scaffolded empty baseline; restored signup trigger, 615 store districts (477 visible / 37,932 stores) and 6 employee records; 49 tests pass, 13 visible states verified.
 - [x] Summit 2026 page: trimmed copy, premium grant/reward cards with gold coin, "Also Included" trio (mentorship/tech/legal); desktop + mobile, no overflow, no errors.
+- [x] Remix import: re-uploaded all 128 site images (verified all load); store/employee data already present.
+- [x] Super Admin account created for owner email; password sign-in verified; admin panel opens with Super Admin badge.
+- [x] Summit 2026 mobile review: no overflow; form responsive; fixed see-through sticky header overlapping content on funding pages.

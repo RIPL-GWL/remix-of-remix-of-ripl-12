@@ -982,6 +982,8 @@ html.navratri, html:not(.dark):not(.light):not(.moonlight):not(.bome):not(.shara
 
 .site-header { background: var(--header-glass); color: var(--header-text); --ink: var(--header-surface); --ink-foreground: var(--header-text); }
 .site-header-seasonal { background: var(--header-glass); border-bottom-color: transparent; backdrop-filter: none; }
+/* Funding pages scroll dense dark content under the sticky header; a translucent bar reads as broken overlap there. */
+.site-header-seasonal:has(+ main:is(.programme-page, .invest-page)) { background: var(--header-surface); }
 .site-header-seasonal:has(+ main > .navratri-home) { margin-bottom: -72px; }
 .site-header-seasonal + main .festival-hero { padding-top: 72px; }
 .header-logo { width: 216px; height: 58px; object-fit: contain; border-radius: 4px; }
