@@ -52,3 +52,5 @@
 - [ ] Zoho form fields: add Startup Stage, Sector, Website, MVP status, Funding Required, Pitch Deck upload, Prototype link and the thank-you message inside Zoho — owner's Zoho account required.
 - [x] Verify opportunity rules with unit tests, application links and desktop/mobile layout; optimize and back up new imagery.
 - [x] Remix: removed copied database setup history, created empty baseline; restored 615 store districts (477 visible / 37,932 stores) and 6 team records.
+- [x] Restore original Funding Programme design (Gwalior theme, fee, journey, support) with all new funding/investment content merged; dates still hidden.
+- [x] Move premium redesign to its own page (Investment Program, footer link) using the original fonts (Inter body, Montserrat headings).
