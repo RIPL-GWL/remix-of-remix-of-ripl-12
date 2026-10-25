@@ -23,7 +23,7 @@
 .programme-prizes-five .programme-prize-total { background: color-mix(in oklch, var(--programme-gold) 18%, transparent); }
 .programme-duo { display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; }
 .programme-panel { border: 1px solid var(--border); border-radius: 8px; padding: 22px; background: var(--card); }
-.programme-panel-dark { background: linear-gradient(100deg, oklch(0.2 0.07 27), var(--programme-dark) 60%); color: var(--programme-photo-text); border-color: var(--primary); box-shadow: var(--programme-red-glow); }
+.programme-panel-dark { background: linear-gradient(100deg, color-mix(in oklch, var(--primary) 30%, var(--programme-dark)), var(--programme-dark) 60%); color: var(--programme-photo-text); border-color: var(--primary); box-shadow: var(--programme-red-glow); }
 .programme-panel-dark .programme-heading em { color: var(--programme-gold); }
 .programme-panel-dark .programme-heading > span { background: var(--programme-gold); }
 .programme-amount { display: grid; gap: 2px; margin: 0 0 16px; padding: 14px 16px; border-left: 4px solid var(--primary); background: var(--muted); border-radius: 6px; }
