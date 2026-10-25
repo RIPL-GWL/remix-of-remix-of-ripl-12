@@ -1,45 +1,66 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState, type ReactNode } from "react";
-import {
-  ArrowRight, Award, BadgeIndianRupee, BriefcaseBusiness, Building2, ChartNoAxesCombined, ChevronDown, Code2, Compass,
-  Cpu, FileCheck2, FileSignature, FlaskConical, Gavel, Gem, Globe2, GraduationCap, Handshake, Headphones, Hotel, Landmark, Layers,
-  Lightbulb, Mail, MapPin, Mic, Network, PenTool, Plane, Presentation, Rocket, Scale, Server,
-  ShieldCheck, Sparkles, Target, TrendingUp, Trophy, UserRoundCheck, Users, Wrench, type LucideIcon,
-} from "lucide-react";
+import { ArrowRight, Award, BadgeIndianRupee, BriefcaseBusiness, Building2, CalendarCheck, Car, ChartNoAxesCombined, ClipboardCheck, Code2, Compass, Cpu, FileCheck2, FilePenLine, FileSignature, FlaskConical, Gavel, Gem, Globe2, GraduationCap, Handshake, Headphones, Hotel, Landmark, Layers, Lightbulb, MapPin, Mic, Network, PenTool, Plane, Presentation, Rocket, Scale, ScanSearch, Server, ShieldCheck, Sparkles, Star, Target, TrendingUp, Trophy, UserRoundCheck, Users, Utensils, Wrench, type LucideIcon } from "lucide-react";
 import { Button } from "@/frontend/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/frontend/components/ui/accordion";
-import { SiteFooter, SiteHeader } from "@/frontend/components/site-chrome";
-import heroPhoto from "@/assets/investment-program-hero.webp";
+import heroPhoto from "@/assets/funding-gwalior-hero.webp.asset.json";
+import supportPhotos from "@/assets/funding-support-photos.webp.asset.json";
+import logo from "@/assets/header-wordmark-dark.webp.asset.json";
 import technologyPhoto from "@/assets/investment-program-technology.webp";
 import legalPhoto from "@/assets/investment-program-legal.webp";
-import gwaliorAsset from "@/assets/funding-gwalior-hero.webp.asset.json";
-import pitchAsset from "@/assets/funding-programme-benefit-1.webp.asset.json";
 import { formatRupeeWords, grantPool, opportunityRules as rules, programmeRules, registrationTotal, rewardPool } from "./rules";
+import { SiteFooter, SiteHeader } from "@/frontend/components/site-chrome";
 import { SUMMIT_REGISTRATION_URL, ZohoRegistrationForm } from "./zoho-form";
-import "./investment.css";
+import benefit0Asset from "@/assets/funding-programme-benefit-0.webp.asset.json";
+import benefit1Asset from "@/assets/funding-programme-benefit-1.webp.asset.json";
+import benefit2Asset from "@/assets/funding-programme-benefit-2.webp.asset.json";
+import benefit3Asset from "@/assets/funding-programme-benefit-3.webp.asset.json";
+import benefit4Asset from "@/assets/funding-programme-benefit-4.webp.asset.json";
+import benefit5Asset from "@/assets/funding-programme-benefit-5.webp.asset.json";
+import "./programme-extra.css";
 
+const hero = { url: heroPhoto.url };
+const supportPhotoUrl = supportPhotos.url;
+const benefit4 = benefit4Asset.url;
 const grant = formatRupeeWords(grantPool());
 const crore = formatRupeeWords(rules.investmentOpportunityMax);
-const prototypeRange = `₹${rules.prototypeGrantMin / 1000}K–₹${rules.prototypeGrantMax / 1000}K`;
+const techValue = formatRupeeWords(rules.technologySupportMax);
+const prototypeRange = `₹${rules.prototypeGrantMin.toLocaleString("en-IN")}–₹${rules.prototypeGrantMax.toLocaleString("en-IN")}`;
 const DISCLAIMER = "All grants, rewards, benefits and funding opportunities are subject to eligibility, evaluation, selection, investor interest, applicable program guidelines and Terms & Conditions.";
 
-const trust = ["Grant", "Prototype", "Mentorship", "Investor Connect", "Technology", "Legal Support"];
-const pillars: { icon: LucideIcon; title: string; text: string }[] = [
-  { icon: BadgeIndianRupee, title: "Funding", text: "Grant opportunities and investor funding pathways." },
-  { icon: FlaskConical, title: "Prototype Support", text: "Turn your idea into a working MVP." },
-  { icon: Compass, title: "Mentorship", text: `${rules.mentorshipMonths} months of focused founder guidance.` },
-  { icon: Handshake, title: "Investor Connect", text: "Pitch before investors and industry experts." },
-  { icon: Cpu, title: "Technology", text: "Domain, website, hosting and digital setup." },
-  { icon: Scale, title: "Legal Support", text: "Agreements, compliance and IP guidance." },
+const benefits = [
+  { icon: Users, title: "Mentor Support", text: "Get guidance from experienced mentors to refine your business idea and pitch.", image: benefit0Asset.url },
+  { icon: Handshake, title: "Investor Connect", text: "Pitch to investors and connect with industry experts.", image: benefit1Asset.url },
+  { icon: ClipboardCheck, title: "Business Evaluation", text: "Understand your startup’s strengths and growth potential.", image: benefit2Asset.url },
+  { icon: Users, title: "Strategic Networking", text: "Connect with founders, industry leaders and ecosystem partners.", image: benefit3Asset.url },
+  { icon: Mic, title: "National Visibility", text: "Showcase your startup on a national platform.", image: benefit4 },
+  { icon: ChartNoAxesCombined, title: "Growth Support", text: "Access opportunities to scale your business on a larger platform.", image: benefit5Asset.url },
+];
+const journey = [
+  { icon: FilePenLine, title: "Register", text: "Submit your startup details to the RIPL funding team." },
+  { icon: ScanSearch, title: "Startup Scanning", text: `Within ${programmeRules.scanningDays} days, RIPL evaluates your startup, understands your business and provides a rating.` },
+  { icon: Users, title: "First Pitch", text: "Pitch your startup to our jury panel with support from RIPL mentors." },
+  { icon: Star, title: "Senior Jury Pitch", text: "Selected startups pitch to the senior jury panel with continued mentor support." },
+  { icon: Mic, title: "Investor Pitch", text: "Final selected startups pitch to participating investors for potential funding." },
+];
+const support = [
+  { icon: Hotel, title: "Accommodation", note: "Stay" },
+  { icon: Utensils, title: "Food", note: "Meals" },
+  { icon: Plane, title: "One-Side Travel Ticket", note: "Fare support" },
+  { icon: Car, title: "Local Travel", note: "In Gwalior" },
+  { icon: MapPin, title: "Local Tour", note: "Gwalior highlights" },
+];
+const pillars = [
+  { icon: BadgeIndianRupee, title: "Funding" }, { icon: FlaskConical, title: "Prototype Support" }, { icon: Compass, title: "Mentorship" },
+  { icon: Handshake, title: "Investor Connect" }, { icon: Cpu, title: "Technology" }, { icon: Scale, title: "Legal Support" },
 ];
 const ranks = ["1st", "2nd", "3rd", "4th", "5th"];
 const prototypeUses = ["MVP Development", "Prototype Creation", "Product Development", "Technology Development", "Testing & Validation", "Proof of Concept"];
 const fundingSteps = ["Business Evaluation", "Funding Readiness", "Investor Pitch", "Investor Connect", "Potential Funding"];
-const audiences: { icon: LucideIcon; title: string }[] = [
+const audiences = [
   { icon: Landmark, title: "Investors" }, { icon: BriefcaseBusiness, title: "Industry Experts" },
   { icon: GraduationCap, title: "Mentors" }, { icon: Network, title: "Startup Ecosystem Stakeholders" },
 ];
-const selectedBenefits: { icon: LucideIcon; title: string; text: string }[] = [
+const selectedBenefits = [
   { icon: Hotel, title: "Free Accommodation", text: "Accommodation support for eligible selected participants." },
   { icon: Plane, title: "Free One-Side Travel Support", text: "One-side ticket fare / travel support." },
   { icon: MapPin, title: "Free Gwalior Local Tour", text: "Experience Gwalior’s heritage and local attractions." },
@@ -47,24 +68,22 @@ const selectedBenefits: { icon: LucideIcon; title: string; text: string }[] = [
   { icon: Compass, title: "Mentorship", text: "Business, funding and pitch guidance." },
   { icon: Users, title: "Networking", text: "Connect with investors, experts and founders." },
 ];
-const mentorship: { icon: LucideIcon; title: string; points: string[] }[] = [
+const mentorship = [
   { icon: Target, title: "Business Strategy", points: ["Business Model", "Revenue Model", "Market Positioning"] },
   { icon: Wrench, title: "Product & Prototype", points: ["MVP", "Product Validation", "Market Feedback"] },
   { icon: BadgeIndianRupee, title: "Funding Preparation", points: ["Funding Requirement", "Financial Planning", "Investor Readiness"] },
   { icon: Presentation, title: "Pitch Preparation", points: ["Pitch Deck", "Business Story", "Investor Q&A"] },
   { icon: TrendingUp, title: "Growth Strategy", points: ["Sales", "Marketing", "Customer Acquisition", "Scaling"] },
 ];
-const technology: { icon: LucideIcon; title: string }[] = [
-  { icon: Globe2, title: "Free Domain Name" }, { icon: Code2, title: "Free Website / Landing Page" },
-  { icon: Layers, title: "Free Web Hosting" }, { icon: Server, title: "Server Support" },
-  { icon: Cpu, title: "Software / Technology Support" }, { icon: Sparkles, title: "Basic Digital Setup" },
+const technology = [
+  { icon: Globe2, title: "Free Domain Name" }, { icon: Code2, title: "Free Website / Landing Page" }, { icon: Layers, title: "Free Web Hosting" },
+  { icon: Server, title: "Server Support" }, { icon: Cpu, title: "Software / Technology Support" }, { icon: Sparkles, title: "Basic Digital Setup" },
 ];
-const legal: { icon: LucideIcon; title: string }[] = [
-  { icon: FileCheck2, title: "Business Documentation Guidance" }, { icon: Gavel, title: "Legal Guidance" },
-  { icon: FileSignature, title: "Agreements" }, { icon: ShieldCheck, title: "Compliance Guidance" },
-  { icon: PenTool, title: "Trademark / IP Guidance" }, { icon: Scale, title: "Startup Legal Support" },
+const legal = [
+  { icon: FileCheck2, title: "Business Documentation Guidance" }, { icon: Gavel, title: "Legal Guidance" }, { icon: FileSignature, title: "Agreements" },
+  { icon: ShieldCheck, title: "Compliance Guidance" }, { icon: PenTool, title: "Trademark / IP Guidance" }, { icon: Scale, title: "Startup Legal Support" },
 ];
-const evaluation: { icon: LucideIcon; title: string; text: string }[] = [
+const evaluation = [
   { icon: Lightbulb, title: "Innovation", text: "Is the idea solving a meaningful problem?" },
   { icon: ChartNoAxesCombined, title: "Market", text: "Is there a real market opportunity?" },
   { icon: BadgeIndianRupee, title: "Business Model", text: "Can the business generate sustainable revenue?" },
@@ -73,13 +92,13 @@ const evaluation: { icon: LucideIcon; title: string; text: string }[] = [
   { icon: Gem, title: "Funding Readiness", text: "Is the startup ready for investment or funding?" },
 ];
 const ecosystem = ["Idea", "Prototype", "Mentorship", "Business Validation", "Pitch", "Investor Connect", "Funding", "Growth", "Scale"];
-const access: { icon: LucideIcon; label: string; value: string }[] = [
+const access = [
   { icon: BadgeIndianRupee, label: "Funding", value: `Up to ${grant} Grant Opportunity` },
   { icon: Landmark, label: "Investment", value: `Funding Opportunity up to ${crore}` },
-  { icon: FlaskConical, label: "Prototype", value: `${prototypeRange} for Top ${rules.prototypeIdeas} Ideas` },
-  { icon: Award, label: "Reward", value: `₹${rules.ideaReward / 1000}K × ${rules.rewardIdeas} Selected Ideas` },
+  { icon: FlaskConical, label: "Prototype", value: `₹25K–₹50K for Top ${rules.prototypeIdeas} Ideas` },
+  { icon: Award, label: "Reward", value: `₹10K × ${rules.rewardIdeas} Selected Ideas` },
   { icon: Compass, label: "Mentorship", value: `${rules.mentorshipMonths} Months FREE` },
-  { icon: Cpu, label: "Technology", value: `Up to ${formatRupeeWords(rules.technologySupportMax)} Value` },
+  { icon: Cpu, label: "Technology", value: `Up to ${techValue} Value` },
   { icon: Scale, label: "Legal", value: "Startup Legal Support" },
   { icon: Mic, label: "Investor Pitch", value: "Selected Startups" },
   { icon: Hotel, label: "Accommodation", value: "Selected Participants" },
@@ -88,298 +107,158 @@ const access: { icon: LucideIcon; label: string; value: string }[] = [
   { icon: Users, label: "Networking", value: "Investors + Experts + Founders" },
 ];
 const whyApply = [
-  "Your idea can get funding.", "Your prototype can get support.", "Your startup can meet investors.",
-  "Your business can get expert mentorship.", "Your technology costs can be reduced.", "Your startup can get legal guidance.",
-  "Your journey can move from idea to investment.",
+  "Your idea can get funding.", "Your prototype can get support.", "Your startup can meet investors.", "Your business can get expert mentorship.",
+  "Your technology costs can be reduced.", "Your startup can get legal guidance.", "Your journey can move from idea to investment.",
 ];
-const whoCanApply = [
-  "Early-Stage Startups", "Existing Startups", "Student Founders", "First-Time Entrepreneurs", "Innovators",
-  "Technology Startups", "Product Startups", "Service Startups", "Scalable Business Ideas", "Founders with MVP / Prototype",
+const eligibility = [
+  { icon: Rocket, title: "Early-Stage Startups" }, { icon: Building2, title: "Existing Startups" }, { icon: GraduationCap, title: "Student Founders" },
+  { icon: Sparkles, title: "First-Time Entrepreneurs" }, { icon: Lightbulb, title: "Innovators" }, { icon: Cpu, title: "Technology Startups" },
+  { icon: Layers, title: "Product Startups" }, { icon: BriefcaseBusiness, title: "Service Startups" }, { icon: TrendingUp, title: "Scalable Business Ideas" },
+  { icon: FlaskConical, title: "Founders with MVP / Prototype" },
 ];
 const finalHighlights = [
-  `${grant} Grant Opportunity`, `${prototypeRange} Prototype Grant`, `₹${rules.ideaReward / 1000}K Reward for ${rules.rewardIdeas} Ideas`,
-  `Up to ${crore} Funding Opportunity`, "Investor Pitching", `${rules.mentorshipMonths} Months Free Mentorship`,
-  "Free Technology & Legal Support", "Travel & Accommodation Support for Selected Startups",
+  `${grant} Grant Opportunity`, `₹25K–₹50K Prototype Grant`, `₹10K Reward for ${rules.rewardIdeas} Ideas`, `Up to ${crore} Funding Opportunity`,
+  "Investor Pitching", `${rules.mentorshipMonths} Months Free Mentorship`, "Free Technology & Legal Support", "Travel & Accommodation Support for Selected Startups",
 ];
-const faqs: [string, string][] = [
-  ["Is the ₹5 crore funding guaranteed?", `No. The program offers a funding opportunity of up to ${crore}. Funding is subject to investor interest, due diligence, eligibility, valuation and applicable terms.`],
-  ["Is a grant the same as investment?", `No. Grants (up to ${grant} in total across five ranks) are non-refundable awards decided through evaluation. Investment comes from participating investors and depends on their own decisions.`],
-  ["What is the registration fee?", `The fee is ₹${programmeRules.registrationFee.toLocaleString("en-IN")} plus ${programmeRules.gstPercent}% GST (₹${registrationTotal(2).toLocaleString("en-IN")} total) for up to two people per startup. Each additional participant costs ₹${programmeRules.additionalParticipantFee.toLocaleString("en-IN")} plus GST.`],
-  ["Can I apply with only an idea?", `Yes. Early-stage ideas can apply. The top ${rules.prototypeIdeas} ideas may receive prototype support, and ${rules.rewardIdeas} selected ideas may receive a ₹${rules.ideaReward.toLocaleString("en-IN")} reward.`],
-  ["How is my startup evaluated?", "Applications are reviewed for innovation, market, business model, scalability, execution and funding readiness, followed by jury and senior jury rounds."],
+const faqs = [
+  ["What is the registration fee?", `The fee is ₹${programmeRules.registrationFee.toLocaleString("en-IN")} plus ${programmeRules.gstPercent}% GST (₹${registrationTotal(2).toLocaleString("en-IN")} total) per startup for up to two people. Each additional participant costs ₹${programmeRules.additionalParticipantFee.toLocaleString("en-IN")} plus ${programmeRules.gstPercent}% GST (₹${(registrationTotal(3) - registrationTotal(2)).toLocaleString("en-IN")} total).`],
+  ["Who can participate?", "Early-stage and existing startups, student founders, first-time entrepreneurs, innovators, technology, product and service startups, scalable business ideas and founders with an MVP or prototype. Participation is subject to review and selection."],
+  ["Is the funding guaranteed?", `No. The non-refundable grant opportunity of ${grant} is shared by the top five startups (₹10 lakh, ₹5 lakh, ₹2.5 lakh, ₹1.5 lakh and ₹1 lakh). Separately, selected startups get a funding opportunity of up to ${crore} by pitching to investors. A grant is not an investment, and funding is subject to investor interest, due diligence, eligibility, valuation and applicable terms.`],
+  ["Can I apply with only an idea?", `Yes. The top ${rules.prototypeIdeas} ideas may receive a ${prototypeRange} prototype grant, and ${rules.rewardIdeas} selected ideas receive ₹${rules.ideaReward.toLocaleString("en-IN")} each.`],
+  ["What does the registration include?", "The stated fee covers participation for up to two people from one startup. The team will confirm participation details and applicable terms before payment."],
+  ["Will travel, stay and food be provided?", "Eligible selected participants receive accommodation, food, one-side travel fare support, local travel and a Gwalior tour, subject to program guidelines and terms. Confirm eligibility and reimbursement arrangements with the team before booking."],
+  ["Where will the program be held?", "The program will be held in Gwalior, Madhya Pradesh, India. The team will share the schedule and exact venue with confirmed participants."],
 ];
 
-function scrollToRegister(event?: React.MouseEvent) {
-  event?.preventDefault();
-  document.getElementById("register")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+function scrollToRegister(event: React.MouseEvent) {
+  event.preventDefault();
+  document.getElementById("register")?.scrollIntoView({ behavior: "smooth" });
 }
-function Cta({ label, variant = "gold" }: { label: string; variant?: "gold" | "ghost" | "crimson" }) {
-  return <Button asChild variant="ghost" className={`invest-cta invest-cta-${variant}`}><a href="#register" onClick={scrollToRegister}>{label}<ArrowRight /></a></Button>;
+function RegisterButton({ compact = false, label }: { compact?: boolean; label?: string }) {
+  return <Button asChild variant="programme" size={compact ? "default" : "lg"} className="programme-register"><a href="#register" onClick={scrollToRegister}>{label ?? (compact ? "Apply Now" : "Register Your Startup Now")}<ArrowRight /></a></Button>;
 }
-function SectionHead({ eyebrow, title, children, center = false }: { eyebrow?: string; title: ReactNode; children?: ReactNode; center?: boolean }) {
-  return <div className={`invest-head ${center ? "invest-head-center" : ""}`} data-reveal>
-    {eyebrow && <p className="invest-eyebrow">{eyebrow}</p>}
-    <h2>{title}</h2>
-    {children && <div className="invest-lead">{children}</div>}
-  </div>;
+function Heading({ children, note }: { children: React.ReactNode; note?: string }) {
+  return <div className="programme-heading"><h2>{children}</h2><span aria-hidden="true" />{note && <p>{note}</p>}</div>;
 }
-function Flow({ steps, tone = "light" }: { steps: string[]; tone?: "light" | "dark" }) {
-  return <ol className={`invest-flow invest-flow-${tone}`} aria-label={steps.join(" to ")}>{steps.map((step, i) => <li key={step}><span>{step}</span>{i < steps.length - 1 && <ArrowRight aria-hidden="true" />}</li>)}</ol>;
+function IconTiles({ items }: { items: { icon: LucideIcon; title: string }[] }) {
+  return <div className="programme-icon-tiles">{items.map(({ icon: Icon, title }) => <div key={title}><Icon aria-hidden="true" /><h3>{title}</h3></div>)}</div>;
 }
-function Counter({ value, prefix = "", suffix = "", decimals = 0 }: { value: number; prefix?: string; suffix?: string; decimals?: number }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [shown, setShown] = useState(value);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
-    let frame = 0;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (!entry?.isIntersecting) return;
-      observer.disconnect();
-      const start = performance.now();
-      const tick = (now: number) => {
-        const t = Math.min(1, (now - start) / 1400);
-        setShown(value * (1 - Math.pow(1 - t, 3)));
-        if (t < 1) frame = requestAnimationFrame(tick);
-      };
-      frame = requestAnimationFrame(tick);
-    }, { threshold: 0.4 });
-    observer.observe(el);
-    return () => { observer.disconnect(); cancelAnimationFrame(frame); };
-  }, [value]);
-  return <span ref={ref}>{prefix}{shown.toFixed(decimals)}{suffix}</span>;
+function Flow({ steps }: { steps: string[] }) {
+  return <ol className="programme-flow" aria-label={steps.join(" to ")}>{steps.map((step, i) => <li key={step}><span>{step}</span>{i < steps.length - 1 && <ArrowRight aria-hidden="true" />}</li>)}</ol>;
 }
-function useReveal(root: React.RefObject<HTMLElement | null>) {
-  useEffect(() => {
-    const el = root.current;
-    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
-    el.classList.add("invest-animate");
-    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
-      if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); }
-    }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-    el.querySelectorAll("[data-reveal]").forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
-  }, [root]);
+function Cards({ items }: { items: { icon: LucideIcon; title: string; text: string }[] }) {
+  return <div className="programme-cards">{items.map(({ icon: Icon, title, text }) => <article key={title}><Icon aria-hidden="true" /><h3>{title}</h3><p>{text}</p></article>)}</div>;
 }
 
 export function FundingProgrammePage() {
-  const pageRef = useRef<HTMLElement>(null);
-  useReveal(pageRef);
   return <><SiteHeader />
-    <main ref={pageRef} className="invest-page">
-      <section className="invest-hero">
-        <img src={heroPhoto} alt="Startup founder pitching a prototype to investors in a boardroom" width={1920} height={1024} fetchPriority="high" className="invest-hero-photo" />
-        <div className="invest-hero-veil" />
-        <div className="page-shell invest-hero-inner">
-          <div className="invest-hero-copy">
-            <p className="invest-eyebrow">Startup Funding &amp; Investment Program</p>
-            <h1>Turn Your Idea Into a <em>Fundable</em> &amp; <em>Scalable</em> Business</h1>
-            <p className="invest-support">Free Grants • Prototype Support • Mentorship • Investor Pitch • Funding • Technology • Legal Support</p>
-            <div className="invest-hero-highlights">
-              <div className="invest-glass invest-glass-gold"><small>Up to</small><strong>{crore}</strong><span>Funding Opportunity</span></div>
-              <div className="invest-glass"><small>Up to</small><strong>{grant}</strong><span>Non-Refundable Grant Opportunities</span></div>
-            </div>
-            <div className="invest-actions"><Cta label="Apply Now" /><Cta label="Submit Your Idea" variant="ghost" /></div>
-            <p className="invest-positioning">“We don't just fund startups — we help them build, validate, pitch, raise and scale.”</p>
-          </div>
+    <main className="programme-page">
+    <section className="programme-hero">
+      <img src={hero.url} alt="Startup founder overlooking Gwalior’s fort and palace at sunset" width={1944} height={700} fetchPriority="high" className="programme-hero-photo" />
+      <div className="programme-hero-veil" />
+      <div className="page-shell programme-hero-inner">
+        <div className="programme-hero-copy">
+          <p className="programme-eyebrow">RIPL STARTUP <span aria-hidden="true" /></p>
+          <h1><span>FUNDING</span><br />&amp; INVESTMENT PROGRAM</h1>
+          <p className="programme-tagline">Turn Your Idea Into a Fundable &amp; Scalable Business</p>
+          <p className="programme-intro">We don't just fund startups — we help them build, validate, pitch, raise and scale. Free Grants • Prototype Support • Mentorship • Investor Pitch • Funding • Technology • Legal Support</p>
+          <div className="programme-hero-points">{[{ icon: Lightbulb, title: "BUILD", text: "Your prototype" }, { icon: Users, title: "PITCH", text: "To investors" }, { icon: ChartNoAxesCombined, title: "RAISE", text: `Up to ${crore}` }, { icon: Rocket, title: "GROW", text: "Your business" }].map(({ icon: Icon, title, text }) => <div key={title}><Icon /><div><b>{title}</b><small>{text}</small></div></div>)}</div>
+          <div className="programme-hero-actions"><RegisterButton label="Apply Now" /><Button asChild variant="ghost" className="programme-watch programme-idea"><a href="#register" onClick={scrollToRegister}>Submit Your Idea <ArrowRight /></a></Button></div>
         </div>
-        <ul className="invest-trust" aria-label="Program support">{trust.map((item) => <li key={item}>{item}</li>)}</ul>
-      </section>
+        <div className="programme-gwalior"><strong>Gwalior</strong><p><MapPin /> Madhya Pradesh, India</p><em>Ideas Today.<br />Impact Tomorrow.</em></div>
+        <div className="programme-date programme-crore-box"><BadgeIndianRupee /><div><span>UP TO</span><strong>{crore.replace("₹", "₹ ").toUpperCase()}</strong><b>FUNDING OPPORTUNITY</b></div><p><Trophy /> {grant} non-refundable grant opportunity</p></div>
+      </div>
+    </section>
+    <section className="programme-strip"><div className="page-shell"><IconTiles items={[{ icon: BadgeIndianRupee, title: "Grant" }, { icon: FlaskConical, title: "Prototype" }, { icon: Users, title: "Mentorship" }, { icon: Handshake, title: "Investor Connect" }, { icon: Cpu, title: "Technology" }, { icon: Scale, title: "Legal Support" }]} /><p><img src={logo.url} alt="RIPL" width={70} height={35} />Organised by <strong>Rishishwar Industry Private Limited (RIPL)</strong><small>Grow Your Business With Us.</small></p></div></section>
 
-      <section className="invest-stats" aria-label="Program highlights">
-        <div className="page-shell">
-          <dl>
-            <div><dt><Counter value={5} prefix="₹" suffix=" Cr" /></dt><dd>Funding opportunity</dd></div>
-            <div><dt><Counter value={grantPool() / 100000} prefix="₹" suffix=" L" /></dt><dd>Total grant opportunity</dd></div>
-            <div><dt><Counter value={rules.prototypeIdeas} /></dt><dd>Prototype grants</dd></div>
-            <div><dt><Counter value={rules.rewardIdeas} /></dt><dd>Idea rewards</dd></div>
-            <div><dt><Counter value={rules.mentorshipMonths} suffix=" Mo" /></dt><dd>Free mentorship</dd></div>
-          </dl>
-        </div>
-      </section>
+    <section className="page-shell programme-section">
+      <Heading note="WHY THIS PROGRAM?">More Than Just <em>Funding</em></Heading>
+      <p className="programme-lead">Your startup needs more than capital. We help founders move from:</p>
+      <Flow steps={["Idea", "Prototype", "Validation", "Pitch", "Funding", "Growth"]} />
+      <IconTiles items={pillars} />
+    </section>
 
-      <section id="about-programme" className="invest-section">
-        <div className="page-shell">
-          <SectionHead eyebrow="Why this program?" title={<>More Than Just <em>Funding</em></>} center>
-            <p>Your startup needs more than capital. We help founders move from:</p>
-          </SectionHead>
-          <Flow steps={["Idea", "Prototype", "Validation", "Pitch", "Funding", "Growth"]} />
-          <div className="invest-card-grid invest-grid-3">{pillars.map(({ icon: Icon, title, text }) => <article key={title} className="invest-card" data-reveal><span className="invest-icon"><Icon /></span><h3>{title}</h3><p>{text}</p></article>)}</div>
-        </div>
-      </section>
+    <section id="about-programme" className="programme-funding"><div className="page-shell programme-funding-grid">
+      <div className="programme-opportunity"><p>TOTAL</p><h2>{grant.toUpperCase()}<span>NON-REFUNDABLE GRANT OPPORTUNITY</span></h2><p>The five top-performing startups share the grant pool, alongside mentorship and investor connections.</p><p className="programme-grant-highlight"><strong>Grant ≠ investment.</strong> Beyond the grant, selected startups pitch to participating investors for a funding opportunity of up to {crore}.</p></div>
+      <div><div className="programme-prizes programme-prizes-five">{rules.grantAwards.map((amount, i) => <article key={amount}><Trophy /><div><h3>{ranks[i]} Performing Startup</h3><p>Up to <strong>{formatRupeeWords(amount).toUpperCase()}</strong></p></div></article>)}<article className="programme-prize-total"><Award /><div><h3>Total Grant Pool</h3><p><strong>{grant.toUpperCase()}</strong></p></div></article></div><p className="programme-terms">Grants are subject to eligibility, evaluation, selection and applicable Terms &amp; Conditions.</p></div>
+    </div></section>
 
-      <section id="grant" className="invest-section invest-crimson">
-        <div className="page-shell invest-grant">
-          <SectionHead eyebrow="Non-refundable grant opportunity" title={<>{grant} Total <em>Grant</em> Opportunity</>}>
-            <p>Five top-performing startups share the grant pool — awarded on merit, with no repayment.</p>
-            <p className="invest-note">Grants are subject to eligibility, evaluation, selection and applicable Terms &amp; Conditions.</p>
-          </SectionHead>
-          <div className="invest-ranks" data-reveal>
-            {rules.grantAwards.map((amount, i) => <div key={amount} className="invest-rank" style={{ "--rank-fill": `${(amount / rules.grantAwards[0]) * 100}%` } as React.CSSProperties}>
-              <span className="invest-rank-place">{i === 0 ? <Trophy /> : null}{ranks[i]}</span>
-              <span className="invest-rank-bar"><span /></span>
-              <strong>{formatRupeeWords(amount)}</strong>
-            </div>)}
-            <div className="invest-rank-total"><span>Total</span><strong>{grant}</strong></div>
-          </div>
-        </div>
-      </section>
+    <section className="page-shell programme-section programme-duo">
+      <div className="programme-panel">
+        <Heading note={`TOP ${rules.prototypeIdeas} IDEAS`}>Have an Idea? <em>Build It.</em></Heading>
+        <div className="programme-amount"><strong>{prototypeRange}</strong><span>Prototype Grant Opportunity</span></div>
+        <p className="programme-lead">Support can be used for:</p>
+        <IconTiles items={prototypeUses.map((title) => ({ icon: FlaskConical, title }))} />
+        <Flow steps={["Idea", "Prototype", "Validation", "Funding"]} />
+        <p className="programme-small">Funding opportunities may be available after successful prototype development and evaluation.</p>
+      </div>
+      <div className="programme-panel programme-panel-dark">
+        <Heading note="IDEA REWARD">{rules.rewardIdeas} Ideas. <em>₹{rules.ideaReward.toLocaleString("en-IN")} Each.</em></Heading>
+        <div className="programme-amount"><strong>₹{rules.ideaReward.toLocaleString("en-IN")}</strong><span>Flat reward for {rules.rewardIdeas} selected ideas</span></div>
+        <div className="programme-amount"><strong>{formatRupeeWords(rewardPool()).toUpperCase()}</strong><span>Total reward pool</span></div>
+        <p className="programme-quote">“Even early-stage ideas deserve recognition.”</p>
+      </div>
+    </section>
 
-      <section className="invest-section">
-        <div className="page-shell invest-duo">
-          <article className="invest-feature" data-reveal>
-            <p className="invest-eyebrow">Top {rules.prototypeIdeas} prototype grant</p>
-            <h2>Have an Idea? <em>Build It.</em></h2>
-            <div className="invest-amount"><small>Top {rules.prototypeIdeas} Ideas</small><strong>₹{rules.prototypeGrantMin.toLocaleString("en-IN")}–₹{rules.prototypeGrantMax.toLocaleString("en-IN")}</strong><span>Prototype Grant Opportunity</span></div>
-            <p className="invest-sub">Support can be used for:</p>
-            <ul className="invest-checks">{prototypeUses.map((use) => <li key={use}><FlaskConical aria-hidden="true" />{use}</li>)}</ul>
-            <Flow steps={["Idea", "Prototype", "Validation", "Funding"]} />
-            <p className="invest-note">Funding opportunities may be available after successful prototype development and evaluation.</p>
-          </article>
-          <article className="invest-feature invest-reward" data-reveal>
-            <p className="invest-eyebrow">₹10,000 idea reward</p>
-            <h2>{rules.rewardIdeas} Ideas. ₹{rules.ideaReward.toLocaleString("en-IN")} Each.</h2>
-            <div className="invest-reward-coin"><Award aria-hidden="true" /><strong>₹{rules.ideaReward.toLocaleString("en-IN")}</strong><span>Flat Reward</span></div>
-            <dl className="invest-reward-facts"><div><dt>For</dt><dd>{rules.rewardIdeas} Selected Ideas</dd></div><div><dt>Total reward pool</dt><dd>{formatRupeeWords(rewardPool())}</dd></div></dl>
-            <blockquote>“Even early-stage ideas deserve recognition.”</blockquote>
-          </article>
-        </div>
-      </section>
+    <section id="investment" className="programme-funding"><div className="page-shell programme-funding-grid">
+      <div className="programme-opportunity"><p>GET FUNDING OPPORTUNITY</p><h2>UP TO {crore.toUpperCase()}<span>INVESTOR FUNDING OPPORTUNITY</span></h2><p>Selected and investment-ready startups may get opportunities to connect with investors and present their businesses for potential funding.</p><p className="programme-grant-highlight">Funding is subject to investor interest, due diligence, eligibility, valuation and applicable terms.</p></div>
+      <ol className="programme-ladder">{fundingSteps.map((step, i) => <li key={step}><span>0{i + 1}</span><b>{step}</b></li>)}</ol>
+    </div></section>
 
-      <section id="investment" className="invest-section invest-dark">
-        <div className="page-shell invest-split">
-          <SectionHead eyebrow="Investment opportunity" title={<>Get Funding Opportunity Up to <em>{crore}</em></>}>
-            <p>Selected and investment-ready startups may get opportunities to connect with investors and present their businesses for potential funding.</p>
-            <p className="invest-note">Funding is subject to investor interest, due diligence, eligibility, valuation and applicable terms. Grant opportunity ≠ investment.</p>
-            <Cta label="Apply Now" />
-          </SectionHead>
-          <ol className="invest-ladder" data-reveal>{fundingSteps.map((step, i) => <li key={step}><span>{String(i + 1).padStart(2, "0")}</span><b>{step}</b>{i < fundingSteps.length - 1 && <ChevronDown aria-hidden="true" />}</li>)}</ol>
-        </div>
-      </section>
+    <section id="process" className="page-shell programme-section"><Heading note="FROM IDEA TO INVESTMENT">The 5-Stage <em>Startup</em> Journey</Heading><ol className="programme-journey">{journey.map(({ icon: Icon, title, text }, index) => <li key={title}><span className="programme-step">0{index + 1}</span><Icon /><h3>{title}</h3><p>{text}</p>{index < 4 && <ArrowRight className="programme-step-arrow" />}</li>)}</ol></section>
 
-      <section id="process" className="invest-section">
-        <div className="page-shell invest-split invest-pitch">
-          <div className="invest-photo" data-reveal><img src={pitchAsset.url} alt="Founders pitching their startup to an investor panel" width={592} height={298} loading="lazy" /></div>
-          <div>
-            <SectionHead eyebrow="Investor pitching" title={<>Put Your Startup in Front of <em>Investors</em></>}>
-              <p>Selected startups can receive opportunities to present their businesses before:</p>
-            </SectionHead>
-            <ul className="invest-audience">{audiences.map(({ icon: Icon, title }) => <li key={title}><Icon aria-hidden="true" />{title}</li>)}</ul>
-            <Flow steps={["Jury Pitch", "Senior Jury", "Investor Pitch"]} />
-            <p className="invest-tagline">Your Startup. Your Pitch. Your Opportunity.</p>
-          </div>
-        </div>
-      </section>
+    <section className="page-shell programme-section programme-split">
+      <img src={benefit1Asset.url} alt="Founders pitching their startup to an investor panel" width={592} height={298} loading="lazy" />
+      <div>
+        <Heading note="INVESTOR PITCHING">Put Your Startup in Front of <em>Investors</em></Heading>
+        <p className="programme-lead">Selected startups can receive opportunities to present their businesses before:</p>
+        <IconTiles items={audiences} />
+        <Flow steps={["Jury Pitch", "Senior Jury", "Investor Pitch"]} />
+        <p className="programme-quote programme-quote-red">Your Startup. Your Pitch. Your Opportunity.</p>
+      </div>
+    </section>
 
-      <section id="benefits" className="invest-section invest-soft">
-        <div className="page-shell">
-          <SectionHead eyebrow="Selected startup benefits" title={<>Selected Startups Get <em>More</em></>} center />
-          <div className="invest-card-grid invest-grid-3">{selectedBenefits.map(({ icon: Icon, title, text }) => <article key={title} className="invest-card invest-card-line" data-reveal><span className="invest-icon"><Icon /></span><h3>{title}</h3><p>{text}</p></article>)}</div>
-          <div className="invest-gwalior" data-reveal><img src={gwaliorAsset.url} alt="Gwalior fort and palace at sunset" width={1944} height={700} loading="lazy" /><p><MapPin aria-hidden="true" /> Gwalior, Madhya Pradesh — heritage, hospitality and a founder community.</p></div>
-          <p className="invest-note invest-center">Benefits are subject to eligibility, selection and applicable program guidelines.</p>
-        </div>
-      </section>
+    <section id="benefits" className="programme-benefits"><div className="page-shell programme-section"><Heading>What You Get</Heading><div className="programme-benefit-grid">{benefits.map(({ icon: Icon, title, text, image }) => <article key={title}><img src={image} alt={title} width={592} height={298} loading="lazy" /><div><span className="programme-benefit-icon"><Icon /></span><h3>{title}</h3><p>{text}</p></div></article>)}</div></div></section>
 
-      <section id="mentorship" className="invest-section">
-        <div className="page-shell">
-          <SectionHead eyebrow={`${rules.mentorshipMonths} months free mentorship`} title={<>Build a <em>Funding-Ready</em> Startup</>} center />
-          <div className="invest-card-grid invest-grid-5">{mentorship.map(({ icon: Icon, title, points }, i) => <article key={title} className="invest-card invest-mentor" data-reveal><span className="invest-step-no">{String(i + 1).padStart(2, "0")}</span><span className="invest-icon"><Icon /></span><h3>{title}</h3><ul>{points.map((p) => <li key={p}>{p}</li>)}</ul></article>)}</div>
-        </div>
-      </section>
+    <section className="page-shell programme-section"><Heading note="SELECTED STARTUP BENEFITS">Selected Startups Get <em>More</em></Heading><Cards items={selectedBenefits} /><p className="programme-small">Benefits are subject to eligibility, selection and applicable program guidelines.</p></section>
 
-      <section id="technology" className="invest-section invest-soft">
-        <div className="page-shell invest-split">
-          <div>
-            <SectionHead eyebrow="Free technology support" title={<>Build Without Heavy <em>Initial Cost</em></>}>
-              <div className="invest-amount invest-amount-inline"><small>Up to</small><strong>{formatRupeeWords(rules.technologySupportMax)}</strong><span>Technology Support Value</span></div>
-            </SectionHead>
-            <ul className="invest-tiles">{technology.map(({ icon: Icon, title }) => <li key={title}><Icon aria-hidden="true" />{title}</li>)}</ul>
-            <p className="invest-note">Eligible startups may receive technology support with an indicative value of up to {formatRupeeWords(rules.technologySupportMax)}, subject to scope and eligibility.</p>
-          </div>
-          <div className="invest-photo" data-reveal><img src={technologyPhoto} alt="Startup team developing a product prototype" width={1200} height={912} loading="lazy" /></div>
-        </div>
-      </section>
+    <section className="page-shell programme-section programme-logistics">
+      <div className="programme-fee"><h2 className="programme-band-title">Registration Fee</h2><div className="programme-fee-body"><div className="programme-main-fee"><Users /><p><strong>₹2,999/-</strong><span>+18% GST</span></p></div><p>Includes participation for up to 2 persons per startup.</p><div className="programme-extra-fee"><Users /><div><h3>Additional Participant</h3><strong>₹2,000/-</strong><p>+18% GST per person</p><small>Applicable beyond the first 2 persons.</small></div></div></div></div>
+      <div className="programme-support"><h2 className="programme-band-title">Completely Free for Selected Participants</h2><div className="programme-support-body"><div className="programme-support-grid">{support.map(({ icon: Icon, title, note }) => <div key={title}><Icon /><h3>{title}</h3><p>({note})</p></div>)}</div><div className="programme-support-photos"><img src={supportPhotoUrl} alt="Accommodation, meals, train ticket, local travel and Gwalior tour" width={1200} height={400} loading="lazy" /></div><p className="programme-support-banner">STAY · FOOD · ONE-SIDE TICKET · LOCAL TRAVEL · LOCAL TOUR<br /><strong>COMPLETELY FREE</strong></p><p className="programme-small">Eligible participants receive these benefits subject to policy, eligibility and Terms & Conditions. Confirm travel support before booking.</p></div></div>
+      <div className="programme-event"><h2 className="programme-band-title">Program Location</h2><div><p><MapPin /><strong>Gwalior, Madhya Pradesh, India</strong></p><p><CalendarCheck /><span><strong>Schedule shared with confirmed participants</strong></span></p><img src={hero.url} alt="Gwalior program location" width={1944} height={700} loading="lazy" /><RegisterButton compact /></div></div>
+    </section>
 
-      <section id="legal" className="invest-section">
-        <div className="page-shell invest-split invest-reverse">
-          <div className="invest-photo" data-reveal><img src={legalPhoto} alt="Legal advisor reviewing agreements with a startup founder" width={1200} height={912} loading="lazy" /></div>
-          <div>
-            <SectionHead eyebrow="Free legal support" title={<>Legal Support for Your <em>Startup</em></>} />
-            <ul className="invest-tiles">{legal.map(({ icon: Icon, title }) => <li key={title}><Icon aria-hidden="true" />{title}</li>)}</ul>
-          </div>
-        </div>
-      </section>
+    <section id="mentorship" className="page-shell programme-section"><Heading note="BUILD A FUNDING-READY STARTUP">{rules.mentorshipMonths} Months Free <em>Mentorship</em></Heading>
+      <div className="programme-cards programme-cards-five">{mentorship.map(({ icon: Icon, title, points }) => <article key={title}><Icon aria-hidden="true" /><h3>{title}</h3><ul>{points.map((p) => <li key={p}>{p}</li>)}</ul></article>)}</div>
+    </section>
 
-      <section id="evaluation" className="invest-section invest-dark">
-        <div className="page-shell">
-          <SectionHead eyebrow="Startup evaluation" title={<>Your Idea Will Be Evaluated for Its <em>Potential</em></>} center />
-          <div className="invest-card-grid invest-grid-3">{evaluation.map(({ icon: Icon, title, text }) => <article key={title} className="invest-card invest-card-dark" data-reveal><span className="invest-icon"><Icon /></span><h3>{title}</h3><p>{text}</p></article>)}</div>
-          <Flow steps={["Jury", "Senior Jury", "Funding Opportunity"]} tone="dark" />
-        </div>
-      </section>
+    <section id="technology" className="page-shell programme-section programme-split programme-split-reverse">
+      <div>
+        <Heading note="FREE TECHNOLOGY SUPPORT">Build Without Heavy <em>Initial Cost</em></Heading>
+        <div className="programme-amount"><strong>UP TO {techValue.toUpperCase()}</strong><span>Technology Support Value</span></div>
+        <IconTiles items={technology} />
+        <p className="programme-small">Eligible startups may receive technology support with an indicative value of up to {techValue}, subject to scope and eligibility.</p>
+      </div>
+      <img src={technologyPhoto} alt="Startup team developing a product prototype" width={1200} height={912} loading="lazy" />
+    </section>
 
-      <section className="invest-section">
-        <div className="page-shell">
-          <SectionHead eyebrow="Complete startup ecosystem" title={<>From Idea to <em>Scale</em></>} center />
-          <ol className="invest-ecosystem" data-reveal>{ecosystem.map((step, i) => <li key={step}><span>{i + 1}</span><b>{step}</b></li>)}</ol>
-        </div>
-      </section>
+    <section id="legal" className="page-shell programme-section programme-split">
+      <img src={legalPhoto} alt="Legal advisor reviewing agreements with a startup founder" width={1200} height={912} loading="lazy" />
+      <div><Heading note="FREE LEGAL SUPPORT">Legal Support for Your <em>Startup</em></Heading><IconTiles items={legal} /></div>
+    </section>
 
-      <section className="invest-section invest-soft">
-        <div className="page-shell">
-          <SectionHead eyebrow="Everything you can access" title={<>One Program. <em>Every</em> Growth Lever.</>} center />
-          <div className="invest-access">{access.map(({ icon: Icon, label, value }) => <article key={label} data-reveal><Icon aria-hidden="true" /><div><small>{label}</small><strong>{value}</strong></div></article>)}</div>
-        </div>
-      </section>
+    <section id="evaluation" className="page-shell programme-section"><Heading note="STARTUP EVALUATION">Your Idea Will Be Evaluated for Its <em>Potential</em></Heading><Cards items={evaluation} /><Flow steps={["Jury", "Senior Jury", "Funding Opportunity"]} /></section>
 
-      <section id="why-participate" className="invest-section invest-crimson">
-        <div className="page-shell invest-split">
-          <SectionHead eyebrow="Why apply?" title={<>Why Should <em>You</em> Apply?</>}>
-            <p>IDEA → BUILD → VALIDATE → PITCH → FUND → GROW</p>
-          </SectionHead>
-          <ul className="invest-statements" data-reveal>{whyApply.map((line) => <li key={line}><Sparkles aria-hidden="true" />{line}</li>)}</ul>
-        </div>
-      </section>
+    <section className="page-shell programme-section"><Heading note="COMPLETE STARTUP ECOSYSTEM">From Idea to <em>Scale</em></Heading><ol className="programme-ecosystem">{ecosystem.map((step, i) => <li key={step}><span>{i + 1}</span><b>{step}</b></li>)}</ol></section>
 
-      <section className="invest-section">
-        <div className="page-shell">
-          <SectionHead eyebrow="Who can apply?" title={<>Built for <em>Founders</em> at Every Stage</>} center />
-          <ul className="invest-chips" data-reveal>{whoCanApply.map((item) => <li key={item}><Rocket aria-hidden="true" />{item}</li>)}</ul>
-          <div className="invest-banner" data-reveal><p>Your idea doesn't have to be perfect. <em>It has to have potential.</em></p><Cta label="Submit Your Idea" variant="crimson" /></div>
-        </div>
-      </section>
+    <section className="programme-benefits"><div className="page-shell programme-section"><Heading note="EVERYTHING YOU CAN ACCESS">One Program. <em>Every</em> Growth Lever.</Heading><div className="programme-access">{access.map(({ icon: Icon, label, value }) => <article key={label}><Icon aria-hidden="true" /><div><small>{label}</small><strong>{value}</strong></div></article>)}</div></div></section>
 
-      <section className="invest-final">
-        <div className="page-shell">
-          <p className="invest-eyebrow">Ready when you are</p>
-          <h2>Your Idea Could Be Worth <em>More</em> Than You Think.</h2>
-          <ul>{finalHighlights.map((item) => <li key={item}><Trophy aria-hidden="true" />{item}</li>)}</ul>
-          <div className="invest-actions"><Cta label="Submit Your Startup / Idea Now" /><Cta label="Apply Now" variant="ghost" /></div>
-        </div>
-      </section>
+    <section className="page-shell programme-section programme-eligibility"><div><Heading>Who Can Apply?</Heading><IconTiles items={eligibility} /><div id="why-participate"><Heading>Why Should You Apply?</Heading></div><ul className="programme-statements">{whyApply.map((line) => <li key={line}><Sparkles aria-hidden="true" />{line}</li>)}</ul></div><div className="programme-platform"><img src={benefit4} alt="Founder presenting a startup to an audience" width={592} height={298} loading="lazy" /><div><h2>YOUR IDEA DOESN'T HAVE TO BE<br /><em>PERFECT.</em><br />IT HAS TO HAVE<br /><em>POTENTIAL.</em></h2><RegisterButton compact label="Submit Your Idea" /></div></div></section>
 
-      <section id="register" className="invest-section invest-register">
-        <div className="page-shell">
-          <SectionHead eyebrow="Registration form" title={<>Submit Your <em>Application</em></>} center>
-            <p>Share your founder, startup, stage, funding and product details. Your application will be reviewed as per program guidelines.</p>
-          </SectionHead>
-          <div className="invest-register-actions"><Button asChild variant="ghost" className="invest-cta invest-cta-crimson"><a href={SUMMIT_REGISTRATION_URL} target="_blank" rel="noopener noreferrer">Open Form in New Tab <ArrowRight /></a></Button></div>
-          <div className="invest-form-shell"><ZohoRegistrationForm /></div>
-        </div>
-      </section>
-
-      <section id="programme-faq" className="invest-section invest-soft">
-        <div className="page-shell invest-faq">
-          <div>
-            <SectionHead eyebrow="Questions" title={<>Frequently Asked <em>Questions</em></>} />
-            <aside className="invest-help"><Headphones aria-hidden="true" /><h3>Still have questions?</h3><p>Talk to the RIPL startup team.</p><Button asChild variant="ghost" className="invest-cta invest-cta-crimson"><Link to="/contact">Contact Us <Mail /></Link></Button></aside>
-          </div>
-          <Accordion type="single" collapsible className="invest-accordion">{faqs.map(([q, a], i) => <AccordionItem value={`faq-${i}`} key={q}><AccordionTrigger>{q}</AccordionTrigger><AccordionContent>{a}</AccordionContent></AccordionItem>)}</Accordion>
-        </div>
-      </section>
-
-      <p className="invest-disclaimer"><Building2 aria-hidden="true" /><span>Organised by Rishishwar Industry Private Limited (RIPL). {DISCLAIMER}</span></p>
-    </main>
-    <SiteFooter />
+    <section id="register" className="page-shell programme-section programme-app"><Heading note="REGISTER NOW">Startup <em>Summit</em> Registration</Heading><Button asChild variant="programme"><a href={SUMMIT_REGISTRATION_URL} target="_blank" rel="noopener noreferrer">Open Registration Form <ArrowRight /></a></Button><ZohoRegistrationForm /></section>
+    <section id="programme-faq" className="page-shell programme-section"><Heading>Frequently Asked Questions</Heading><div className="programme-faq-layout"><Accordion type="single" collapsible className="programme-faq">{faqs.map(([question, answer], index) => <AccordionItem value={`faq-${index}`} key={question}><AccordionTrigger>{question}</AccordionTrigger><AccordionContent>{answer}</AccordionContent></AccordionItem>)}</Accordion><aside className="programme-help"><Headphones /><h3>Still have questions?</h3><p>Get in touch with our team.</p><Button asChild variant="outline"><Link to="/contact">Contact Us <ArrowRight /></Link></Button></aside></div></section>
+    <section className="programme-closing"><img src={hero.url} alt="Gwalior palace at sunset" width={1944} height={700} loading="lazy" /><div className="page-shell"><h2>Your Idea Could Be Worth More Than You Think.</h2><ul className="programme-final-list">{finalHighlights.map((item) => <li key={item}><Trophy aria-hidden="true" />{item}</li>)}</ul><div className="programme-hero-actions"><RegisterButton label="Submit Your Startup / Idea Now" /><RegisterButton compact label="Apply Now" /></div></div></section>
+    <p className="programme-disclaimer">{DISCLAIMER}</p>
+    </main><SiteFooter />
   </>;
 }

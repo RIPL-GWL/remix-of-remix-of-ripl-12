@@ -13,7 +13,7 @@
 - Keep public verification presentation separate from the authenticated team directory; verification results must not require directory access.
 - Record verification changes with database triggers and public attempts server-side in an append-only admin-readable audit table; never store submitted codes, email addresses or phone numbers in audit events.
 - Keep imported media as Lovable Assets pointers and generated media as bundled ES imports, so media remains available independently of the source project.
-- Scope Funding Programme design tokens and controls to its page to preserve other imported page designs.
+- Scope Funding Programme design tokens and controls to its page to preserve other imported page designs; the original programme page and the separate investment page share opportunity amounts from the rules module so both stay consistent.
 - Preserve original IDs when importing future user records; verified identity mapping must control access, never client-submitted roles.
 - Keep programme calculation rules in a browser-safe module with concrete unit tests so registration terms remain consistent.
 - Mount the funding promotion dialog once in the root shell with an explicit allowlist (home + public funding pages); registration links bypass it so applications remain accessible.

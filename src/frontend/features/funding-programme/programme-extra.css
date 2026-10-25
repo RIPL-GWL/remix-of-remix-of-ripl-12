@@ -1,0 +1,84 @@
+/* Funding & Investment additions in the original Funding Programme style (Inter body, Montserrat headings, red + gold). */
+.programme-page .programme-hero h1 { font-size: 52px; }
+.programme-page .programme-hero h1 > span { font-size: 86px; }
+.programme-page .programme-idea { color: var(--programme-photo-text); font-size: 14px; text-transform: none; border: 1px solid var(--programme-gold); border-radius: 6px; padding-inline: 18px; height: 48px; }
+.programme-page .programme-idea:hover { background: color-mix(in oklch, var(--programme-gold) 15%, transparent); color: var(--programme-photo-text); }
+.programme-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.programme-crore-box > div > span { font-size: 12px; font-weight: 700; letter-spacing: .1em; color: var(--programme-gold); }
+.programme-crore-box strong { color: var(--programme-gold); font-family: "Montserrat", sans-serif; }
+.programme-lead { font-size: 15px; line-height: 1.5; margin-bottom: 14px; color: var(--muted-foreground); }
+.programme-small { font-size: 11px; color: var(--muted-foreground); line-height: 1.5; margin-top: 12px; }
+.programme-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 16px 0; }
+.programme-flow li { display: flex; align-items: center; gap: 8px; }
+.programme-flow span { padding: 7px 14px; border-radius: 6px; background: var(--muted); border: 1px solid var(--border); font-size: 11px; font-weight: 800; text-transform: uppercase; font-family: "Montserrat", sans-serif; }
+.programme-flow li:last-child span { background: var(--primary); color: var(--primary-foreground); border-color: var(--primary); }
+.programme-flow svg { width: 15px; height: 15px; color: var(--primary); }
+.programme-prizes-five { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.programme-prizes-five article svg { color: var(--programme-gold); width: 30px; height: 30px; flex-shrink: 0; }
+.programme-prizes-five h3 { font-size: 13px; }
+.programme-prizes-five p { font-size: 13px; }
+.programme-prizes-five strong { color: var(--programme-gold); font-size: 20px; display: block; }
+.programme-prizes-five article:nth-child(2) :is(svg, h3) { color: inherit; }
+.programme-prizes-five article:nth-child(2) strong { color: var(--programme-gold); }
+.programme-prizes-five .programme-prize-total { background: color-mix(in oklch, var(--programme-gold) 18%, transparent); }
+.programme-duo { display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; }
+.programme-panel { border: 1px solid var(--border); border-radius: 8px; padding: 22px; background: var(--card); }
+.programme-panel-dark { background: linear-gradient(100deg, oklch(0.2 0.07 27), var(--programme-dark) 60%); color: var(--programme-photo-text); border-color: var(--primary); box-shadow: var(--programme-red-glow); }
+.programme-panel-dark .programme-heading em { color: var(--programme-gold); }
+.programme-panel-dark .programme-heading > span { background: var(--programme-gold); }
+.programme-amount { display: grid; gap: 2px; margin: 0 0 16px; padding: 14px 16px; border-left: 4px solid var(--primary); background: var(--muted); border-radius: 6px; }
+.programme-amount strong { font-family: "Montserrat", sans-serif; font-size: 30px; font-weight: 900; color: var(--primary); line-height: 1.1; }
+.programme-amount span { font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.programme-panel-dark .programme-amount { background: color-mix(in oklch, var(--programme-photo-text) 8%, transparent); border-color: var(--programme-gold); }
+.programme-panel-dark .programme-amount strong { color: var(--programme-gold); }
+.programme-quote { font-family: "Montserrat", sans-serif; font-size: 18px; font-weight: 700; font-style: italic; color: var(--programme-gold); margin-top: 12px; }
+.programme-quote-red { color: var(--primary); }
+.programme-ladder { display: grid; gap: 10px; align-content: center; }
+.programme-ladder li { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border: 1px solid var(--programme-gold); border-radius: 6px; }
+.programme-ladder li:last-child { background: color-mix(in oklch, var(--programme-gold) 18%, transparent); }
+.programme-ladder span { font-family: "Montserrat", sans-serif; font-size: 22px; font-weight: 900; color: var(--programme-gold); }
+.programme-ladder b { font-size: 15px; text-transform: uppercase; }
+.programme-split { display: grid; grid-template-columns: 1fr 1.2fr; gap: 28px; align-items: center; }
+.programme-split-reverse { grid-template-columns: 1.2fr 1fr; }
+.programme-split > img { width: 100%; height: 100%; max-height: 380px; object-fit: cover; border-radius: 8px; }
+.programme-split .programme-icon-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.programme-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.programme-cards-five { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.programme-cards article { border: 1px solid var(--border); border-top: 3px solid var(--primary); border-radius: 6px; padding: 18px; background: var(--card); }
+.programme-cards article > svg { width: 32px; height: 32px; color: var(--primary); margin-bottom: 10px; }
+.programme-cards h3 { font-size: 15px; font-weight: 800; text-transform: uppercase; }
+.programme-cards p, .programme-cards li { font-size: 13px; line-height: 1.45; margin-top: 6px; color: var(--muted-foreground); }
+.programme-cards ul { margin-top: 6px; list-style: disc; padding-left: 18px; }
+.programme-cards li::marker { color: var(--primary); }
+.programme-ecosystem { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 10px; }
+.programme-ecosystem li { display: grid; justify-items: center; gap: 8px; text-align: center; padding: 14px 6px; background: var(--muted); border-radius: 6px; }
+.programme-ecosystem span { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--primary); color: var(--primary-foreground); font-weight: 800; font-size: 13px; }
+.programme-ecosystem li:last-child span { background: var(--programme-gold); color: var(--programme-dark); }
+.programme-ecosystem b { font-size: 11px; font-weight: 800; text-transform: uppercase; line-height: 1.25; }
+.programme-access { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.programme-access article { display: flex; gap: 12px; align-items: flex-start; padding: 14px; border-radius: 6px; background: var(--card); border: 1px solid var(--border); }
+.programme-access svg { width: 26px; height: 26px; color: var(--primary); flex-shrink: 0; }
+.programme-access small { display: block; font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--primary); }
+.programme-access strong { display: block; font-size: 13px; line-height: 1.35; margin-top: 2px; }
+.programme-statements { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.programme-statements li { display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 6px; background: var(--muted); font-weight: 700; font-size: 14px; }
+.programme-statements svg { width: 18px; height: 18px; color: var(--primary); flex-shrink: 0; }
+.programme-final-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 18px 0 22px; max-width: 980px; }
+.programme-final-list li { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1px solid color-mix(in oklch, var(--programme-gold) 60%, transparent); border-radius: 6px; background: color-mix(in oklch, var(--programme-dark) 55%, transparent); font-size: 13px; font-weight: 700; }
+.programme-final-list svg { width: 16px; height: 16px; color: var(--programme-gold); flex-shrink: 0; }
+.programme-disclaimer { padding: 16px max(16px, calc((100vw - 1100px) / 2)); background: var(--programme-dark); color: var(--programme-photo-text); font-size: 12px; line-height: 1.5; text-align: center; }
+@media (width < 64rem) {
+  .programme-prizes-five, .programme-cards-five { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .programme-ecosystem { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .programme-access, .programme-final-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .programme-duo { grid-template-columns: 1fr; }
+}
+@media (width < 40rem) {
+  .programme-page .programme-hero h1 { font-size: 30px; }
+  .programme-page .programme-hero h1 > span { font-size: 54px; }
+  .programme-split, .programme-split-reverse, .programme-cards, .programme-cards-five, .programme-statements, .programme-access, .programme-final-list { grid-template-columns: 1fr; }
+  .programme-split-reverse > img { order: 2; }
+  .programme-prizes-five { grid-template-columns: 1fr 1fr; }
+  .programme-amount strong { font-size: 24px; }
+  .programme-hero-actions { display: grid; grid-template-columns: 1fr; }
+}
