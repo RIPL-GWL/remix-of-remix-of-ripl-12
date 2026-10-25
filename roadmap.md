@@ -55,4 +55,8 @@
 - [x] Restore original Funding Programme design (Gwalior theme, fee, journey, support) with all new funding/investment content merged; dates still hidden.
 - [x] Move premium redesign to its own page (Investment Program, footer link) using the original fonts (Inter body, Montserrat headings).
 - [x] Funding Programme (permanent) uses the premium design; dedicated Gwalior-themed Startup Summit 2026 page added with footer link and cross-links (desktop + phone checked).
-- [ ] Summit 2026 dates: still hidden per brief — awaiting owner decision to show them.
+- [x] Summit 2026 dates: owner asked to show them on the summit page.
+- [ ] Header: replace Funding Programme button with Startup Summit 2026 button.
+- [ ] Funding Programme page: program details only — no form (apply button only), no fee, no grant amounts; add what is / is not included.
+- [ ] Summit 2026 page: show event date (29–31 December 2026) and full event details, grants, fee and form.
+- [ ] Both pages follow selected site theme; check all four themes.
