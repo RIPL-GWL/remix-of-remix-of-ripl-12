@@ -160,7 +160,7 @@ export function Story() {
           </Link>
         </div>
         <div className="relative">
-          <img
+          <img loading="lazy" decoding="async"
             src={officeImage}
             alt="Rishishwar Industry office — where partnerships begin"
             loading="lazy"
@@ -259,7 +259,7 @@ export function WhyUs() {
         </ul>
       </div>
       <div className="dark-surface relative min-h-72">
-        <img
+        <img loading="lazy" decoding="async"
           src={handshakeImage}
           alt="Business handshake — your growth, our commitment"
           loading="lazy"
@@ -320,7 +320,7 @@ export function GrowCta() {
   return (
     <section className="px-4 pb-20 sm:px-6">
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-sm border border-border bg-ink text-ink-foreground">
-        <img
+        <img loading="lazy" decoding="async"
           src={aboutHero}
           alt=""
           loading="lazy"

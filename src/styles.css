@@ -1646,3 +1646,8 @@ html .site-footer { --primary: var(--site-primary); }
 .footer-family .footer-login { padding-top: 1lh; }
 
 .programme-registration-frame { display: block; width: 100%; min-height: 600px; border: none; background: transparent; margin-top: 24px; transition: height 0.5s ease; }
+
+/* Smooth feel: gentle transitions on interactive elements and images */
+a, button, [role="button"], .card, img { transition-property: color, background-color, border-color, box-shadow, opacity, transform; transition-duration: .25s; transition-timing-function: cubic-bezier(.22,.61,.36,1); }
+img { content-visibility: auto; }
+html { -webkit-tap-highlight-color: transparent; }
