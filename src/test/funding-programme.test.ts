@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { programmeRules, registrationTotal } from "@/frontend/features/funding-programme/rules";
+import { formatRupeeWords, grantPool, opportunityRules, programmeRules, registrationTotal, rewardPool } from "@/frontend/features/funding-programme/rules";
 
 describe("Funding programme terms", () => {
   it("charges 2999 plus 18 percent GST for two people", () => {
@@ -13,16 +13,41 @@ describe("Funding programme terms", () => {
     expect(registrationTotal(3)).toBe(5898.82);
     expect(registrationTotal(4)).toBe(8258.82);
   });
-  it("offers ten and five lakh awards without guaranteeing funding", () => {
-    expect(programmeRules.firstAward).toBe(1000000);
-    expect(programmeRules.secondAward).toBe(500000);
-    expect(programmeRules.fundingGuaranteed).toBe(false);
-  });
   it("scans startups within fifteen days", () => {
     expect(programmeRules.scanningDays).toBe(15);
   });
-  it("holds the summit from 29 through 31 December 2026", () => {
-    expect(programmeRules.eventStart).toBe("2026-12-29");
-    expect(programmeRules.eventEnd).toBe("2026-12-31");
+});
+
+describe("Funding & Investment Program opportunities", () => {
+  it("splits a 20 lakh grant pool across five ranks", () => {
+    expect(opportunityRules.grantAwards).toEqual([1000000, 500000, 250000, 150000, 100000]);
+    expect(grantPool()).toBe(2000000);
+  });
+  it("offers 25,000 to 50,000 prototype grants to the top 20 ideas", () => {
+    expect(opportunityRules.prototypeIdeas).toBe(20);
+    expect(opportunityRules.prototypeGrantMin).toBe(25000);
+    expect(opportunityRules.prototypeGrantMax).toBe(50000);
+  });
+  it("rewards 25 ideas with 10,000 each for a 2.5 lakh pool", () => {
+    expect(opportunityRules.rewardIdeas).toBe(25);
+    expect(opportunityRules.ideaReward).toBe(10000);
+    expect(rewardPool()).toBe(250000);
+  });
+  it("presents investment up to 5 crore as an opportunity, never guaranteed", () => {
+    expect(opportunityRules.investmentOpportunityMax).toBe(50000000);
+    expect(opportunityRules.fundingGuaranteed).toBe(false);
+    expect(formatRupeeWords(opportunityRules.investmentOpportunityMax)).toBe("₹5 Crore");
+  });
+  it("offers 3 months of mentorship and technology support worth up to 3 lakh", () => {
+    expect(opportunityRules.mentorshipMonths).toBe(3);
+    expect(opportunityRules.technologySupportMax).toBe(300000);
+  });
+  it("does not display event dates", () => {
+    expect(opportunityRules.showEventDates).toBe(false);
+  });
+  it("formats amounts in lakh and crore", () => {
+    expect(formatRupeeWords(250000)).toBe("₹2.5 Lakh");
+    expect(formatRupeeWords(2000000)).toBe("₹20 Lakh");
+    expect(formatRupeeWords(10000)).toBe("₹10,000");
   });
 });

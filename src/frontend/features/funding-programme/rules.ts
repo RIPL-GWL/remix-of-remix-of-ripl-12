@@ -8,9 +8,33 @@ export const programmeRules = {
   secondAward: 500000,
   fundingGuaranteed: false,
   scanningDays: 15,
-  eventStart: "2026-12-29",
-  eventEnd: "2026-12-31",
 } as const;
+
+/** Opportunity amounts shown on the Funding & Investment Program page (rupees). */
+export const opportunityRules = {
+  grantAwards: [1000000, 500000, 250000, 150000, 100000],
+  prototypeIdeas: 20,
+  prototypeGrantMin: 25000,
+  prototypeGrantMax: 50000,
+  rewardIdeas: 25,
+  ideaReward: 10000,
+  investmentOpportunityMax: 50000000,
+  mentorshipMonths: 3,
+  technologySupportMax: 300000,
+  fundingGuaranteed: false,
+  showEventDates: false,
+} as const;
+
+export const grantPool = () => opportunityRules.grantAwards.reduce((sum, amount) => sum + amount, 0);
+export const rewardPool = () => opportunityRules.rewardIdeas * opportunityRules.ideaReward;
+
+/** Formats rupee amounts in Indian lakh/crore words, e.g. 250000 → "₹2.5 Lakh". */
+export function formatRupeeWords(amount: number) {
+  const trim = (n: number) => String(Math.round(n * 100) / 100);
+  if (amount >= 10000000) return `₹${trim(amount / 10000000)} Crore`;
+  if (amount >= 100000) return `₹${trim(amount / 100000)} Lakh`;
+  return `₹${amount.toLocaleString("en-IN")}`;
+}
 
 export function registrationTotal(participants: number) {
   const base = programmeRules.registrationFee + Math.max(0, participants - programmeRules.includedParticipants) * programmeRules.additionalParticipantFee;
