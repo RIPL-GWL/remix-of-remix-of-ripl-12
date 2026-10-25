@@ -47,7 +47,7 @@ export function FundingPopup() {
     <DialogPortal>
       <DialogOverlay className="funding-popup-overlay" />
       <DialogPrimitive.Content className="funding-popup" onCloseAutoFocus={(event) => event.preventDefault()}>
-        <img src={heroPhoto} alt="" width={1920} height={1024} className="funding-popup-photo" />
+        <img loading="lazy" decoding="async" src={heroPhoto} alt="" width={1920} height={1024} className="funding-popup-photo" />
         <div className="funding-popup-body">
           <p className="funding-popup-eyebrow">RIPL Startup Summit 2026 · 29–31 December · Gwalior</p>
           <DialogTitle className="funding-popup-title">Turn Your Idea Into a <em>Fundable</em> Business</DialogTitle>
