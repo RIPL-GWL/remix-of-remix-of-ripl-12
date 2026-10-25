@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { LegalPage } from "@/frontend/features/legal/legal-page";
-import { COMPANY } from "@/frontend/content/company";
+import { BilingualLegal } from "@/frontend/features/legal/bilingual-legal";
+import en from "@/frontend/content/legal/disclaimer-en.md?raw";
+import hi from "@/frontend/content/legal/disclaimer-hi.md?raw";
 
 export const Route = createFileRoute("/disclaimer")({
   head: () => ({ links: [{ rel: "canonical", href: "/disclaimer" }],
@@ -17,16 +18,5 @@ export const Route = createFileRoute("/disclaimer")({
 });
 
 function Page() {
-  return (
-    <LegalPage title="Disclaimer">
-      <h2>Funding</h2>
-      <p>Business funding assistance is subject to eligibility, assessment and funding-partner approval. RIPL does not guarantee funding approval, amounts or terms.</p>
-      <h2>Valuation and estimates</h2>
-      <p>Valuation and rent figures shown by our calculators are indicative and based on the information you enter. Actual values depend on verification, location, inspection and final terms.</p>
-      <h2>Global markets</h2>
-      <p>Market pages describe opportunities and support RIPL can provide. They do not imply a registered office or operational presence in every market listed.</p>
-      <h2>Third parties</h2>
-      <p>Product names and brands belong to their respective owners. RIPL does not manufacture or own partner products unless explicitly stated.</p>
-    </LegalPage>
-  );
+  return <BilingualLegal title="Disclaimer" hiTitle="अस्वीकरण" en={en} hi={hi} />;
 }
