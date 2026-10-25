@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatRupeeWords, grantPool, opportunityRules, programmeRules, registrationTotal, rewardPool } from "@/frontend/features/funding-programme/rules";
+import { formatRupeeWords, grantPool, opportunityRules, programmeRules, registrationTotal, rewardPool, summitRules } from "@/frontend/features/funding-programme/rules";
 
 describe("Funding programme terms", () => {
   it("charges 2999 plus 18 percent GST for two people", () => {
@@ -42,8 +42,14 @@ describe("Funding & Investment Program opportunities", () => {
     expect(opportunityRules.mentorshipMonths).toBe(3);
     expect(opportunityRules.technologySupportMax).toBe(300000);
   });
-  it("does not display event dates", () => {
+  it("keeps event dates off the program page", () => {
     expect(opportunityRules.showEventDates).toBe(false);
+  });
+  it("holds Startup Summit 2026 in Gwalior from 29 to 31 December 2026", () => {
+    expect(summitRules.eventStart).toBe("2026-12-29");
+    expect(summitRules.eventEnd).toBe("2026-12-31");
+    expect(summitRules.days).toBe(3);
+    expect(summitRules.city).toContain("Gwalior");
   });
   it("formats amounts in lakh and crore", () => {
     expect(formatRupeeWords(250000)).toBe("₹2.5 Lakh");

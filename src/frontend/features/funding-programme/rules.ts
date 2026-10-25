@@ -10,6 +10,14 @@ export const programmeRules = {
   scanningDays: 15,
 } as const;
 
+/** Startup Summit 2026 event details (shown only on the summit page). */
+export const summitRules = {
+  eventStart: "2026-12-29",
+  eventEnd: "2026-12-31",
+  days: 3,
+  city: "Gwalior, Madhya Pradesh, India",
+} as const;
+
 /** Opportunity amounts shown on the Funding & Investment Program page (rupees). */
 export const opportunityRules = {
   grantAwards: [1000000, 500000, 250000, 150000, 100000],
