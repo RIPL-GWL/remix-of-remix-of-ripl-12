@@ -104,7 +104,7 @@ export function CountriesSection() {
                 View Markets <ArrowRight className="size-4" />
               </a>
             </div>
-            <img loading="lazy" decoding="async"
+            <img
               src={worldMap}
               alt="World map showing Rishishwar Industry's presence in 8 countries from India"
               loading="lazy"
@@ -124,7 +124,7 @@ export function CountriesSection() {
               >
                 <div className="relative aspect-[16/10]">
                   <div className="size-full overflow-hidden">
-                    <img loading="lazy" decoding="async"
+                    <img
                       src={c.img}
                       alt={c.name}
                       loading="lazy"
@@ -211,7 +211,7 @@ export function BiggerMarketsSection() {
               </Link>
             </div>
             <div>
-              <img loading="lazy" decoding="async"
+              <img
                 src={shipImg}
                 alt="Container ship at port ready for export"
                 loading="lazy"
@@ -236,7 +236,7 @@ export function CtaSection() {
   return (
     <>
         <section className="relative overflow-hidden bg-primary text-primary-foreground">
-          <img loading="lazy" decoding="async"
+          <img
             src={shipImg}
             alt=""
             aria-hidden
