@@ -183,21 +183,23 @@ export function FundingProgrammePage() {
       <div><div className="programme-prizes programme-prizes-five">{rules.grantAwards.map((amount, i) => <article key={amount}><Trophy /><div><h3>{ranks[i]} Performing Startup</h3><p>Up to <strong>{formatRupeeWords(amount).toUpperCase()}</strong></p></div></article>)}<article className="programme-prize-total"><Award /><div><h3>Total Grant Pool</h3><p><strong>{grant.toUpperCase()}</strong></p></div></article></div><p className="programme-terms">Grants are subject to eligibility, evaluation, selection and applicable Terms &amp; Conditions.</p></div>
     </div></section>
 
-    <section className="page-shell programme-section programme-duo">
-      <div className="programme-panel">
-        <Heading note={`TOP ${rules.prototypeIdeas} IDEAS`}>Have an Idea? <em>Build It.</em></Heading>
-        <div className="programme-amount"><strong>{prototypeRange}</strong><span>Prototype Grant Opportunity</span></div>
-        <p className="programme-lead">Support can be used for:</p>
-        <IconTiles items={prototypeUses.map((title) => ({ icon: FlaskConical, title }))} />
+    <section className="page-shell programme-section programme-duo summit-duo">
+      <article className="summit-proto">
+        <p className="summit-eyebrow"><span />Top {rules.prototypeIdeas} prototype grant</p>
+        <h2>Have an Idea? <em>Build It.</em></h2>
+        <div className="summit-amount"><small>Top {rules.prototypeIdeas} Ideas</small><strong>{prototypeRange}</strong><span>Prototype Grant Opportunity</span></div>
+        <p className="summit-sub">Support can be used for:</p>
+        <ul className="summit-checks">{prototypeUses.map((use) => <li key={use}><FlaskConical aria-hidden="true" />{use}</li>)}</ul>
         <Flow steps={["Idea", "Prototype", "Validation", "Funding"]} />
         <p className="programme-small">Funding opportunities may be available after successful prototype development and evaluation.</p>
-      </div>
-      <div className="programme-panel programme-panel-dark">
-        <Heading note="IDEA REWARD">{rules.rewardIdeas} Ideas. <em>₹{rules.ideaReward.toLocaleString("en-IN")} Each.</em></Heading>
-        <div className="programme-amount"><strong>₹{rules.ideaReward.toLocaleString("en-IN")}</strong><span>Flat reward for {rules.rewardIdeas} selected ideas</span></div>
-        <div className="programme-amount"><strong>{formatRupeeWords(rewardPool()).toUpperCase()}</strong><span>Total reward pool</span></div>
-        <p className="programme-quote">“Even early-stage ideas deserve recognition.”</p>
-      </div>
+      </article>
+      <article className="summit-reward">
+        <p className="summit-eyebrow"><span />₹{rules.ideaReward.toLocaleString("en-IN")} idea reward</p>
+        <h2>{rules.rewardIdeas} Ideas.<br />₹{rules.ideaReward.toLocaleString("en-IN")} Each.</h2>
+        <div className="summit-coin"><Award aria-hidden="true" /><strong>₹{rules.ideaReward.toLocaleString("en-IN")}</strong><span>Flat Reward</span></div>
+        <dl className="summit-facts"><div><dt>For</dt><dd>{rules.rewardIdeas} Selected Ideas</dd></div><div><dt>Total reward pool</dt><dd>{formatRupeeWords(rewardPool())}</dd></div></dl>
+        <blockquote>“Even early-stage ideas deserve recognition.”</blockquote>
+      </article>
     </section>
 
     <section id="investment" className="programme-funding"><div className="page-shell programme-funding-grid">
