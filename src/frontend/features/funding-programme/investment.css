@@ -292,3 +292,19 @@
 
 html.sharad .invest-page { --inv-band: oklch(0.5 0.1 255); --inv-gold: oklch(0.88 0.08 88); }
 html.dark .invest-page { --inv-band: oklch(0.45 0.12 40); }
+.invest-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.invest-photo-tall { margin-top: 0; }
+.invest-photo-tall img { height: 100%; min-height: 340px; }
+.invest-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.invest-compare article { padding: 28px; border-radius: 22px; background: var(--inv-surface); border: 1px solid var(--inv-line); border-top: 4px solid var(--inv-crimson); box-shadow: var(--inv-shadow); }
+.invest-compare h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.invest-compare h3 svg { width: 24px; height: 24px; color: var(--inv-crimson); }
+.invest-compare ul { display: grid; gap: 12px; }
+.invest-compare li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.45; }
+.invest-compare li svg { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; color: var(--inv-crimson); }
+.invest-compare-not { border-top-color: var(--inv-muted) !important; }
+.invest-compare-not :is(h3, li) svg { color: var(--inv-muted); }
+.invest-final-note { margin-top: 18px; font-size: 14px; color: var(--inv-on-dark-muted); }
+.invest-glass strong { font-size: clamp(28px, 3.2vw, 40px); }
+@media (width < 64rem) { .invest-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (width < 48rem) { .invest-grid-4, .invest-compare { grid-template-columns: 1fr; } .invest-compare article { padding: 22px; } }
