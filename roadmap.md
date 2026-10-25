@@ -44,3 +44,8 @@
 
 - [x] Owner account now exists; no repeat signup needed (confirmed 2026-10-24).
 - [ ] Admin verification page browser test pending (needs the account above)
+
+## 2026-10-25 Funding Programme enhancement
+- [ ] Rebuild funding page as premium funding and investment experience with complete opportunity, support and evaluation sections.
+- [ ] Remove displayed programme dates and outdated promotion claims; retain existing Zoho registration pending confirmation of replacement.
+- [ ] Verify opportunity rules with unit tests, application links and desktop/mobile layout; optimize and back up new imagery.
