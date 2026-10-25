@@ -655,13 +655,10 @@ For questions concerning these Terms, commercial arrangements, service scope, ca
 
 **Rishishwar Industry Private Limited**  
 Gwalior, Madhya Pradesh, India  
-**Email:** info@rishishwarindustry.in
 
 Users should use official Company communication channels when submitting important contractual, payment or refund-related requests.
 
 ---
-
-## 57. Agreement to Continue to Part 2
 
 These Terms contain additional provisions dealing with the detailed nature of RIPL's services, business engagements, funding programmes, investment opportunities, startup programmes, grants, investor interactions, commercial responsibilities and related matters.
 
@@ -669,12 +666,7 @@ The subsequent sections shall be read together with the provisions contained abo
 
 In particular, users should carefully review the dedicated payment, cancellation and refund provisions before making any payment or entering into a commercial engagement with RIPL.
 
-**End of Part 1**
-
 ---
-
-# TERMS & CONDITIONS  
-## PART 2 — SERVICES, BUSINESS ENGAGEMENTS, FUNDING, INVESTMENT & STARTUP PROGRAMMES
 
 ### 58. Business Services Offered by RIPL
 
@@ -983,20 +975,6 @@ The provisions concerning funding, grants, investment, confidentiality, intellec
 By applying for or participating in a funding, investment, grant, startup, incubation, investor-connect or related programme, the applicant acknowledges that participation represents an opportunity to be evaluated and supported and does not constitute a guarantee of funding, investment, grant approval, business success or commercial return.
 
 The applicant further acknowledges that all financial and commercial opportunities are subject to eligibility, assessment, availability, selection, due diligence, applicable programme conditions and the independent decisions of relevant stakeholders.
-
-**End of Part 2**
-
----
-
-
-# RISHISHWAR INDUSTRY PRIVATE LIMITED  
-## TERMS & CONDITIONS  
-### PART 3 — PAYMENT, CANCELLATION, NON-REFUNDABLE PAYMENTS & REFUND FRAMEWORK
-
-**Effective Date:** 25 October 2026  
-**Company:** Rishishwar Industry Private Limited  
-**Registered/Principal Location:** Gwalior, Madhya Pradesh, India  
-**Official Email:** info@rishishwarindustry.in  
 
 ---
 
@@ -1310,18 +1288,6 @@ These payment and refund provisions should be read together with the remaining s
 
 ---
 
-
-# RISHISHWAR INDUSTRY PRIVATE LIMITED  
-## TERMS & CONDITIONS  
-### PART 4 — INTELLECTUAL PROPERTY, CONFIDENTIALITY & BUSINESS INFORMATION
-
-**Effective Date:** 25 October 2026  
-**Company:** Rishishwar Industry Private Limited  
-**Location:** Gwalior, Madhya Pradesh, India  
-**Official Email:** info@rishishwarindustry.in  
-
----
-
 ## 156. Intellectual Property Rights — General Principle
 
 All intellectual property appearing on or associated with the Rishishwar Industry Private Limited website, digital platforms, business communications, programmes, services, presentations, proposals, research frameworks, strategic methodologies, business models, designs, graphics, logos, trademarks, service names, written content, videos, photographs, software interfaces, databases, documents, templates, processes, systems, methodologies, training materials, internal frameworks, and other original or proprietary content shall remain the property of RIPL or the respective lawful owner, unless a different ownership arrangement has been expressly established through a separate written agreement.
@@ -1603,18 +1569,6 @@ Termination of a service does not automatically grant either party permission to
 Where the parties have entered into a separate confidentiality agreement, intellectual property agreement, non-disclosure agreement, technology agreement, service agreement, programme agreement, or other specific contract, that agreement shall be read together with these Terms & Conditions and shall prevail to the extent of any valid inconsistency.
 
 The continuing application of these provisions is intended to protect legitimate rights without restricting information that has lawfully entered the public domain or rights that cannot legally be restricted.
-
----
-
-
-# RISHISHWAR INDUSTRY PRIVATE LIMITED  
-## TERMS & CONDITIONS  
-### PART 5 — PRIVACY, PERSONAL DATA, COMMUNICATIONS & DATA PROTECTION
-
-**Effective Date:** 25 October 2026  
-**Company:** Rishishwar Industry Private Limited  
-**Location:** Gwalior, Madhya Pradesh, India  
-**Official Email:** info@rishishwarindustry.in  
 
 ---
 
@@ -2042,18 +1996,6 @@ These provisions should be read together with the confidentiality, intellectual 
 
 ---
 
-
-# RISHISHWAR INDUSTRY PRIVATE LIMITED  
-## TERMS & CONDITIONS  
-### PART 6 — THIRD-PARTY SERVICES, TECHNOLOGY, FUNDING RISKS & BUSINESS DISCLAIMERS
-
-**Effective Date:** 25 October 2026  
-**Company:** Rishishwar Industry Private Limited  
-**Location:** Gwalior, Madhya Pradesh, India  
-**Official Email:** info@rishishwarindustry.in  
-
----
-
 ## 205. Third-Party Services and Independent Providers
 
 RIPL may, in connection with its website, business operations, programmes, funding activities, technology services, incubation activities, research assignments, marketing activities, or other commercial engagements, use or coordinate with independent third-party service providers. These may include technology companies, cloud-service providers, payment gateways, financial institutions, investors, consultants, legal professionals, accountants, software providers, communication platforms, logistics providers, event partners, marketing platforms, data providers, research providers, incubation partners, mentors, or other external organisations.
@@ -2456,18 +2398,6 @@ Where a specific written agreement contains a different provision, that agreemen
 
 ---
 
-# RISHISHWAR INDUSTRY PRIVATE LIMITED
-## TERMS & CONDITIONS
-### FINAL PART — INTELLECTUAL PROPERTY, CONFIDENTIALITY, TERMINATION, LIABILITY & LEGAL PROVISIONS
-
-**Effective Date:** 25 October 2026  
-**Registered/Principal Business Location:** Gwalior, Madhya Pradesh, India  
-**Email:** info@rishishwarindustry.in
-
----
-
-## PART 7 — INTELLECTUAL PROPERTY, CONFIDENTIALITY & USER CONTENT
-
 ### 234. Intellectual Property Ownership
 
 Unless expressly stated otherwise in a written agreement, all intellectual property rights relating to the Rishishwar Industry Private Limited website, its design, layout, branding, logos, trademarks, service marks, business names, written content, graphics, photographs, videos, databases, software, source code, frameworks, methodologies, research structures, business processes, templates, documents, presentations, strategic models, analytical approaches, proprietary systems, know-how, training structures, programme formats and other original content created, developed, owned or lawfully licensed by RIPL shall remain the property of RIPL or its respective licensors. Nothing contained in these Terms shall be interpreted as transferring ownership of RIPL's intellectual property to a customer, applicant, startup, investor, partner, visitor or any other user merely because such person accesses, purchases, receives, reviews or uses a service provided by RIPL. Access to a service or document does not by itself constitute an assignment of intellectual property rights. Any transfer, assignment or licensing of intellectual property must be expressly documented in writing and signed or otherwise validly authorised by RIPL and, where applicable, the relevant rights holder.
@@ -2553,8 +2483,6 @@ Payment for a service does not automatically transfer ownership of RIPL's intell
 The provisions concerning intellectual property, confidentiality, permitted use, protection of proprietary information, third-party rights and restrictions on unauthorised disclosure shall survive termination or expiry of the commercial relationship to the extent necessary to give them meaningful effect. Obligations relating to trade secrets may continue for as long as legally protected. Other confidentiality obligations shall continue for the period specified in the relevant agreement or, where no period is specified, for a reasonable period consistent with the nature of the information and applicable law.
 
 ---
-
-# PART 8 — TERMINATION, LIABILITY, INDEMNITY & FINAL LEGAL PROVISIONS
 
 ### 255. Suspension or Termination by RIPL
 
@@ -2745,8 +2673,6 @@ These Terms are intended to establish a comprehensive contractual framework for 
 # FINAL CONTACT & LEGAL NOTICE
 
 **Rishishwar Industry Private Limited (RIPL)**  
-**Location:** Gwalior, Madhya Pradesh, India  
-**Official Email:** info@rishishwarindustry.in
 
 For service-related questions, commercial clarification, refund requests, privacy matters, legal notices or other formal communications, users should communicate through authorised RIPL channels and retain copies of relevant correspondence, invoices, payment confirmations and agreements.
 
