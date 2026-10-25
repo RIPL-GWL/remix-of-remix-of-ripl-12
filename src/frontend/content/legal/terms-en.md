@@ -655,6 +655,7 @@ For questions concerning these Terms, commercial arrangements, service scope, ca
 
 **Rishishwar Industry Private Limited**  
 Gwalior, Madhya Pradesh, India  
+**Email:** info@rishishwarindustry.in
 
 Users should use official Company communication channels when submitting important contractual, payment or refund-related requests.
 
