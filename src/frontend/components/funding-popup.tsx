@@ -10,7 +10,7 @@ import "./funding-popup.css";
 const fundingPaths = new Set([
   "/",
   "/fund-your-business", "/fund-your-startup", "/funding-programme",
-  "/startup-with-ripl", "/scale-your-startup", "/our-services/funding-support", "/startup-investment-program",
+  "/startup-with-ripl", "/scale-your-startup", "/our-services/funding-support", "/summit-2026",
 ]);
 
 const highlights = [

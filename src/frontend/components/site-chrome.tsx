@@ -112,7 +112,7 @@ export function SiteFooter() {
           <h3 className="text-sm uppercase tracking-wider text-accent-foreground">Startups and Investments</h3>
           <ul className="mt-3 grid gap-3 text-sm text-ink-foreground/75 sm:mt-5">
             <li><Link to="/funding-programme" className="hover:text-primary">Funding Programme</Link></li>
-            <li><Link to="/startup-investment-program" className="hover:text-primary">Investment Program</Link></li>
+            <li><Link to="/summit-2026" className="hover:text-primary">Startup Summit 2026</Link></li>
             <li><Link to="/fund-your-startup" className="hover:text-primary">Fund Your Startup</Link></li>
             <li><Link to="/startup-with-ripl" className="hover:text-primary">Startup with RIPL</Link></li>
             <li><Link to="/business-valuation-calculator" className="hover:text-primary">Business Valuation Calculator</Link></li>
