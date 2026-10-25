@@ -120,3 +120,15 @@
   .summit-amount strong { font-size: 26px; white-space: nowrap; }
   .summit-coin { width: 170px; } .summit-coin strong { font-size: 34px; }
 }
+/* Summit 2026: "Also included" premium trio */
+.summit-extras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.summit-extras article { position: relative; overflow: hidden; display: grid; gap: 6px; padding: 30px 26px; border-radius: 22px; background: var(--card); color: var(--card-foreground); border: 1px solid var(--border); box-shadow: 0 24px 50px -32px color-mix(in oklch, var(--foreground) 40%, transparent); transition: transform .3s ease, box-shadow .3s ease; }
+.summit-extras article::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, var(--primary), var(--programme-gold)); }
+.summit-extras article:hover { transform: translateY(-4px); box-shadow: 0 30px 60px -30px color-mix(in oklch, var(--primary) 45%, transparent); }
+.summit-extra-icon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 10px; border-radius: 14px; background: linear-gradient(140deg, var(--primary), color-mix(in oklch, var(--primary) 65%, var(--programme-dark))); color: var(--primary-foreground); }
+.summit-extra-icon svg { width: 24px; height: 24px; }
+.summit-extras small { font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--primary); }
+.summit-extras strong { font-family: "Montserrat", sans-serif; font-size: 30px; font-weight: 800; line-height: 1.1; }
+.summit-extras p { font-size: 14px; line-height: 1.5; color: var(--muted-foreground); }
+.summit-platform { grid-column: 1 / -1; }
+@media (width < 48rem) { .summit-extras { grid-template-columns: 1fr; } .summit-extras article { padding: 24px 22px; } }
