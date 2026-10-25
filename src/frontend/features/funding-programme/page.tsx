@@ -134,7 +134,7 @@ function Counter({ value, prefix = "", suffix = "", decimals = 0 }: { value: num
     if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
     let frame = 0;
     const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
+      if (!entry?.isIntersecting) return;
       observer.disconnect();
       const start = performance.now();
       const tick = (now: number) => {

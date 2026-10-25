@@ -46,6 +46,9 @@
 - [ ] Admin verification page browser test pending (needs the account above)
 
 ## 2026-10-25 Funding Programme enhancement
-- [ ] Rebuild funding page as premium funding and investment experience with complete opportunity, support and evaluation sections.
-- [ ] Remove displayed programme dates and outdated promotion claims; retain existing Zoho registration pending confirmation of replacement.
-- [ ] Verify opportunity rules with unit tests, application links and desktop/mobile layout; optimize and back up new imagery.
+- [x] Rebuild funding page as premium funding and investment experience with complete opportunity, support and evaluation sections (desktop + phone checked).
+- [x] Remove displayed programme dates (page, popup, assistant); popup rebuilt without dated poster; existing Zoho registration retained.
+- [ ] Confirm grant headline: brief says both ₹15 lakh and ₹20 lakh; ₹20 lakh five-rank split used — awaiting owner confirmation.
+- [ ] Zoho form fields: add Startup Stage, Sector, Website, MVP status, Funding Required, Pitch Deck upload, Prototype link and the thank-you message inside Zoho — owner's Zoho account required.
+- [x] Verify opportunity rules with unit tests, application links and desktop/mobile layout; optimize and back up new imagery.
+- [x] Remix: removed copied database setup history, created empty baseline; restored 615 store districts (477 visible / 37,932 stores) and 6 team records.
