@@ -27,7 +27,7 @@ const ratesGroup: FaqGroup = {
 const programmeGroup: FaqGroup = {
   title: "Startup Funding Programme",
   items: [
-    { q: "RIPL Startup Funding Programme क्या है?", a: "RIPL Startup Funding Programme 29–31 दिसंबर 2026 को Gwalior में होगा। कुल ₹15 लाख non-refundable grant pool है — केवल 2 startups को grant मिलेगा (₹10 लाख और ₹5 लाख)। बाकी startups investor pitch stage के ज़रिए investor funding जुटा सकते हैं। Grant, funding या selection की कोई गारंटी नहीं है।" },
+    { q: "RIPL Startup Funding Programme क्या है?", a: "RIPL Startup Funding & Investment Program founders को idea से build, validate, pitch, raise और scale तक support करता है। Highlights: up to ₹5 crore funding opportunity (investors के through), ₹20 लाख total non-refundable grant opportunity (1st ₹10 लाख, 2nd ₹5 लाख, 3rd ₹2.5 लाख, 4th ₹1.5 लाख, 5th ₹1 लाख), top 20 ideas को ₹25,000–₹50,000 prototype grant, 25 selected ideas को ₹10,000 reward, 3 months free mentorship, up to ₹3 लाख technology support value, legal support, और selected startups के लिए stay, one-side travel और Gwalior tour। Grant ≠ investment। Grant, funding या selection की कोई गारंटी नहीं है — eligibility, evaluation, selection, investor interest, due diligence और Terms & Conditions लागू।" },
     { q: "Funding Programme की प्रक्रिया और fee क्या है?", a: "Journey: Registration → Startup Scanning (15 दिन) → First Pitch → Senior Jury Pitch → Investor Pitch। Fee ₹2,999 + 18% GST (2 participants तक), हर अतिरिक्त participant ₹2,000 + GST। Apply करने के लिए website पर Funding Programme page खोलें।" },
   ],
 };
