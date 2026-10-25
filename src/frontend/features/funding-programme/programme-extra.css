@@ -85,3 +85,50 @@
 .programme-inline-link { color: var(--primary); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .programme-closing-date { display: flex; align-items: center; gap: 8px; margin: 10px 0 0; font-weight: 700; color: var(--programme-gold); }
 .programme-closing-date svg { width: 18px; height: 18px; }
+/* Summit 2026: prototype grant + idea reward cards */
+.summit-duo { grid-template-columns: 1.25fr 1fr; gap: 24px; align-items: stretch; }
+.summit-duo h2 { font-family: "Montserrat", sans-serif; font-size: clamp(28px, 3.2vw, 40px); font-weight: 800; line-height: 1.12; text-transform: none; }
+.summit-duo h2 em { font-style: normal; color: var(--primary); }
+.summit-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--primary); }
+.summit-eyebrow span { width: 26px; height: 2px; background: var(--programme-gold); }
+.summit-proto { padding: clamp(24px, 3.5vw, 40px); border-radius: 24px; background: var(--card); color: var(--card-foreground); border: 1px solid var(--border); box-shadow: 0 24px 50px -30px color-mix(in oklch, var(--foreground) 35%, transparent); }
+.summit-amount { display: grid; gap: 2px; margin: 22px 0; padding: 18px 20px; border-radius: 16px; background: color-mix(in oklch, var(--muted) 80%, var(--programme-gold) 6%); border-left: 4px solid var(--primary); }
+.summit-amount small { font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--primary); }
+.summit-amount strong { font-family: "Montserrat", sans-serif; font-size: clamp(30px, 3.8vw, 44px); font-weight: 700; line-height: 1.05; }
+.summit-amount span { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted-foreground); }
+.summit-sub { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+.summit-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
+.summit-checks li { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.summit-checks svg { width: 17px; height: 17px; flex-shrink: 0; color: var(--primary); }
+.summit-reward { display: flex; flex-direction: column; padding: clamp(24px, 3.5vw, 40px); border-radius: 24px; color: var(--programme-photo-text); background: radial-gradient(110% 80% at 90% 0%, color-mix(in oklch, var(--primary) 35%, transparent), transparent 60%), linear-gradient(160deg, color-mix(in oklch, var(--programme-dark) 92%, var(--primary)), var(--programme-dark)); box-shadow: var(--programme-red-glow); }
+.summit-reward .summit-eyebrow { color: var(--programme-gold); }
+.summit-reward h2 { color: var(--programme-photo-text); }
+.summit-coin { position: relative; display: grid; place-content: center; justify-items: center; gap: 4px; width: 200px; aspect-ratio: 1; margin: 30px auto; border-radius: 50%; color: var(--programme-dark); background: radial-gradient(circle at 32% 25%, color-mix(in oklch, var(--programme-gold) 55%, var(--programme-photo-text)), var(--programme-gold) 45%, color-mix(in oklch, var(--programme-gold) 70%, var(--programme-dark)) 100%); box-shadow: 0 0 0 12px color-mix(in oklch, var(--programme-gold) 14%, transparent), 0 0 60px color-mix(in oklch, var(--programme-gold) 45%, transparent), inset 0 -10px 24px color-mix(in oklch, var(--programme-dark) 25%, transparent); animation: summit-coin-glow 3.2s ease-in-out infinite; }
+.summit-coin svg { width: 28px; height: 28px; }
+.summit-coin strong { font-family: "Montserrat", sans-serif; font-size: 40px; font-weight: 800; line-height: 1; }
+.summit-coin span { font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+@keyframes summit-coin-glow { 50% { box-shadow: 0 0 0 16px color-mix(in oklch, var(--programme-gold) 10%, transparent), 0 0 80px color-mix(in oklch, var(--programme-gold) 60%, transparent), inset 0 -10px 24px color-mix(in oklch, var(--programme-dark) 25%, transparent); } }
+@media (prefers-reduced-motion: reduce) { .summit-coin { animation: none; } }
+.summit-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.summit-facts div { padding: 14px; border-radius: 14px; background: color-mix(in oklch, var(--programme-photo-text) 7%, transparent); border: 1px solid color-mix(in oklch, var(--programme-photo-text) 16%, transparent); }
+.summit-facts dt { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: color-mix(in oklch, var(--programme-photo-text) 70%, transparent); }
+.summit-facts dd { margin-top: 4px; font-size: 17px; font-weight: 800; color: var(--programme-gold); }
+.summit-reward blockquote { margin-top: auto; padding-top: 24px; font-family: "Montserrat", sans-serif; font-size: 21px; font-style: italic; line-height: 1.35; }
+@media (width < 48rem) {
+  .summit-duo { grid-template-columns: 1fr; }
+  .summit-checks { grid-template-columns: 1fr; }
+  .summit-amount strong { font-size: 26px; white-space: nowrap; }
+  .summit-coin { width: 170px; } .summit-coin strong { font-size: 34px; }
+}
+/* Summit 2026: "Also included" premium trio */
+.summit-extras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.summit-extras article { position: relative; overflow: hidden; display: grid; gap: 6px; padding: 30px 26px; border-radius: 22px; background: var(--card); color: var(--card-foreground); border: 1px solid var(--border); box-shadow: 0 24px 50px -32px color-mix(in oklch, var(--foreground) 40%, transparent); transition: transform .3s ease, box-shadow .3s ease; }
+.summit-extras article::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, var(--primary), var(--programme-gold)); }
+.summit-extras article:hover { transform: translateY(-4px); box-shadow: 0 30px 60px -30px color-mix(in oklch, var(--primary) 45%, transparent); }
+.summit-extra-icon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 10px; border-radius: 14px; background: linear-gradient(140deg, var(--primary), color-mix(in oklch, var(--primary) 65%, var(--programme-dark))); color: var(--primary-foreground); }
+.summit-extra-icon svg { width: 24px; height: 24px; }
+.summit-extras small { font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--primary); }
+.summit-extras strong { font-family: "Montserrat", sans-serif; font-size: 30px; font-weight: 800; line-height: 1.1; }
+.summit-extras p { font-size: 14px; line-height: 1.5; color: var(--muted-foreground); }
+.summit-platform { grid-column: 1 / -1; }
+@media (width < 48rem) { .summit-extras { grid-template-columns: 1fr; } .summit-extras article { padding: 24px 22px; } }

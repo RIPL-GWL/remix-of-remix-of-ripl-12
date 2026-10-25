@@ -60,3 +60,4 @@
 - [x] Funding Programme page: program details only — no form (apply button only), no fee, no grant amounts; add what is / is not included.
 - [x] Summit 2026 page: show event date (29–31 December 2026) and full event details, grants, fee and form.
 - [x] Both pages follow selected site theme; check all four themes.
+- [ ] Summit 2026 page: less text, more premium look (trim copy, keep dates/grants/fee/form).
