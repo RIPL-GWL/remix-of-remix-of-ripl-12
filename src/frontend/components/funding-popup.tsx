@@ -4,7 +4,7 @@ import { ArrowRight, X } from "lucide-react";
 import { Dialog, DialogClose, DialogDescription, DialogOverlay, DialogPortal, DialogTitle } from "./ui/dialog";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { Button } from "./ui/button";
-import poster from "@/assets/funding-popup.webp.asset.json";
+import heroPhoto from "@/assets/investment-program-hero.webp";
 import "./funding-popup.css";
 
 const fundingPaths = new Set([
@@ -12,6 +12,13 @@ const fundingPaths = new Set([
   "/fund-your-business", "/fund-your-startup", "/funding-programme",
   "/startup-with-ripl", "/scale-your-startup", "/our-services/funding-support",
 ]);
+
+const highlights = [
+  ["Up to ₹5 Crore", "Funding opportunity"],
+  ["₹20 Lakh", "Grant opportunity"],
+  ["₹25K–₹50K", "Prototype grants"],
+  ["3 Months", "Free mentorship"],
+];
 
 export function FundingPopup() {
   const { pathname, hash } = useLocation();
@@ -40,13 +47,15 @@ export function FundingPopup() {
     <DialogPortal>
       <DialogOverlay className="funding-popup-overlay" />
       <DialogPrimitive.Content className="funding-popup" onCloseAutoFocus={(event) => event.preventDefault()}>
-        <DialogTitle className="sr-only">RIPL Startup Funding Programme — Registrations Open</DialogTitle>
-        <DialogDescription className="sr-only">29–31 December 2026, Gwalior. The top two startups can receive grants of up to ₹10 lakhs and ₹5 lakhs, subject to evaluation, eligibility and terms.</DialogDescription>
-        <div className="funding-popup-poster">
-          <img src={poster.url} alt="RIPL Startup Funding Programme: Pitch. Connect. Raise. Grow. Gwalior summit, 29–31 December 2026. Grants for the top two startups, subject to selection and terms." width={789} height={680} />
-          <Button variant="ghost" className="funding-popup-registration" onClick={register} aria-label="Register Your Startup Now"><span className="sr-only">Register Your Startup Now</span></Button>
+        <img src={heroPhoto} alt="" width={1920} height={1024} className="funding-popup-photo" />
+        <div className="funding-popup-body">
+          <p className="funding-popup-eyebrow">Startup Funding &amp; Investment Program</p>
+          <DialogTitle className="funding-popup-title">Turn Your Idea Into a <em>Fundable</em> Business</DialogTitle>
+          <DialogDescription className="funding-popup-text">Grants, prototype support, mentorship, investor pitching, technology and legal support — applications are open.</DialogDescription>
+          <dl className="funding-popup-facts">{highlights.map(([value, label]) => <div key={label}><dt>{value}</dt><dd>{label}</dd></div>)}</dl>
+          <Button className="funding-popup-register" onClick={register}>Apply Now <ArrowRight /></Button>
+          <p className="funding-popup-terms">Subject to eligibility, evaluation, selection, investor interest and Terms &amp; Conditions. Funding is not guaranteed.</p>
         </div>
-        <Button className="funding-popup-mobile-register" onClick={register}>Register Your Startup Now <ArrowRight /></Button>
         <DialogClose asChild><Button variant="ghost" size="icon" className="funding-popup-close" aria-label="Close funding popup"><X /></Button></DialogClose>
       </DialogPrimitive.Content>
     </DialogPortal>

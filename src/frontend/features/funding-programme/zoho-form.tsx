@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const SUMMIT_REGISTRATION_URL =
   "https://forms.zohopublic.in/RIPLSTORES/form/StartupIdeaRegistrationForm/formperma/1SNzTjiKwSF14T0BCEyJLvZCZDDowZl3NYWbAjpy1KE";
@@ -11,6 +11,11 @@ const FORM_PERMA = "1SNzTjiKwSF14T0BCEyJLvZCZDDowZl3NYWbAjpy1KE";
  */
 export function ZohoRegistrationForm() {
   const frameRef = useRef<HTMLIFrameElement>(null);
+  // The referrer is browser-only, so build the form address after hydration to keep server and client markup identical.
+  const [src, setSrc] = useState<string | null>(null);
+  useEffect(() => {
+    setSrc(`${SUMMIT_REGISTRATION_URL}?zf_rszfm=1&referrername=${encodeURIComponent(window.location.href.slice(0, 1800))}`);
+  }, []);
 
   useEffect(() => {
     const onMessage = (event: MessageEvent) => {
@@ -29,9 +34,7 @@ export function ZohoRegistrationForm() {
     return () => window.removeEventListener("message", onMessage);
   }, []);
 
-  const src = `${SUMMIT_REGISTRATION_URL}?zf_rszfm=1&referrername=${encodeURIComponent(
-    typeof window === "undefined" ? "" : window.location.href.slice(0, 1800),
-  )}`;
+  if (!src) return <div className="programme-registration-frame" style={{ height: 2383 }} aria-hidden="true" />;
 
   return (
     <iframe
