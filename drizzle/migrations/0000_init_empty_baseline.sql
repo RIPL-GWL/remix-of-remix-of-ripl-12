@@ -1,0 +1,1 @@
+-- Empty baseline for the remixed project. Existing schema and data are managed in the database; future changes get their own migration files.
